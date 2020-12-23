@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04236E572592F07E00C6C27A /* GLNavgationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04236E562592F07E00C6C27A /* GLNavgationBar.swift */; };
+		04236E5A2592F46E00C6C27A /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04236E592592F46E00C6C27A /* UIImage+Extensions.swift */; };
+		04236E8B259331A500C6C27A /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04236E8A259331A500C6C27A /* UIBarButtonItem+Extension.swift */; };
+		048A84B92591F808001F2D79 /* UINavgationBar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A84B82591F808001F2D79 /* UINavgationBar+Extension.swift */; };
 		048E5BBB25834E9A00A30115 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E5BBA25834E9A00A30115 /* AppDelegate.swift */; };
 		048E5BC425834E9C00A30115 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 048E5BC325834E9C00A30115 /* Assets.xcassets */; };
 		048E5BE12585EDF600A30115 /* GLMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E5BE02585EDF600A30115 /* GLMainViewController.swift */; };
@@ -30,9 +34,14 @@
 		048E5C2025865FF000A30115 /* NSAttributedString+CZAdditon.m in Sources */ = {isa = PBXBuildFile; fileRef = 048E5C1325865FF000A30115 /* NSAttributedString+CZAdditon.m */; };
 		048E5C2125865FF000A30115 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 048E5C1425865FF000A30115 /* NSArray+Log.m */; };
 		048E5C2E25866A7D00A30115 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E5C2D25866A7D00A30115 /* Bundle+Extensions.swift */; };
+		048E5C352588ACC600A30115 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E5C342588ACC600A30115 /* Tools.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04236E562592F07E00C6C27A /* GLNavgationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLNavgationBar.swift; sourceTree = "<group>"; };
+		04236E592592F46E00C6C27A /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		04236E8A259331A500C6C27A /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
+		048A84B82591F808001F2D79 /* UINavgationBar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavgationBar+Extension.swift"; sourceTree = "<group>"; };
 		048E5BB725834E9A00A30115 /* GLWeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GLWeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		048E5BBA25834E9A00A30115 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		048E5BC325834E9C00A30115 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -72,6 +81,7 @@
 		048E5C1525865FF000A30115 /* NSString+CZPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CZPath.h"; sourceTree = "<group>"; };
 		048E5C2D25866A7D00A30115 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		048E5C302586FD2100A30115 /* GLWeiBo-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GLWeiBo-Bridge.h"; sourceTree = "<group>"; };
+		048E5C342588ACC600A30115 /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +166,7 @@
 			children = (
 				048E5C2C25866A4E00A30115 /* Extension */,
 				048E5BFC25865FF000A30115 /* Additions */,
+				048E5C342588ACC600A30115 /* Tools.swift */,
 			);
 			path = "Tool(工具)";
 			sourceTree = "<group>";
@@ -166,6 +177,7 @@
 				048E5BE02585EDF600A30115 /* GLMainViewController.swift */,
 				048E5BE42585EE2900A30115 /* GLNavigationViewController.swift */,
 				048E5BE72585EE3B00A30115 /* GLBaseViewController.swift */,
+				04236E562592F07E00C6C27A /* GLNavgationBar.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -238,6 +250,9 @@
 			isa = PBXGroup;
 			children = (
 				048E5C2D25866A7D00A30115 /* Bundle+Extensions.swift */,
+				048A84B82591F808001F2D79 /* UINavgationBar+Extension.swift */,
+				04236E592592F46E00C6C27A /* UIImage+Extensions.swift */,
+				04236E8A259331A500C6C27A /* UIBarButtonItem+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -313,25 +328,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				048E5BE52585EE2900A30115 /* GLNavigationViewController.swift in Sources */,
+				04236E5A2592F46E00C6C27A /* UIImage+Extensions.swift in Sources */,
 				048E5C1A25865FF000A30115 /* NSString+CZBase64.m in Sources */,
 				048E5BE12585EDF600A30115 /* GLMainViewController.swift in Sources */,
 				048E5C1D25865FF000A30115 /* NSObject+CZRuntime.m in Sources */,
 				048E5C2025865FF000A30115 /* NSAttributedString+CZAdditon.m in Sources */,
 				048E5C2125865FF000A30115 /* NSArray+Log.m in Sources */,
 				048E5C2E25866A7D00A30115 /* Bundle+Extensions.swift in Sources */,
+				048E5C352588ACC600A30115 /* Tools.swift in Sources */,
 				048E5C1825865FF000A30115 /* UIScreen+CZAddition.m in Sources */,
 				048E5BF12585EE8000A30115 /* GLDiscoverViewController.swift in Sources */,
 				048E5BF42585EE8B00A30115 /* GLProfileViewController.swift in Sources */,
+				04236E8B259331A500C6C27A /* UIBarButtonItem+Extension.swift in Sources */,
 				048E5BE82585EE3B00A30115 /* GLBaseViewController.swift in Sources */,
 				048E5C1C25865FF000A30115 /* UIButton+CZAddition.m in Sources */,
 				048E5BEE2585EE7300A30115 /* GLMessageViewController.swift in Sources */,
 				048E5C1F25865FF000A30115 /* NSString+CZHash.m in Sources */,
+				048A84B92591F808001F2D79 /* UINavgationBar+Extension.swift in Sources */,
 				048E5C1E25865FF000A30115 /* UIViewController+CZAddition.m in Sources */,
 				048E5BEB2585EE6400A30115 /* GLHomeViewController.swift in Sources */,
 				048E5BBB25834E9A00A30115 /* AppDelegate.swift in Sources */,
 				048E5C1925865FF000A30115 /* UILabel+CZAddition.m in Sources */,
 				048E5C1B25865FF000A30115 /* NSString+CZPath.m in Sources */,
 				048E5C1625865FF000A30115 /* UIColor+CZAddition.m in Sources */,
+				04236E572592F07E00C6C27A /* GLNavgationBar.swift in Sources */,
 				048E5C1725865FF000A30115 /* UIView+CZAddition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

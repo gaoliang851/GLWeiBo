@@ -17,18 +17,21 @@ class GLMainViewController: UITabBarController {
         super.viewDidLoad()
         setupChildControllers()
         setupComposeButton()
-    
-
     }
     /// 撰写微博按钮点击事件
     @objc private func clickComposedButton() {
         GLLogTag()
     }
-    
-    override func viewDidLayoutSubviews() {
-        
-    }
 
+    /// portrait  : 竖屏
+    /// landscape : 横屏
+    /// - 使用代码控制设备的方向的好处：可以在需要横屏的时候，单独设置
+    /// - 设置支持的方向之后，当前的控制器及自控制器都会遵守这个方向
+    /// - 如果播放视频，通常是通过 model 展现的
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+    
 }
 //extension 类似于OC中的分类，在Swift中还可以用来切分代码块
 //可以把功能相近的函数，放在一个extension中

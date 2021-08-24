@@ -54,7 +54,7 @@ extension GLNavgationBar {
         backgroundColor = defaultColor
         addSubview(navgationbar)
         navgationbar.items = [item]
-        navgationbar.setBackgroundImage(UIImage.creatImage(color: defaultColor), for: .default)
+        navgationbar.barTintColor = defaultColor
         navgationbar.shadowImage = UIImage()
     }
 }

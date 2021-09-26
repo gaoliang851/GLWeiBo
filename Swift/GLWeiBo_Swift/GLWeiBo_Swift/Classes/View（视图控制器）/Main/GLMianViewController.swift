@@ -35,7 +35,16 @@ extension GLMianViewController {
     private func setupChildControllers() {
         let controlelrsInfoDict = [[childControllerClsNameKey:"GLHomeViewController",
                                     childControllerTitleKey:"主页",
-                                    childControllerImageNameKey:""]]
+                                    childControllerImageNameKey:"home"],
+                                   [childControllerClsNameKey:"GLMessageViewController",
+                                    childControllerTitleKey:"消息",
+                                    childControllerImageNameKey:"message_center"],
+                                   [childControllerClsNameKey:"GLDiscoverViewController",
+                                    childControllerTitleKey:"发现",
+                                    childControllerImageNameKey:"discover"],
+                                   [childControllerClsNameKey:"GLProfileViewController",
+                                    childControllerTitleKey:"我的",
+                                    childControllerImageNameKey:"profile"]]
     
         var arrayM = [UIViewController]()
         for dict in controlelrsInfoDict {
@@ -59,6 +68,15 @@ extension GLMianViewController {
         // 2.创建控制器，设置title和image
         let vc = cls.init()
         vc.title = title
+        // 3. 设置图像，并设置以原有模式显示
+        vc.tabBarItem.image = UIImage(named: "tabbar_" + imageName)?.withRenderingMode(.alwaysOriginal)
+        vc.tabBarItem.selectedImage = UIImage(named: "tabbar_" + imageName + "_selected")?.withRenderingMode(.alwaysOriginal)
+        // 4. 设置tabbar的字体
+        // 4.1 设置高亮（选中）状态下的字体颜色
+        vc.tabBarItem.setTitleTextAttributes([.foregroundColor:UIColor.orange], for: .selected)
+        // 4.2 如果要设置字体大小可以选在在Normal Status下,设置如果字体大小，高亮状态下设置无效
+        // vc.tabBarItem.setTitleTextAttributes([.font:UIFont.systemFont(ofSize: 25)], for: .normal)
+        // 5. 设置NavgationController
         let navgationController = GLNavigationController(rootViewController: vc)
         return navgationController
     }

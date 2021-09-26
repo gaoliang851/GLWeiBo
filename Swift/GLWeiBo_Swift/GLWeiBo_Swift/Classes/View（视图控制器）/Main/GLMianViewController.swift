@@ -9,10 +9,15 @@ import UIKit
 
 /// 主控制器
 class GLMianViewController: UITabBarController {
+    
+    /// 撰写添加按钮
+    private lazy var composeButton: UIButton = UIButton.cz_imageButton("tabbar_compose_icon_add",
+                                                             backgroundImageName: "tabbar_compose_button")
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupChildControllers()
+        setupComposeButton()
     }
 }
 
@@ -31,6 +36,17 @@ fileprivate let childControllerImageNameKey = "imageName"
 
 extension GLMianViewController {
     
+    private func setupComposeButton() {
+        tabBar.addSubview(composeButton)
+        // 获取子控制器的数量
+        let count = CGFloat(children.count)
+        // 计算每个tabbarItem的宽度，
+        // -1是为了避免偶尔点击tabbar之间的空白区域导致空白ViewController展示
+        let w = tabBar.bounds.width / count
+        //insetBy函数，以调用CGRect为中心，扩大或缩小CGRect，正数缩小，负数扩大。
+        composeButton.frame = tabBar.bounds.insetBy(dx: 2 * w, dy: 0)
+    }
+    
     /// 设置所有子控制器
     private func setupChildControllers() {
         let controlelrsInfoDict = [[childControllerClsNameKey:"GLHomeViewController",
@@ -39,6 +55,7 @@ extension GLMianViewController {
                                    [childControllerClsNameKey:"GLMessageViewController",
                                     childControllerTitleKey:"消息",
                                     childControllerImageNameKey:"message_center"],
+                                   [childControllerClsNameKey:"UIViewController"],//为撰写按钮占位
                                    [childControllerClsNameKey:"GLDiscoverViewController",
                                     childControllerTitleKey:"发现",
                                     childControllerImageNameKey:"discover"],

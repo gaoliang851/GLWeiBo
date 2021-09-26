@@ -19,6 +19,12 @@ class GLMianViewController: UITabBarController {
         setupChildControllers()
         setupComposeButton()
     }
+    
+    /// 撰写按钮的点击事件
+    /// @objc：允许方法以OC的消息发送机制调用方法
+    @objc private func composeStatus() {
+        NSLog("撰写微博")
+    }
 }
 
 // extension类似于OC中的分类,在 Swift 中还可以用来切分代码块
@@ -45,6 +51,8 @@ extension GLMianViewController {
         let w = tabBar.bounds.width / count
         //insetBy函数，以调用CGRect为中心，扩大或缩小CGRect，正数缩小，负数扩大。
         composeButton.frame = tabBar.bounds.insetBy(dx: 2 * w, dy: 0)
+        // 添加点击事件
+        composeButton.addTarget(self, action: #selector(composeStatus), for: .touchUpInside)
     }
     
     /// 设置所有子控制器

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		043F02352700817800B40465 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F02342700817800B40465 /* UIBarButtonItem+Extension.swift */; };
 		049E6F4F26FF2A1700BD774F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E6F4E26FF2A1700BD774F /* AppDelegate.swift */; };
 		049E6F5826FF2A1A00BD774F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 049E6F5726FF2A1A00BD774F /* Assets.xcassets */; };
 		049E6F5B26FF2A1A00BD774F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 049E6F5926FF2A1A00BD774F /* LaunchScreen.storyboard */; };
@@ -30,9 +31,11 @@
 		04F27C76270021E6006F5B01 /* NSAttributedString+CZAdditon.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F27C69270021E5006F5B01 /* NSAttributedString+CZAdditon.m */; };
 		04F27C77270021E6006F5B01 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F27C6A270021E5006F5B01 /* NSArray+Log.m */; };
 		04F27C7E270049D5006F5B01 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F27C7D270049D5006F5B01 /* Bundle+Extension.swift */; };
+		04F27C82270070C0006F5B01 /* GLDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F27C81270070C0006F5B01 /* GLDemoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		043F02342700817800B40465 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		049E6F4B26FF2A1700BD774F /* GLWeiBo_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GLWeiBo_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		049E6F4E26FF2A1700BD774F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		049E6F5726FF2A1A00BD774F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -72,6 +75,7 @@
 		04F27C6B270021E5006F5B01 /* NSString+CZPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CZPath.h"; sourceTree = "<group>"; };
 		04F27C7927002224006F5B01 /* GLWeiBo-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GLWeiBo-Bridge.h"; sourceTree = "<group>"; };
 		04F27C7D270049D5006F5B01 /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
+		04F27C81270070C0006F5B01 /* GLDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLDemoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +133,6 @@
 			isa = PBXGroup;
 			children = (
 				04F27C3627001CD1006F5B01 /* Main */,
-				04F27C3727001CD8006F5B01 /* Home */,
 				04F27C3927001CEC006F5B01 /* Message */,
 				04F27C3827001CDF006F5B01 /* Discover */,
 				04F27C3A27001CF3006F5B01 /* Profile */,
@@ -163,9 +166,11 @@
 		04F27C3627001CD1006F5B01 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				04F27C80270070B1006F5B01 /* test */,
 				04F27C3B27001DA1006F5B01 /* GLMianViewController.swift */,
 				04F27C3F27001DB8006F5B01 /* GLNavigationController.swift */,
 				04F27C4227001DCC006F5B01 /* GLBaseViewController.swift */,
+				04F27C3727001CD8006F5B01 /* Home */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -238,8 +243,17 @@
 			isa = PBXGroup;
 			children = (
 				04F27C7D270049D5006F5B01 /* Bundle+Extension.swift */,
+				043F02342700817800B40465 /* UIBarButtonItem+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		04F27C80270070B1006F5B01 /* test */ = {
+			isa = PBXGroup;
+			children = (
+				04F27C81270070C0006F5B01 /* GLDemoViewController.swift */,
+			);
+			path = test;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,9 +335,11 @@
 				04F27C77270021E6006F5B01 /* NSArray+Log.m in Sources */,
 				04F27C6E270021E5006F5B01 /* UIScreen+CZAddition.m in Sources */,
 				04F27C4D27001E2B006F5B01 /* GLDiscoverViewController.swift in Sources */,
+				043F02352700817800B40465 /* UIBarButtonItem+Extension.swift in Sources */,
 				04F27C5027001E3D006F5B01 /* GLProfileViewController.swift in Sources */,
 				04F27C4027001DB8006F5B01 /* GLNavigationController.swift in Sources */,
 				04F27C72270021E5006F5B01 /* UIButton+CZAddition.m in Sources */,
+				04F27C82270070C0006F5B01 /* GLDemoViewController.swift in Sources */,
 				04F27C4A27001E1F006F5B01 /* GLMessageViewController.swift in Sources */,
 				04F27C75270021E6006F5B01 /* NSString+CZHash.m in Sources */,
 				04F27C74270021E6006F5B01 /* UIViewController+CZAddition.m in Sources */,

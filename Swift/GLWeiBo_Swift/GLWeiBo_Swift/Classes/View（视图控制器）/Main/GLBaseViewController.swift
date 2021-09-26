@@ -8,11 +8,14 @@
 import UIKit
 
 class GLBaseViewController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
+    }
+}
 
+extension GLBaseViewController {
+    @objc func setupUI() {
         view.backgroundColor = UIColor.cz_random()
     }
-
 }

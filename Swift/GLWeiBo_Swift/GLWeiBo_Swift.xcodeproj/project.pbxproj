@@ -8,18 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		049E6F4F26FF2A1700BD774F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E6F4E26FF2A1700BD774F /* AppDelegate.swift */; };
-		049E6F5326FF2A1700BD774F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E6F5226FF2A1700BD774F /* ViewController.swift */; };
 		049E6F5826FF2A1A00BD774F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 049E6F5726FF2A1A00BD774F /* Assets.xcassets */; };
 		049E6F5B26FF2A1A00BD774F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 049E6F5926FF2A1A00BD774F /* LaunchScreen.storyboard */; };
+		04F27C3C27001DA1006F5B01 /* GLMianViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F27C3B27001DA1006F5B01 /* GLMianViewController.swift */; };
+		04F27C4027001DB8006F5B01 /* GLNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F27C3F27001DB8006F5B01 /* GLNavigationController.swift */; };
+		04F27C4327001DCC006F5B01 /* GLBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F27C4227001DCC006F5B01 /* GLBaseViewController.swift */; };
+		04F27C4727001E12006F5B01 /* GLHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F27C4627001E12006F5B01 /* GLHomeViewController.swift */; };
+		04F27C4A27001E1F006F5B01 /* GLMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F27C4927001E1F006F5B01 /* GLMessageViewController.swift */; };
+		04F27C4D27001E2B006F5B01 /* GLDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F27C4C27001E2B006F5B01 /* GLDiscoverViewController.swift */; };
+		04F27C5027001E3D006F5B01 /* GLProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F27C4F27001E3D006F5B01 /* GLProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		049E6F4B26FF2A1700BD774F /* GLWeiBo_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GLWeiBo_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		049E6F4E26FF2A1700BD774F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		049E6F5226FF2A1700BD774F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		049E6F5726FF2A1A00BD774F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		049E6F5A26FF2A1A00BD774F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		049E6F5C26FF2A1A00BD774F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04F27C3B27001DA1006F5B01 /* GLMianViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLMianViewController.swift; sourceTree = "<group>"; };
+		04F27C3F27001DB8006F5B01 /* GLNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLNavigationController.swift; sourceTree = "<group>"; };
+		04F27C4227001DCC006F5B01 /* GLBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLBaseViewController.swift; sourceTree = "<group>"; };
+		04F27C4627001E12006F5B01 /* GLHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLHomeViewController.swift; sourceTree = "<group>"; };
+		04F27C4927001E1F006F5B01 /* GLMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLMessageViewController.swift; sourceTree = "<group>"; };
+		04F27C4C27001E2B006F5B01 /* GLDiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLDiscoverViewController.swift; sourceTree = "<group>"; };
+		04F27C4F27001E3D006F5B01 /* GLProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,13 +64,99 @@
 		049E6F4D26FF2A1700BD774F /* GLWeiBo_Swift */ = {
 			isa = PBXGroup;
 			children = (
+				04F27C3027001B26006F5B01 /* Classes */,
 				049E6F4E26FF2A1700BD774F /* AppDelegate.swift */,
-				049E6F5226FF2A1700BD774F /* ViewController.swift */,
 				049E6F5726FF2A1A00BD774F /* Assets.xcassets */,
 				049E6F5926FF2A1A00BD774F /* LaunchScreen.storyboard */,
 				049E6F5C26FF2A1A00BD774F /* Info.plist */,
 			);
 			path = GLWeiBo_Swift;
+			sourceTree = "<group>";
+		};
+		04F27C3027001B26006F5B01 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				04F27C3127001B47006F5B01 /* View（视图控制器） */,
+				04F27C3227001B55006F5B01 /* ViewModel（视图模型） */,
+				04F27C3327001B6C006F5B01 /* Model（模型） */,
+				04F27C3427001B7C006F5B01 /* Tools */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		04F27C3127001B47006F5B01 /* View（视图控制器） */ = {
+			isa = PBXGroup;
+			children = (
+				04F27C3627001CD1006F5B01 /* Main */,
+				04F27C3727001CD8006F5B01 /* Home */,
+				04F27C3927001CEC006F5B01 /* Message */,
+				04F27C3827001CDF006F5B01 /* Discover */,
+				04F27C3A27001CF3006F5B01 /* Profile */,
+			);
+			path = "View（视图控制器）";
+			sourceTree = "<group>";
+		};
+		04F27C3227001B55006F5B01 /* ViewModel（视图模型） */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "ViewModel（视图模型）";
+			sourceTree = "<group>";
+		};
+		04F27C3327001B6C006F5B01 /* Model（模型） */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Model（模型）";
+			sourceTree = "<group>";
+		};
+		04F27C3427001B7C006F5B01 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		04F27C3627001CD1006F5B01 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				04F27C3B27001DA1006F5B01 /* GLMianViewController.swift */,
+				04F27C3F27001DB8006F5B01 /* GLNavigationController.swift */,
+				04F27C4227001DCC006F5B01 /* GLBaseViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		04F27C3727001CD8006F5B01 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				04F27C4627001E12006F5B01 /* GLHomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		04F27C3827001CDF006F5B01 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				04F27C4C27001E2B006F5B01 /* GLDiscoverViewController.swift */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		04F27C3927001CEC006F5B01 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				04F27C4927001E1F006F5B01 /* GLMessageViewController.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		04F27C3A27001CF3006F5B01 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				04F27C4F27001E3D006F5B01 /* GLProfileViewController.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -87,6 +185,7 @@
 		049E6F4326FF2A1700BD774F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = GL;
 				LastSwiftUpdateCheck = 1230;
 				LastUpgradeCheck = 1230;
 				TargetAttributes = {
@@ -130,7 +229,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				049E6F5326FF2A1700BD774F /* ViewController.swift in Sources */,
+				04F27C4327001DCC006F5B01 /* GLBaseViewController.swift in Sources */,
+				04F27C3C27001DA1006F5B01 /* GLMianViewController.swift in Sources */,
+				04F27C4D27001E2B006F5B01 /* GLDiscoverViewController.swift in Sources */,
+				04F27C5027001E3D006F5B01 /* GLProfileViewController.swift in Sources */,
+				04F27C4027001DB8006F5B01 /* GLNavigationController.swift in Sources */,
+				04F27C4A27001E1F006F5B01 /* GLMessageViewController.swift in Sources */,
+				04F27C4727001E12006F5B01 /* GLHomeViewController.swift in Sources */,
 				049E6F4F26FF2A1700BD774F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

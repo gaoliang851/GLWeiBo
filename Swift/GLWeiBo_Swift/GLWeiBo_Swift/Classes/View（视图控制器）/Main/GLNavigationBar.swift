@@ -18,6 +18,12 @@ class GLNavigationBar: UIView {
         }
     }
     
+    var titleTextAttributes: [NSAttributedString.Key : Any]? {
+        didSet {
+            navigationBar.titleTextAttributes = titleTextAttributes
+        }
+    }
+    
     /// 重写frame的setter
     override var frame: CGRect {
         didSet {

@@ -13,17 +13,17 @@ class GLDemoViewController: GLBaseViewController {
         super.viewDidLoad()
     }
     
-    @objc private func back() {
-        navigationController?.popViewController(animated: true)
+    @objc private func showNext() {
+        let vc = GLDemoViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
 extension GLDemoViewController {
     override func setupUI() {
         super.setupUI()
-        navItem.leftBarButtonItem = UIBarButtonItem(title: "上一个", target: self, action: #selector(back))
-        
-        //navigationBar.setColor(UIColor.cz_random())
+        navItem.rightBarButtonItem = UIBarButtonItem(title: "下一个", target: self, action: #selector(showNext))
+        title = "第 \(navigationController?.children.count ?? 0 ) 个"
     }
 }
 

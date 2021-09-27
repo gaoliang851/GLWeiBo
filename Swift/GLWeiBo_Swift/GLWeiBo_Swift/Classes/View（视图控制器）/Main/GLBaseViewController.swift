@@ -31,22 +31,35 @@ class GLBaseViewController: UIViewController, UIGestureRecognizerDelegate {
 
 extension GLBaseViewController {
     
-    @objc func setupUI() {
+    private func setupUI() {
         view.backgroundColor = UIColor.cz_random()
         setupNavigationBar()
         setupTableView()
     }
     
     /// 设置导航条的方法
-    fileprivate func setupNavigationBar() {
+    private func setupNavigationBar() {
         navigationBar.items = [navItem]
         //设置navigationbar标题颜色
         navigationBar.titleTextAttributes = [.foregroundColor:UIColor.darkGray]
         view.addSubview(navigationBar)
     }
     /// 设置table View
-    fileprivate func setupTableView() {
+    private func setupTableView() {
         tableView = UITableView(frame: view.bounds, style: .plain)
         view.insertSubview(tableView!, belowSubview: navigationBar)
+        
+        tableView?.delegate = self
+        tableView?.dataSource = self
+    }
+}
+
+/// 这里是为了隔离TableView的数据源方法，子类直接实现即可
+extension GLBaseViewController : UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        0
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        UITableViewCell()
     }
 }

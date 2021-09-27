@@ -10,6 +10,7 @@ import UIKit
 class GLHomeViewController: GLBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
     }
     
     @objc private func showFirends() {
@@ -20,8 +21,7 @@ class GLHomeViewController: GLBaseViewController {
 }
 
 extension GLHomeViewController {
-    override func setupUI() {
-        super.setupUI()
+    private func setupUI() {
         navItem.rightBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showFirends))
     }
 }

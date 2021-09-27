@@ -30,7 +30,7 @@ extension GLBaseViewController {
         view.backgroundColor = UIColor.cz_random()
         navigationBar.items = [navItem]
         //设置navigationbar标题颜色
-        navigationBar.titleTextAttributes = [.foregroundColor:UIColor.red]
+        navigationBar.titleTextAttributes = [.foregroundColor:UIColor.darkGray]
         view.addSubview(navigationBar)
     }
 }

@@ -13,7 +13,6 @@ class GLMianViewController: UITabBarController {
     /// 撰写添加按钮
     private lazy var composeButton: UIButton = UIButton.cz_imageButton("tabbar_compose_icon_add",
                                                              backgroundImageName: "tabbar_compose_button")
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupChildControllers()
@@ -24,6 +23,17 @@ class GLMianViewController: UITabBarController {
     /// @objc：允许方法以OC的消息发送机制调用方法
     @objc private func composeStatus() {
         NSLog("撰写微博")
+    }
+    
+    
+    /// 设置支持的方向
+    /// portrait  : 竖屏，
+    /// landscape : 竖屏，
+    /// - 使用代码控制控制设备的方向，好处，可以在需要的横屏的时候，单独处理！
+    /// - 设置支持的方向之后，当前的控制器及子控制器都会遵守这个方向！
+    /// - 如果播放视频，通常是通过 modal 展现的!
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        .portrait
     }
 }
 

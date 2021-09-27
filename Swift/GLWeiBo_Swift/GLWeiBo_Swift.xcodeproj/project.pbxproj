@@ -95,6 +95,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0480C9F22701C1BD00AF92F1 /* 主控制器 */ = {
+			isa = PBXGroup;
+			children = (
+				04F27C3B27001DA1006F5B01 /* GLMianViewController.swift */,
+				04F27C3F27001DB8006F5B01 /* GLNavigationController.swift */,
+			);
+			path = "主控制器";
+			sourceTree = "<group>";
+		};
 		049E6F4226FF2A1700BD774F = {
 			isa = PBXGroup;
 			children = (
@@ -174,8 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				04F27C80270070B1006F5B01 /* test */,
-				04F27C3B27001DA1006F5B01 /* GLMianViewController.swift */,
-				04F27C3F27001DB8006F5B01 /* GLNavigationController.swift */,
+				0480C9F22701C1BD00AF92F1 /* 主控制器 */,
 				04F27C4227001DCC006F5B01 /* GLBaseViewController.swift */,
 				043F023B270165E000B40465 /* GLNavigationBar.swift */,
 			);

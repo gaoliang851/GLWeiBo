@@ -98,8 +98,24 @@ extension GLMianViewController {
         vc.tabBarItem.selectedImage = UIImage(named: "tabbar_" + imageName + "_selected")?.withRenderingMode(.alwaysOriginal)
         // 4. 设置tabbar的字体
         // 4.1 设置高亮（选中）状态下的字体颜色
-        vc.tabBarItem.setTitleTextAttributes([.foregroundColor:UIColor.orange], for: .selected)
-        vc.tabBarItem.setTitleTextAttributes([.foregroundColor:UIColor.darkGray], for: .normal)
+        /**
+         * 记录适配iOS13发现设置UITabBarItem的颜色，
+         * 未选中状态下无效为默认颜色，选中状态下有效，
+         * 但是push后再返回，tabBarItem选中颜色变为系统蓝色。适
+         * 配方法提供如下
+         */
+        if #available(iOS 13.0, *) {
+            // 选中颜色
+            tabBar.tintColor = .orange
+            //默认颜色
+            tabBar.unselectedItemTintColor = .darkGray
+        } else {
+            // iOS 13以下
+            vc.tabBarItem.setTitleTextAttributes([.foregroundColor:UIColor.orange], for: .selected)
+            vc.tabBarItem.setTitleTextAttributes([.foregroundColor:UIColor.darkGray], for: .normal)
+        }
+        
+        
         // 4.2 如果要设置字体大小可以选在在Normal Status下,设置如果字体大小，高亮状态下设置无效
         // vc.tabBarItem.setTitleTextAttributes([.font:UIFont.systemFont(ofSize: 25)], for: .normal)
         // 5. 设置NavgationController

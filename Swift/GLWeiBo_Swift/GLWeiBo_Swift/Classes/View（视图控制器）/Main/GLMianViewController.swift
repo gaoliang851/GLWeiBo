@@ -99,6 +99,7 @@ extension GLMianViewController {
         // 4. 设置tabbar的字体
         // 4.1 设置高亮（选中）状态下的字体颜色
         vc.tabBarItem.setTitleTextAttributes([.foregroundColor:UIColor.orange], for: .selected)
+        vc.tabBarItem.setTitleTextAttributes([.foregroundColor:UIColor.darkGray], for: .normal)
         // 4.2 如果要设置字体大小可以选在在Normal Status下,设置如果字体大小，高亮状态下设置无效
         // vc.tabBarItem.setTitleTextAttributes([.font:UIFont.systemFont(ofSize: 25)], for: .normal)
         // 5. 设置NavgationController

@@ -14,13 +14,14 @@ class GLHomeViewController: GLBaseViewController {
     
     @objc private func showFirends() {
         print(#function)
+        let vc = GLDemoViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
 extension GLHomeViewController {
     override func setupUI() {
         super.setupUI()
-        
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showFirends))
+        navItem.rightBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showFirends))
     }
 }

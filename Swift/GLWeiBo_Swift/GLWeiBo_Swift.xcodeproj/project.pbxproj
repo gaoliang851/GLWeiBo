@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		043F02352700817800B40465 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F02342700817800B40465 /* UIBarButtonItem+Extension.swift */; };
+		043F023827015B3D00B40465 /* UINavigationBar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F023727015B3D00B40465 /* UINavigationBar+Extension.swift */; };
+		043F023C270165E000B40465 /* GLNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F023B270165E000B40465 /* GLNavigationBar.swift */; };
+		043F024027016A9000B40465 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F023F27016A9000B40465 /* UIImage+Extension.swift */; };
 		049E6F4F26FF2A1700BD774F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E6F4E26FF2A1700BD774F /* AppDelegate.swift */; };
 		049E6F5826FF2A1A00BD774F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 049E6F5726FF2A1A00BD774F /* Assets.xcassets */; };
 		049E6F5B26FF2A1A00BD774F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 049E6F5926FF2A1A00BD774F /* LaunchScreen.storyboard */; };
@@ -36,6 +39,9 @@
 
 /* Begin PBXFileReference section */
 		043F02342700817800B40465 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
+		043F023727015B3D00B40465 /* UINavigationBar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Extension.swift"; sourceTree = "<group>"; };
+		043F023B270165E000B40465 /* GLNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLNavigationBar.swift; sourceTree = "<group>"; };
+		043F023F27016A9000B40465 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		049E6F4B26FF2A1700BD774F /* GLWeiBo_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GLWeiBo_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		049E6F4E26FF2A1700BD774F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		049E6F5726FF2A1A00BD774F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -133,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				04F27C3627001CD1006F5B01 /* Main */,
+				04F27C3727001CD8006F5B01 /* Home */,
 				04F27C3927001CEC006F5B01 /* Message */,
 				04F27C3827001CDF006F5B01 /* Discover */,
 				04F27C3A27001CF3006F5B01 /* Profile */,
@@ -170,7 +177,7 @@
 				04F27C3B27001DA1006F5B01 /* GLMianViewController.swift */,
 				04F27C3F27001DB8006F5B01 /* GLNavigationController.swift */,
 				04F27C4227001DCC006F5B01 /* GLBaseViewController.swift */,
-				04F27C3727001CD8006F5B01 /* Home */,
+				043F023B270165E000B40465 /* GLNavigationBar.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -244,6 +251,8 @@
 			children = (
 				04F27C7D270049D5006F5B01 /* Bundle+Extension.swift */,
 				043F02342700817800B40465 /* UIBarButtonItem+Extension.swift */,
+				043F023727015B3D00B40465 /* UINavigationBar+Extension.swift */,
+				043F023F27016A9000B40465 /* UIImage+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -330,13 +339,16 @@
 				04F27C7E270049D5006F5B01 /* Bundle+Extension.swift in Sources */,
 				04F27C70270021E5006F5B01 /* NSString+CZBase64.m in Sources */,
 				04F27C3C27001DA1006F5B01 /* GLMianViewController.swift in Sources */,
+				043F023C270165E000B40465 /* GLNavigationBar.swift in Sources */,
 				04F27C73270021E5006F5B01 /* NSObject+CZRuntime.m in Sources */,
+				043F023827015B3D00B40465 /* UINavigationBar+Extension.swift in Sources */,
 				04F27C76270021E6006F5B01 /* NSAttributedString+CZAdditon.m in Sources */,
 				04F27C77270021E6006F5B01 /* NSArray+Log.m in Sources */,
 				04F27C6E270021E5006F5B01 /* UIScreen+CZAddition.m in Sources */,
 				04F27C4D27001E2B006F5B01 /* GLDiscoverViewController.swift in Sources */,
 				043F02352700817800B40465 /* UIBarButtonItem+Extension.swift in Sources */,
 				04F27C5027001E3D006F5B01 /* GLProfileViewController.swift in Sources */,
+				043F024027016A9000B40465 /* UIImage+Extension.swift in Sources */,
 				04F27C4027001DB8006F5B01 /* GLNavigationController.swift in Sources */,
 				04F27C72270021E5006F5B01 /* UIButton+CZAddition.m in Sources */,
 				04F27C82270070C0006F5B01 /* GLDemoViewController.swift in Sources */,
@@ -488,15 +500,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = Q4RK7D73P6;
 				INFOPLIST_FILE = GLWeiBo_Swift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "gao.GLWeiBo-Swift";
+				PRODUCT_BUNDLE_IDENTIFIER = com.welink.mobile.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = ios_app_development_Provisioning_Profile;
 				SWIFT_OBJC_BRIDGING_HEADER = "GLWeiBo_Swift/GLWeiBo-Bridge.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -509,15 +524,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = Q4RK7D73P6;
 				INFOPLIST_FILE = GLWeiBo_Swift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "gao.GLWeiBo-Swift";
+				PRODUCT_BUNDLE_IDENTIFIER = com.welink.mobile.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = ios_app_development_Provisioning_Profile;
 				SWIFT_OBJC_BRIDGING_HEADER = "GLWeiBo_Swift/GLWeiBo-Bridge.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

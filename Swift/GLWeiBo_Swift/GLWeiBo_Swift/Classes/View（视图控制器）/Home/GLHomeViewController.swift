@@ -21,9 +21,14 @@ class GLHomeViewController: GLBaseViewController {
     }
     
     override func loadData() {
-        print(#function)
-        for i in 0..<15 {
-            statusList.insert(i.description, at: 0)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+            for _ in 0..<15 {
+                self.statusList.insert((self.statusList.count + 1).description, at: 0)
+            }
+            // 结束刷新动画
+            self.refreshControl?.endRefreshing()
+            // 刷新表格
+            self.tableView?.reloadData()
         }
     }
 }

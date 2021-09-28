@@ -51,11 +51,33 @@ extension GLBaseViewController {
     }
     /// 设置table View
     private func setupTableView() {
+        
+        
+        
         tableView = UITableView(frame: view.bounds, style: .plain)
         view.insertSubview(tableView!, belowSubview: navigationBar)
         
         tableView?.delegate = self
         tableView?.dataSource = self
+        
+        /**
+         automaticallyAdjustsScrollViewInsets是UIViewController的一个属性,
+         iOS7.0引入，11.0废除
+         之后其作用被UIScrollView的新属性contentInsetAdjustmentBehavior所取代,
+         如设置为UIScrollViewContentInsetAdjustmentAutomatic等
+         作用：默认情况下，它可以保证滚动视图的内容自动偏移，不会被UINavigationBar与UITabBar遮挡。
+         */
+        
+        if #available(iOS 11.0, *) {
+            tableView?.contentInsetAdjustmentBehavior = .never
+        } else {
+            // iOS11及以上的系统该属性失效
+            automaticallyAdjustsScrollViewInsets = false
+        }
+        tableView?.contentInset = UIEdgeInsets(top: navigationBar.bounds.height,
+                                               left: 0,
+                                               bottom: tabBarController?.tabBar.bounds.height ?? 0,
+                                               right: 0)
     }
 }
 

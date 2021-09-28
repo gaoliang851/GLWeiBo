@@ -21,6 +21,7 @@ class GLHomeViewController: GLBaseViewController {
     }
     
     override func loadData() {
+        print(#function)
         for i in 0..<15 {
             statusList.insert(i.description, at: 0)
         }

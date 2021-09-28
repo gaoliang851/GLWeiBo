@@ -15,6 +15,8 @@ class GLBaseViewController: UIViewController, UIGestureRecognizerDelegate {
     
     /// 这里定义成可选的，原因是当用户没有登录是，tableView是不需要创建的
     var tableView: UITableView?
+    /// 下拉刷新控件
+    var refreshControl: UIRefreshControl?
     
     override var title: String? {
         didSet {
@@ -29,7 +31,7 @@ class GLBaseViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     /// 网络加载的方法，在viewDidLoad中统一调用
-    func loadData() {
+    @objc func loadData() {
         
     }
 }
@@ -51,8 +53,6 @@ extension GLBaseViewController {
     }
     /// 设置table View
     private func setupTableView() {
-        
-        
         
         tableView = UITableView(frame: view.bounds, style: .plain)
         view.insertSubview(tableView!, belowSubview: navigationBar)
@@ -78,6 +78,13 @@ extension GLBaseViewController {
                                                left: 0,
                                                bottom: tabBarController?.tabBar.bounds.height ?? 0,
                                                right: 0)
+        
+        // 1.> 创建下拉刷新控件,UIRefreshControl的frame是固定
+        refreshControl = UIRefreshControl()
+        // 2.> 添加到tableview
+        tableView?.addSubview(refreshControl!)
+        // 3.> 添加点击事件，当UIRefreshControl开始旋转的时候，会触发 UIControl.Event.valueChanged事件
+        refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
     }
 }
 

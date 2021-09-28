@@ -21,7 +21,8 @@ class GLDemoViewController: GLBaseViewController {
 }
 
 extension GLDemoViewController {
-    private func setupUI() {
+     override func setupUI() {
+        super.setupUI()
         navItem.rightBarButtonItem = UIBarButtonItem(title: "下一个", target: self, action: #selector(showNext))
         title = "第 \(navigationController?.children.count ?? 0 ) 个"
     }

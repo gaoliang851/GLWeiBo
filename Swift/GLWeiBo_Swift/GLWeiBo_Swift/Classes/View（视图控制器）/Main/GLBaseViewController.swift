@@ -13,25 +13,30 @@ class GLBaseViewController: UIViewController, UIGestureRecognizerDelegate {
     
     lazy var navItem: UINavigationItem = UINavigationItem()
     
-    
     /// 这里定义成可选的，原因是当用户没有登录是，tableView是不需要创建的
     var tableView: UITableView?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupUI()
-    }
-        
     override var title: String? {
         didSet {
             navItem.title = title
         }
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupUI()
+        loadData()
+    }
+    
+    /// 网络加载的方法，在viewDidLoad中统一调用
+    func loadData() {
+        
+    }
 }
 
 extension GLBaseViewController {
     
-    private func setupUI() {
+    @objc func setupUI() {
         view.backgroundColor = UIColor.cz_random()
         setupNavigationBar()
         setupTableView()

@@ -12,19 +12,31 @@ fileprivate let cellId = "cellId"
 
 class GLHomeViewController: GLBaseViewController {
     
+    /// 数据源
     lazy var statusList = [String]()
     
+    /// 上拉加载标志
+    private var isPullup = false
+    
     @objc private func showFirends() {
-        print(#function)
         let vc = GLDemoViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
     
     override func loadData() {
+        print("开始加载....")
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
-            for _ in 0..<15 {
-                self.statusList.insert((self.statusList.count + 1).description, at: 0)
+            if self.isPullup { //上拉加载
+                for i in 0..<15 {
+                    self.statusList.append("上拉:\(i)")
+                }
+            } else { // 下拉刷新
+                for i in 0..<15 {
+                    self.statusList.insert(i.description, at: 0)
+                }
             }
+            //将上拉标志设置回去
+            self.isPullup = false
             // 结束刷新动画
             self.refreshControl?.endRefreshing()
             // 刷新表格
@@ -55,6 +67,21 @@ extension GLHomeViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         statusList.count
+    }
+    
+    /// 无缝上拉加载
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        // 1. 获取最大的section
+        let section = tableView.numberOfSections - 1
+        // 2. 获取最大的Row
+        let row = tableView.numberOfRows(inSection: section) - 1
+        // 3. section匹配，row匹配，则认为是最后一行，开始上拉刷新
+        if indexPath.row == row && indexPath.section == section && !isPullup {
+            print("上拉加载")
+            isPullup = true
+            // 开始刷新
+            loadData()
+        }
     }
 }
 

@@ -17,6 +17,8 @@ class GLBaseViewController: UIViewController, UIGestureRecognizerDelegate {
     var tableView: UITableView?
     /// 下拉刷新控件
     var refreshControl: UIRefreshControl?
+    /// 是否登录的标志
+    var userLogin = false
     
     override var title: String? {
         didSet {
@@ -42,7 +44,7 @@ extension GLBaseViewController {
     @objc func setupUI() {
         view.backgroundColor = UIColor.cz_random()
         setupNavigationBar()
-        setupTableView()
+        userLogin ? setupTableView() : setupVistorView()
     }
     
     /// 设置导航条的方法
@@ -86,6 +88,12 @@ extension GLBaseViewController {
         tableView?.addSubview(refreshControl!)
         // 3.> 添加点击事件，当UIRefreshControl开始旋转的时候，会触发 UIControl.Event.valueChanged事件
         refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
+    }
+    
+    /// 设置访客视图
+    private func setupVistorView() {
+        let vistorView = GLVistorView(frame: view.bounds)
+        view.insertSubview(vistorView, belowSubview: navigationBar)
     }
 }
 

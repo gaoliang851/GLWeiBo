@@ -19,6 +19,8 @@ class GLBaseViewController: UIViewController, UIGestureRecognizerDelegate {
     var refreshControl: UIRefreshControl?
     /// 是否登录的标志
     var userLogin = false
+    /// 访客视图属性字典
+    var vistorInfo: [String: String]?
     
     override var title: String? {
         didSet {
@@ -93,6 +95,7 @@ extension GLBaseViewController {
     private func setupVistorView() {
         let vistorView = GLVistorView(frame: view.bounds)
         view.insertSubview(vistorView, belowSubview: navigationBar)
+        vistorView.vistorInfo = vistorInfo
     }
 }
 

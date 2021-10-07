@@ -9,6 +9,31 @@ import UIKit
 
 /// 访客视图
 class GLVistorView: UIView {
+    /// 视图属性字典
+    /// key: imageName,message
+    /// 注意: 首页视图 imageName传入""
+    var vistorInfo: [String:String]? {
+        didSet {
+            // 取出imageName和message
+            guard let imageName = vistorInfo?["imageName"],
+                  let message = vistorInfo?["message"] else {
+                return
+            }
+            
+            // 如果imageName的长度为0,则说明是首页传入
+            // 不用再做其他的设置
+            if imageName.count == 0 {
+                return
+            }
+            
+            icon.image = UIImage(named: imageName)
+            tipLabel.text = message
+            // 其他页面不需要小房子图标、遮罩图标
+            houseIcon.isHidden = true
+            maskIconView.isHidden = true
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
@@ -52,7 +77,10 @@ class GLVistorView: UIView {
 // MARK: - 设置界面
 extension GLVistorView {
     private func setupUI() {
+        //1> 修改背景颜色
         backgroundColor = UIColor.init(red: 236/255.0, green: 237/255.0, blue: 236/255.0, alpha: 1)
+        
+        //2> 懒加载子控件并添加到视图
         addSubview(icon)
         addSubview(maskIconView)
         addSubview(houseIcon)
@@ -60,6 +88,10 @@ extension GLVistorView {
         addSubview(registerButton)
         addSubview(loginButton)
         
+        // 让文本居中显示
+        tipLabel.textAlignment = .center
+        
+        // 布局子控件
         for v in subviews {
             v.translatesAutoresizingMaskIntoConstraints = false
         }
@@ -113,12 +145,12 @@ extension GLVistorView {
                                          multiplier: 1.0,
                                          constant: 16))
         addConstraint(NSLayoutConstraint(item: tipLabel,
-                                         attribute: .centerX,
+                                         attribute: .width,
                                          relatedBy: .equal,
-                                         toItem: icon,
-                                         attribute: .centerX,
+                                         toItem: nil,
+                                         attribute: .notAnAttribute,
                                          multiplier: 1.0,
-                                         constant: 0))
+                                         constant: 236))
         
         // 注册按钮
         addConstraint(NSLayoutConstraint(item: registerButton,

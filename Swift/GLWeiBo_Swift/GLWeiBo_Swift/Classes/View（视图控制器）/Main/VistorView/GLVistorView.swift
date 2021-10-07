@@ -23,6 +23,7 @@ class GLVistorView: UIView {
             // 如果imageName的长度为0,则说明是首页传入
             // 不用再做其他的设置
             if imageName.count == 0 {
+                startAnimation()
                 return
             }
             
@@ -72,6 +73,7 @@ class GLVistorView: UIView {
                                                           normalColor: .darkGray,
                                                           highlightedColor: .orange,
                                                           backgroundImageName: "common_button_white_disable")
+    
 }
 
 // MARK: - 设置界面
@@ -227,5 +229,20 @@ extension GLVistorView {
                                          attribute: .bottom,
                                          multiplier: 1.0,
                                          constant: 0))
+    }
+    
+    
+    /// 旋转图标动画
+    private func startAnimation() {
+        let anim = CABasicAnimation(keyPath: "transform.rotation")
+        anim.toValue = 2 * Double.pi
+        anim.repeatCount = MAXFLOAT
+        anim.duration = 15
+        
+        // 动画完成不删除,如果 iconView被释放,动画会一起销毁
+        anim.isRemovedOnCompletion = false
+        
+        //将动画添加到图层
+        icon.layer.add(anim, forKey: nil)
     }
 }

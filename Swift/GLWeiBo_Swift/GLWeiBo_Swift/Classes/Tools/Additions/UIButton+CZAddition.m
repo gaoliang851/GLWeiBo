@@ -26,7 +26,6 @@
     
     if (backgroundImageName != nil) {
         [button setBackgroundImage:[UIImage imageNamed:backgroundImageName] forState:UIControlStateNormal];
-        
         NSString *backgroundImageNameHL = [backgroundImageName stringByAppendingString:@"_highlighted"];
         [button setBackgroundImage:[UIImage imageNamed:backgroundImageNameHL] forState:UIControlStateHighlighted];
     }

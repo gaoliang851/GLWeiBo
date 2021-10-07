@@ -70,7 +70,6 @@ extension GLBaseViewController {
          如设置为UIScrollViewContentInsetAdjustmentAutomatic等
          作用：默认情况下，它可以保证滚动视图的内容自动偏移，不会被UINavigationBar与UITabBar遮挡。
          */
-        
         if #available(iOS 11.0, *) {
             tableView?.contentInsetAdjustmentBehavior = .never
         } else {
@@ -105,5 +104,4 @@ extension GLBaseViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         UITableViewCell()
     }
-
 }

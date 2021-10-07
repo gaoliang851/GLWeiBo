@@ -17,6 +17,7 @@ extension UINavigationBar {
         } else {
             statusBarHeight = UIApplication.shared.statusBarFrame.height
         }
+        //44为导航栏固定高度
         let navgationbarHeight = statusBarHeight + 44
         return navgationbarHeight
     }

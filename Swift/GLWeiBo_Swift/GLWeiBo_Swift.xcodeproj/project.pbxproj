@@ -200,10 +200,10 @@
 		04F27C3627001CD1006F5B01 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				0480C9F22701C1BD00AF92F1 /* 主控制器 */,
 				049AB0C627044C2800FCD619 /* NavigationBar */,
 				049AB0C527044C1B00FCD619 /* VistorView */,
 				04F27C80270070B1006F5B01 /* test */,
-				0480C9F22701C1BD00AF92F1 /* 主控制器 */,
 				04F27C4227001DCC006F5B01 /* GLBaseViewController.swift */,
 			);
 			path = Main;
@@ -244,31 +244,31 @@
 		04F27C52270021E5006F5B01 /* Additions */ = {
 			isa = PBXGroup;
 			children = (
+				04F27C61270021E5006F5B01 /* UIColor+CZAddition.h */,
 				04F27C53270021E5006F5B01 /* UIColor+CZAddition.m */,
-				04F27C54270021E5006F5B01 /* UIView+CZAddition.m */,
 				04F27C55270021E5006F5B01 /* UIButton+CZAddition.h */,
 				04F27C5F270021E5006F5B01 /* UIButton+CZAddition.m */,
 				04F27C64270021E5006F5B01 /* UIScreen+CZAddition.h */,
 				04F27C57270021E5006F5B01 /* UIScreen+CZAddition.m */,
-				04F27C56270021E5006F5B01 /* NSString+CZHash.h */,
 				04F27C58270021E5006F5B01 /* UIViewController+CZAddition.h */,
+				04F27C65270021E5006F5B01 /* UIViewController+CZAddition.m */,
+				04F27C63270021E5006F5B01 /* UILabel+CZAddition.h */,
 				04F27C59270021E5006F5B01 /* UILabel+CZAddition.m */,
+				04F27C60270021E5006F5B01 /* UIView+CZAddition.h */,
+				04F27C54270021E5006F5B01 /* UIView+CZAddition.m */,
+				04F27C56270021E5006F5B01 /* NSString+CZHash.h */,
+				04F27C66270021E5006F5B01 /* NSString+CZHash.m */,
 				04F27C5A270021E5006F5B01 /* NSObject+CZRuntime.h */,
+				04F27C62270021E5006F5B01 /* NSObject+CZRuntime.m */,
+				04F27C67270021E5006F5B01 /* NSString+CZBase64.h */,
 				04F27C5B270021E5006F5B01 /* NSString+CZBase64.m */,
+				04F27C6B270021E5006F5B01 /* NSString+CZPath.h */,
 				04F27C5C270021E5006F5B01 /* NSString+CZPath.m */,
 				04F27C5D270021E5006F5B01 /* NSArray+Log.h */,
-				04F27C5E270021E5006F5B01 /* NSAttributedString+CZAdditon.h */,
-				04F27C60270021E5006F5B01 /* UIView+CZAddition.h */,
-				04F27C61270021E5006F5B01 /* UIColor+CZAddition.h */,
-				04F27C62270021E5006F5B01 /* NSObject+CZRuntime.m */,
-				04F27C63270021E5006F5B01 /* UILabel+CZAddition.h */,
-				04F27C65270021E5006F5B01 /* UIViewController+CZAddition.m */,
-				04F27C66270021E5006F5B01 /* NSString+CZHash.m */,
-				04F27C67270021E5006F5B01 /* NSString+CZBase64.h */,
-				04F27C68270021E5006F5B01 /* CZAdditions.h */,
-				04F27C69270021E5006F5B01 /* NSAttributedString+CZAdditon.m */,
 				04F27C6A270021E5006F5B01 /* NSArray+Log.m */,
-				04F27C6B270021E5006F5B01 /* NSString+CZPath.h */,
+				04F27C5E270021E5006F5B01 /* NSAttributedString+CZAdditon.h */,
+				04F27C69270021E5006F5B01 /* NSAttributedString+CZAdditon.m */,
+				04F27C68270021E5006F5B01 /* CZAdditions.h */,
 			);
 			path = Additions;
 			sourceTree = "<group>";

@@ -71,7 +71,7 @@ class GLVistorView: UIView {
     private lazy var loginButton: UIButton = UIButton.cz_textButton("登录",
                                                           fontSize: 16,
                                                           normalColor: .darkGray,
-                                                          highlightedColor: .orange,
+                                                          highlightedColor: .darkGray,
                                                           backgroundImageName: "common_button_white_disable")
     
 }

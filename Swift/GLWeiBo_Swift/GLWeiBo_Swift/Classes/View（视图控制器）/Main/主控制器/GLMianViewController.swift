@@ -59,28 +59,40 @@ extension GLMianViewController {
     
     /// 设置所有子控制器
     private func setupChildControllers() {
-        let controlelrsInfoDict : [[String : Any]] = [["clsName":"GLHomeViewController",
-                                                             "title":"主页",
-                                                             "imageName":"home",
-                                                             "vistorInfo":["imageName":"",
-                                                                           "message":"关注一些人，回这里看看有什么惊喜"]],
-                                                            ["clsName":"GLMessageViewController",
-                                                             "title":"消息",
-                                                             "imageName":"message_center",
-                                                             "vistorInfo":["imageName":"visitordiscover_image_message",
-                                                                           "message":"登录后，别人评论你的微博，发给你的消息，都会在这里收到通知"]],
-                                                            ["clsName":"UIViewController"],//为撰写按钮占位
-                                                            ["clsName":"GLDiscoverViewController",
-                                                             "title":"发现",
-                                                             "imageName":"discover",
-                                                             "vistorInfo":["imageName":"visitordiscover_image_message",
-                                                                           "message":"登录后，最新、最热微博尽在掌握，不再会与实事潮流擦肩而过"]],
-                                                            ["clsName":"GLProfileViewController",
-                                                             "title":"我的",
-                                                             "imageName":"profile",
-                                                             "vistorInfo":["imageName":"visitordiscover_image_profile",
-                                                                           "message":"登录后，你的微博、相册、个人资料会显示在这里，展示给别人"]]]
+//        let controlelrsInfoDict : [[String : Any]] = [["clsName":"GLHomeViewController",
+//                                                             "title":"主页",
+//                                                             "imageName":"home",
+//                                                             "vistorInfo":["imageName":"",
+//                                                                           "message":"关注一些人，回这里看看有什么惊喜"]],
+//                                                            ["clsName":"GLMessageViewController",
+//                                                             "title":"消息",
+//                                                             "imageName":"message_center",
+//                                                             "vistorInfo":["imageName":"visitordiscover_image_message",
+//                                                                           "message":"登录后，别人评论你的微博，发给你的消息，都会在这里收到通知"]],
+//                                                            ["clsName":"UIViewController"],//为撰写按钮占位
+//                                                            ["clsName":"GLDiscoverViewController",
+//                                                             "title":"发现",
+//                                                             "imageName":"discover",
+//                                                             "vistorInfo":["imageName":"visitordiscover_image_message",
+//                                                                           "message":"登录后，最新、最热微博尽在掌握，不再会与实事潮流擦肩而过"]],
+//                                                            ["clsName":"GLProfileViewController",
+//                                                             "title":"我的",
+//                                                             "imageName":"profile",
+//                                                             "vistorInfo":["imageName":"visitordiscover_image_profile",
+//                                                                           "message":"登录后，你的微博、相册、个人资料会显示在这里，展示给别人"]]]
     
+//        let data = try! JSONSerialization.data(withJSONObject: controlelrsInfoDict, options: .prettyPrinted)
+//
+//
+//        let url = NSURL(fileURLWithPath: "/Users/mac/Desktop/main.json")
+//        (data as NSData).write(to: url as URL, atomically: true)
+        
+        guard let path = Bundle.main.path(forResource: "main", ofType: "json"),
+              let data = NSData(contentsOfFile: path) ,
+              let controlelrsInfoDict = try? JSONSerialization.jsonObject(with: data as Data, options: []) as? [[String: Any]] else {
+            return
+        }
+        
         var arrayM = [UIViewController]()
         for dict in controlelrsInfoDict {
             arrayM.append(controller(dict: dict))

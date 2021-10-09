@@ -11,7 +11,7 @@ class GLDemoViewController: GLBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
+        setupNavigationBar()
     }
     
     @objc private func showNext() {
@@ -21,8 +21,13 @@ class GLDemoViewController: GLBaseViewController {
 }
 
 extension GLDemoViewController {
-     override func setupUI() {
-        super.setupUI()
+    
+    override func setupTableView() {
+        super.setupTableView()
+        setupNavigationBar()
+    }
+    
+    private func setupNavigationBar() {
         navItem.rightBarButtonItem = UIBarButtonItem(title: "下一个", target: self, action: #selector(showNext))
         title = "第 \(navigationController?.children.count ?? 0 ) 个"
     }

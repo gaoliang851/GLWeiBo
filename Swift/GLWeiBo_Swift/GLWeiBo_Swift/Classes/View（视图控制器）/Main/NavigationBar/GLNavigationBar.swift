@@ -18,9 +18,23 @@ class GLNavigationBar: UIView {
         }
     }
     
+    /// 设置标题样式
     var titleTextAttributes: [NSAttributedString.Key : Any]? {
         didSet {
             navigationBar.titleTextAttributes = titleTextAttributes
+        }
+    }
+    
+    /// 设置背景颜色
+    var barTintColor: UIColor? {
+        didSet {
+            navigationBar.barTintColor = barTintColor
+        }
+    }
+    
+    override var tintColor: UIColor! {
+        didSet {
+            navigationBar.tintColor = tintColor
         }
     }
     

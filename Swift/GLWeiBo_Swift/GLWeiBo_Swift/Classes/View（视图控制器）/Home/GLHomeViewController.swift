@@ -12,6 +12,10 @@ fileprivate let cellId = "cellId"
 
 class GLHomeViewController: GLBaseViewController {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
     /// 数据源
     lazy var statusList = [String]()
     
@@ -47,8 +51,13 @@ class GLHomeViewController: GLBaseViewController {
 
 // MARK: - 设置界面
 extension GLHomeViewController {
-    override func setupUI() {
-        super.setupUI()
+    
+    override func setupTableView() {
+        super.setupTableView()
+        setupNavigationBar()
+    }
+    
+    private func setupNavigationBar() {
         navItem.rightBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showFirends))
         tableView?.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
     }

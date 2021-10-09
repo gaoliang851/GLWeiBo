@@ -43,7 +43,7 @@ class GLBaseViewController: UIViewController, UIGestureRecognizerDelegate {
 
 extension GLBaseViewController {
     
-    @objc func setupUI() {
+    private func setupUI() {
         view.backgroundColor = UIColor.cz_random()
         setupNavigationBar()
         userLogin ? setupTableView() : setupVistorView()
@@ -57,7 +57,7 @@ extension GLBaseViewController {
         view.addSubview(navigationBar)
     }
     /// 设置table View
-    private func setupTableView() {
+    @objc func setupTableView() {
         
         tableView = UITableView(frame: view.bounds, style: .plain)
         view.insertSubview(tableView!, belowSubview: navigationBar)
@@ -107,6 +107,12 @@ extension GLBaseViewController {
          */
         vistorView.loginButton.addTarget(self, action: #selector(login), for: .touchUpInside)
         vistorView.registerButton.addTarget(self, action: #selector(register), for: .touchUpInside)
+        
+        // 设置未登录时 全局统一的导航栏样式
+        navItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: .plain, target: self, action: #selector(register))
+        navItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: .plain, target: self, action: #selector(login))
+        
+        navigationBar.tintColor = .orange
     }
 }
 

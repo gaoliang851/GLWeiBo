@@ -96,6 +96,17 @@ extension GLBaseViewController {
         let vistorView = GLVistorView(frame: view.bounds)
         view.insertSubview(vistorView, belowSubview: navigationBar)
         vistorView.vistorInfo = vistorInfo
+        
+        /**
+         * vistorView公开了loginButton和registerButton,允许外部直接访问。
+         * 这样可以在外部为loginButton和registerButton addTargetAction
+         * 使用代理传递消息是为了在控制器和视图之间解藕，让视图能够被多个控制器复用
+         * 但是，如果视图仅仅只是为了封装代码，而从控制器中剥离出来的，
+         * 并且能够确认该视图不会被其他控制器引用，则可以直接通过 addTarget 的方式为该视图中的按钮添加监听方法
+         * 这样做的代价是耦合度高，控制器和视图绑定在一起，但是会省略部分冗余代码
+         */
+        vistorView.loginButton.addTarget(self, action: #selector(login), for: .touchUpInside)
+        vistorView.registerButton.addTarget(self, action: #selector(register), for: .touchUpInside)
     }
 }
 
@@ -107,4 +118,16 @@ extension GLBaseViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         UITableViewCell()
     }
+}
+
+//MARK: - 注册和登录按钮事件
+extension GLBaseViewController {
+    @objc func login() {
+        print("用户登录")
+    }
+    
+    @objc func register() {
+        print("用户注册")
+    }
+    
 }

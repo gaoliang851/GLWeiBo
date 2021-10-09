@@ -9,6 +9,21 @@ import UIKit
 
 /// 访客视图
 class GLVistorView: UIView {
+    
+    /// 注册按钮
+    lazy var registerButton: UIButton = UIButton.cz_textButton("注册",
+                                                               fontSize: 16,
+                                                               normalColor: .orange,
+                                                               highlightedColor: .darkGray,
+                                                               backgroundImageName: "common_button_white_disable")
+    
+    /// 登录按钮
+    lazy var loginButton: UIButton = UIButton.cz_textButton("登录",
+                                                            fontSize: 16,
+                                                            normalColor: .darkGray,
+                                                            highlightedColor: .darkGray,
+                                                            backgroundImageName: "common_button_white_disable")
+    
     /// 视图属性字典
     /// key: imageName,message
     /// 注意: 首页视图 imageName传入""
@@ -59,21 +74,6 @@ class GLVistorView: UIView {
         withText: "关注一些人，回这里看看有什么惊喜",
         fontSize: 14,
         color: .darkGray)
-    
-    /// 注册按钮
-    private lazy var registerButton: UIButton = UIButton.cz_textButton("注册",
-                                                             fontSize: 16,
-                                                             normalColor: .orange,
-                                                             highlightedColor: .darkGray,
-                                                             backgroundImageName: "common_button_white_disable")
-    
-    /// 登录按钮
-    private lazy var loginButton: UIButton = UIButton.cz_textButton("登录",
-                                                          fontSize: 16,
-                                                          normalColor: .darkGray,
-                                                          highlightedColor: .darkGray,
-                                                          backgroundImageName: "common_button_white_disable")
-    
 }
 
 // MARK: - 设置界面

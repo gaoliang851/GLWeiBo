@@ -32,5 +32,3 @@ extension GLDemoViewController {
         title = "第 \(navigationController?.children.count ?? 0 ) 个"
     }
 }
-
-

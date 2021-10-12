@@ -37,6 +37,7 @@
 		04F27C77270021E6006F5B01 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F27C6A270021E5006F5B01 /* NSArray+Log.m */; };
 		04F27C7E270049D5006F5B01 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F27C7D270049D5006F5B01 /* Bundle+Extension.swift */; };
 		04F27C82270070C0006F5B01 /* GLDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F27C81270070C0006F5B01 /* GLDemoViewController.swift */; };
+		A0895A5F335C51AAA90CA1CA /* Pods_GLWeiBo_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C767F1A03101793C0BACF4 /* Pods_GLWeiBo_Swift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,9 @@
 		04F27C7927002224006F5B01 /* GLWeiBo-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GLWeiBo-Bridge.h"; sourceTree = "<group>"; };
 		04F27C7D270049D5006F5B01 /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		04F27C81270070C0006F5B01 /* GLDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLDemoViewController.swift; sourceTree = "<group>"; };
+		99C767F1A03101793C0BACF4 /* Pods_GLWeiBo_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GLWeiBo_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC2DEFC70E860BB1137A4690 /* Pods-GLWeiBo_Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GLWeiBo_Swift.release.xcconfig"; path = "Target Support Files/Pods-GLWeiBo_Swift/Pods-GLWeiBo_Swift.release.xcconfig"; sourceTree = "<group>"; };
+		F472C15FC148BAE310D9B455 /* Pods-GLWeiBo_Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GLWeiBo_Swift.debug.xcconfig"; path = "Target Support Files/Pods-GLWeiBo_Swift/Pods-GLWeiBo_Swift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0895A5F335C51AAA90CA1CA /* Pods_GLWeiBo_Swift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +135,8 @@
 			children = (
 				049E6F4D26FF2A1700BD774F /* GLWeiBo_Swift */,
 				049E6F4C26FF2A1700BD774F /* Products */,
+				8DAE05B2A570449C0AB5D379 /* Pods */,
+				13C4FFE81B93F5986A7CE6B5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -295,6 +302,24 @@
 			path = test;
 			sourceTree = "<group>";
 		};
+		13C4FFE81B93F5986A7CE6B5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				99C767F1A03101793C0BACF4 /* Pods_GLWeiBo_Swift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8DAE05B2A570449C0AB5D379 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F472C15FC148BAE310D9B455 /* Pods-GLWeiBo_Swift.debug.xcconfig */,
+				CC2DEFC70E860BB1137A4690 /* Pods-GLWeiBo_Swift.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -302,9 +327,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 049E6F5F26FF2A1A00BD774F /* Build configuration list for PBXNativeTarget "GLWeiBo_Swift" */;
 			buildPhases = (
+				0A76A37EF710105A05251727 /* [CP] Check Pods Manifest.lock */,
 				049E6F4726FF2A1700BD774F /* Sources */,
 				049E6F4826FF2A1700BD774F /* Frameworks */,
 				049E6F4926FF2A1700BD774F /* Resources */,
+				076D74676C68D3B5BA8E02D7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -360,6 +387,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		076D74676C68D3B5BA8E02D7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GLWeiBo_Swift/Pods-GLWeiBo_Swift-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GLWeiBo_Swift/Pods-GLWeiBo_Swift-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GLWeiBo_Swift/Pods-GLWeiBo_Swift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0A76A37EF710105A05251727 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GLWeiBo_Swift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		049E6F4726FF2A1700BD774F /* Sources */ = {
@@ -528,6 +597,7 @@
 		};
 		049E6F6026FF2A1A00BD774F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F472C15FC148BAE310D9B455 /* Pods-GLWeiBo_Swift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -552,6 +622,7 @@
 		};
 		049E6F6126FF2A1A00BD774F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC2DEFC70E860BB1137A4690 /* Pods-GLWeiBo_Swift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

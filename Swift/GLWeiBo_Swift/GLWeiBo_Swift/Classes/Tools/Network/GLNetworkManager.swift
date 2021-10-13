@@ -15,6 +15,7 @@ enum GLHTTPMethod {
 
 /// 网络工具类
 class GLNetworkManager: AFHTTPSessionManager {
+    
     /// 网络工具单例
     static let shared = GLNetworkManager()
     

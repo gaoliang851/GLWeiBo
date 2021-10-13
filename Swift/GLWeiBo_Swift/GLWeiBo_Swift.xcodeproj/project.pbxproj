@@ -3,14 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04136F9127167C5C003A2CC8 /* GLNetworkManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04136F9027167C5C003A2CC8 /* GLNetworkManager+Extension.swift */; };
+		04136F942716AB06003A2CC8 /* GLStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04136F932716AB06003A2CC8 /* GLStatus.swift */; };
+		04136F972716AE8C003A2CC8 /* GLStatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04136F962716AE8C003A2CC8 /* GLStatusListViewModel.swift */; };
 		043F02352700817800B40465 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F02342700817800B40465 /* UIBarButtonItem+Extension.swift */; };
 		043F023827015B3D00B40465 /* UINavigationBar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F023727015B3D00B40465 /* UINavigationBar+Extension.swift */; };
 		043F023C270165E000B40465 /* GLNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F023B270165E000B40465 /* GLNavigationBar.swift */; };
 		043F024027016A9000B40465 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F023F27016A9000B40465 /* UIImage+Extension.swift */; };
+		0494491B2715790B005748C4 /* GLNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0494491A2715790B005748C4 /* GLNetworkManager.swift */; };
 		049AB0C827044C4700FCD619 /* GLVistorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049AB0C727044C4700FCD619 /* GLVistorView.swift */; };
 		049E6F4F26FF2A1700BD774F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E6F4E26FF2A1700BD774F /* AppDelegate.swift */; };
 		049E6F5826FF2A1A00BD774F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 049E6F5726FF2A1A00BD774F /* Assets.xcassets */; };
@@ -41,10 +45,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04136F9027167C5C003A2CC8 /* GLNetworkManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GLNetworkManager+Extension.swift"; sourceTree = "<group>"; };
+		04136F932716AB06003A2CC8 /* GLStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLStatus.swift; sourceTree = "<group>"; };
+		04136F962716AE8C003A2CC8 /* GLStatusListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLStatusListViewModel.swift; sourceTree = "<group>"; };
 		043F02342700817800B40465 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		043F023727015B3D00B40465 /* UINavigationBar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Extension.swift"; sourceTree = "<group>"; };
 		043F023B270165E000B40465 /* GLNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLNavigationBar.swift; sourceTree = "<group>"; };
 		043F023F27016A9000B40465 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		0494491A2715790B005748C4 /* GLNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLNetworkManager.swift; sourceTree = "<group>"; };
 		049AB0C727044C4700FCD619 /* GLVistorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLVistorView.swift; sourceTree = "<group>"; };
 		049E6F4B26FF2A1700BD774F /* GLWeiBo_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GLWeiBo_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		049E6F4E26FF2A1700BD774F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +120,15 @@
 				04F27C3F27001DB8006F5B01 /* GLNavigationController.swift */,
 			);
 			path = "主控制器";
+			sourceTree = "<group>";
+		};
+		0494491927157896005748C4 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				0494491A2715790B005748C4 /* GLNetworkManager.swift */,
+				04136F9027167C5C003A2CC8 /* GLNetworkManager+Extension.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		049AB0C527044C1B00FCD619 /* VistorView */ = {
@@ -187,6 +204,7 @@
 		04F27C3227001B55006F5B01 /* ViewModel（视图模型） */ = {
 			isa = PBXGroup;
 			children = (
+				04136F962716AE8C003A2CC8 /* GLStatusListViewModel.swift */,
 			);
 			path = "ViewModel（视图模型）";
 			sourceTree = "<group>";
@@ -194,6 +212,7 @@
 		04F27C3327001B6C006F5B01 /* Model（模型） */ = {
 			isa = PBXGroup;
 			children = (
+				04136F932716AB06003A2CC8 /* GLStatus.swift */,
 			);
 			path = "Model（模型）";
 			sourceTree = "<group>";
@@ -201,6 +220,7 @@
 		04F27C3427001B7C006F5B01 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				0494491927157896005748C4 /* Network */,
 				04F27C7C270049BA006F5B01 /* Extension */,
 				04F27C52270021E5006F5B01 /* Additions */,
 			);
@@ -316,7 +336,6 @@
 				F472C15FC148BAE310D9B455 /* Pods-GLWeiBo_Swift.debug.xcconfig */,
 				CC2DEFC70E860BB1137A4690 /* Pods-GLWeiBo_Swift.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -445,6 +464,7 @@
 				04F27C76270021E6006F5B01 /* NSAttributedString+CZAdditon.m in Sources */,
 				04F27C77270021E6006F5B01 /* NSArray+Log.m in Sources */,
 				04F27C6E270021E5006F5B01 /* UIScreen+CZAddition.m in Sources */,
+				04136F942716AB06003A2CC8 /* GLStatus.swift in Sources */,
 				04F27C4D27001E2B006F5B01 /* GLDiscoverViewController.swift in Sources */,
 				043F02352700817800B40465 /* UIBarButtonItem+Extension.swift in Sources */,
 				04F27C5027001E3D006F5B01 /* GLProfileViewController.swift in Sources */,
@@ -456,12 +476,15 @@
 				04F27C75270021E6006F5B01 /* NSString+CZHash.m in Sources */,
 				04F27C74270021E6006F5B01 /* UIViewController+CZAddition.m in Sources */,
 				04F27C4727001E12006F5B01 /* GLHomeViewController.swift in Sources */,
+				0494491B2715790B005748C4 /* GLNetworkManager.swift in Sources */,
 				049E6F4F26FF2A1700BD774F /* AppDelegate.swift in Sources */,
 				04F27C6F270021E5006F5B01 /* UILabel+CZAddition.m in Sources */,
 				04F27C71270021E5006F5B01 /* NSString+CZPath.m in Sources */,
+				04136F972716AE8C003A2CC8 /* GLStatusListViewModel.swift in Sources */,
 				04F27C6C270021E5006F5B01 /* UIColor+CZAddition.m in Sources */,
 				04F27C6D270021E5006F5B01 /* UIView+CZAddition.m in Sources */,
 				049AB0C827044C4700FCD619 /* GLVistorView.swift in Sources */,
+				04136F9127167C5C003A2CC8 /* GLNetworkManager+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

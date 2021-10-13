@@ -18,7 +18,7 @@ class GLBaseViewController: UIViewController, UIGestureRecognizerDelegate {
     /// 下拉刷新控件
     var refreshControl: UIRefreshControl?
     /// 是否登录的标志
-    var userLogin = false
+    var userLogin = true
     /// 访客视图属性字典
     var vistorInfo: [String: String]?
     

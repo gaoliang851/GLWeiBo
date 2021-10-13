@@ -6,18 +6,14 @@
 //
 
 import UIKit
+import AFNetworking
 
 //tableView的cell identifier
 fileprivate let cellId = "cellId"
 
 class GLHomeViewController: GLBaseViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
-    /// 数据源
-    lazy var statusList = [String]()
+    private lazy var listViewModel = GLStatusListViewModel()
     
     /// 上拉加载标志
     private var isPullup = false
@@ -29,16 +25,11 @@ class GLHomeViewController: GLBaseViewController {
     
     override func loadData() {
         print("开始加载....")
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
-            if self.isPullup { //上拉加载
-                for i in 0..<15 {
-                    self.statusList.append("上拉:\(i)")
-                }
-            } else { // 下拉刷新
-                for i in 0..<15 {
-                    self.statusList.insert(i.description, at: 0)
-                }
-            }
+        listViewModel.loadStatus { (isSuccess) in
+            
+            print("加载 isSuccess: \(isSuccess)")
+            print("加载 isSuccess: \(self.listViewModel.statusList)")
+            
             //将上拉标志设置回去
             self.isPullup = false
             // 结束刷新动画
@@ -69,13 +60,13 @@ extension GLHomeViewController {
         //1. 取cell
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
         //2. 设置cell
-        cell.textLabel?.text = statusList[indexPath.row]
+        cell.textLabel?.text = listViewModel.statusList[indexPath.row].text
         //3. 返回cell
         return cell
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        statusList.count
+        listViewModel.statusList.count
     }
     
     /// 无缝上拉加载

@@ -19,10 +19,14 @@ extension GLNetworkManager {
         
         tokenRequest(URLString: urlString, paramters: nil) { (json, isSuccess) in
             
+            print("json is \(json)")
+            
             // 从 json 中获取 statuses 字典数组
             // 如果 as? 失败，result = nil
             // 提示：服务器返回的字典数组，就是按照时间的倒序排序的
             let result = (json as? [String:Any])?["statuses"] as? [[String: Any]]
+            
+            print("result is \(result)")
             
             completion(result,isSuccess)
         }

@@ -27,9 +27,6 @@ class GLHomeViewController: GLBaseViewController {
         print("开始加载....")
         listViewModel.loadStatus { (isSuccess) in
             
-            print("加载 isSuccess: \(isSuccess)")
-            print("加载 isSuccess: \(self.listViewModel.statusList)")
-            
             //将上拉标志设置回去
             self.isPullup = false
             // 结束刷新动画

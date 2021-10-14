@@ -28,15 +28,23 @@ class GLStatusListViewModel  {
     /// - Parameter completion: 完成回调
     func loadStatus(completion: @escaping (_ isSuccess: Bool)->()) {
         
-        GLNetworkManager.shared.statusList { (list, isSuccess) in
+        /// 获取已经获取微博数据中ID最大的那个
+        let since_id = statusList.first?.id ?? 0
+        
+        GLNetworkManager.shared.statusList(since_id: since_id) { (list, isSuccess) in
             
             // 1. 字典转模型
             guard let array = NSArray.yy_modelArray(with: GLStatus.self, json: list ?? []) as? [GLStatus] else {
+                //
                 completion(false)
                 return
             }
+            
+            print("loadStatus Count: \(array.count)")
+            
             // 2. 拼接数据
-            self.statusList += array
+            // 2.1 下拉刷新,将新的数据放在最前面
+            self.statusList = array + self.statusList
             
             // 3. 回调
             completion(true)

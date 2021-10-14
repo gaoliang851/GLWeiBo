@@ -25,13 +25,16 @@ class GLStatusListViewModel  {
     lazy var statusList = [GLStatus]()
     
     /// 加载微博列表
+    /// - Parameter isPull    : 是否是下拉加载
     /// - Parameter completion: 完成回调
-    func loadStatus(completion: @escaping (_ isSuccess: Bool)->()) {
+    func loadStatus(isPull: Bool = false, completion: @escaping (_ isSuccess: Bool)->()) {
         
-        /// 获取已经获取微博数据中ID最大的那个
-        let since_id = statusList.first?.id ?? 0
+        /// 如果是上拉加载，则since_id 为0
+        let since_id = isPull ? 0 : statusList.first?.id ?? 0
+        /// 如果是下拉竖线，则max_id 为0
+        let max_id = !isPull ? 0: statusList.last?.id ?? 0
         
-        GLNetworkManager.shared.statusList(since_id: since_id) { (list, isSuccess) in
+        GLNetworkManager.shared.statusList(since_id: since_id, max_id: max_id) { (list, isSuccess) in
             
             // 1. 字典转模型
             guard let array = NSArray.yy_modelArray(with: GLStatus.self, json: list ?? []) as? [GLStatus] else {
@@ -43,8 +46,13 @@ class GLStatusListViewModel  {
             print("loadStatus Count: \(array.count)")
             
             // 2. 拼接数据
-            // 2.1 下拉刷新,将新的数据放在最前面
-            self.statusList = array + self.statusList
+            if isPull {
+                // 下拉刷新,将新的数据放在最前面
+                self.statusList += array
+            } else {
+                // 上拉刷新
+                self.statusList = array + self.statusList
+            }
             
             // 3. 回调
             completion(true)

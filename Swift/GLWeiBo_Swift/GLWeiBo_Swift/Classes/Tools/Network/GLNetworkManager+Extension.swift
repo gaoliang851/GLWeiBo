@@ -20,7 +20,12 @@ extension GLNetworkManager {
         let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
         
         // since_id用于获取最新的微博，该参数用来下拉加载最新的微博
-        let params = ["since_id":since_id]
+        // max_id用于获取之前的微博，该参数用来上拉加载, -1是为了防止每次获取的最后一条微博重复
+        let maxId = max_id - 1
+        let params = ["since_id":since_id,
+                      "max_id":maxId > 0 ? maxId : 0]
+        
+        print("params is \(params)")
         
         tokenRequest(URLString: urlString, paramters: params) { (json, isSuccess) in
             

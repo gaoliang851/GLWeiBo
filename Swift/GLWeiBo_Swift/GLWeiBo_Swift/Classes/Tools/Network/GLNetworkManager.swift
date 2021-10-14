@@ -19,7 +19,7 @@ class GLNetworkManager: AFHTTPSessionManager {
     /// 网络工具单例
     static let shared = GLNetworkManager()
     
-    var access_token: String? = "2.001EgCcGizXLLD9afc3f72c7juBURE"
+    var access_token: String? = "2.001EgCcG6tKNyBfcf41d17ccHDlRXE"
     
     /// 专门负责拼接 token 的网络请求方法
     /// - Parameters:

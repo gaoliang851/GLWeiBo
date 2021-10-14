@@ -25,8 +25,6 @@ extension GLNetworkManager {
         let params = ["since_id":since_id,
                       "max_id":maxId > 0 ? maxId : 0]
         
-        print("params is \(params)")
-        
         tokenRequest(URLString: urlString, paramters: params) { (json, isSuccess) in
             
             // 从 json 中获取 statuses 字典数组

@@ -22,9 +22,8 @@ class GLMianViewController: UITabBarController {
         setupComposeButton()
         setupTimer()
         
-//        GLNetworkManager.shared.unreadCount { (count) in
-//            print("未读的微博条数:\(count)")
-//        }
+        // 设置代理
+        delegate = self
     }
     
     /// 撰写按钮的点击事件
@@ -45,6 +44,14 @@ class GLMianViewController: UITabBarController {
     
     deinit {
         timer?.invalidate()
+    }
+}
+
+// MARK: - UITabBarControllerDelegate
+extension GLMianViewController : UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        // 防止中间的按钮点击穿帮
+        !viewController.isMember(of: UIViewController.self)
     }
 }
 
@@ -77,7 +84,7 @@ extension GLMianViewController {
         let count = CGFloat(children.count)
         // 计算每个tabbarItem的宽度，
         // -1是为了避免偶尔点击tabbar之间的空白区域导致空白ViewController展示
-        let w = tabBar.bounds.width / count - 1
+        let w = tabBar.bounds.width / count
         //insetBy函数，以调用CGRect为中心，扩大或缩小CGRect，正数缩小，负数扩大。
         composeButton.frame = tabBar.bounds.insetBy(dx: 2 * w, dy: 0)
         // 添加点击事件

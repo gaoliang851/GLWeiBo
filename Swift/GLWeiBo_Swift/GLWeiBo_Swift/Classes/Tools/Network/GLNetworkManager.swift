@@ -21,6 +21,8 @@ class GLNetworkManager: AFHTTPSessionManager {
     
     var access_token: String? = "2.001EgCcG6tKNyBfcf41d17ccHDlRXE"
     
+    var user_id: String? = "6058936132"
+    
     /// 专门负责拼接 token 的网络请求方法
     /// - Parameters:
     ///   - method: GET \ POST

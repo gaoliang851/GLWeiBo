@@ -10,6 +10,9 @@ import UIKit
 /// 主控制器
 class GLMianViewController: UITabBarController {
     
+    /// 定时检查未读的微博
+    private var timer: Timer?
+    
     /// 撰写添加按钮
     private lazy var composeButton: UIButton = UIButton.cz_imageButton("tabbar_compose_icon_add",
                                                              backgroundImageName: "tabbar_compose_button")
@@ -17,6 +20,11 @@ class GLMianViewController: UITabBarController {
         super.viewDidLoad()
         setupChildControllers()
         setupComposeButton()
+        setupTimer()
+        
+//        GLNetworkManager.shared.unreadCount { (count) in
+//            print("未读的微博条数:\(count)")
+//        }
     }
     
     /// 撰写按钮的点击事件
@@ -34,7 +42,27 @@ class GLMianViewController: UITabBarController {
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         .portrait
     }
+    
+    deinit {
+        timer?.invalidate()
+    }
 }
+
+// MARK: - 时钟设置
+extension GLMianViewController {
+    private func setupTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(timerUpdata), userInfo: nil, repeats: true)
+    }
+    
+    @objc private func timerUpdata() {
+        GLNetworkManager.shared.unreadCount { (count) in
+            print("检测到 \(count)条 微博未读")
+            self.tabBar.items?.first?.badgeValue = count > 0 ? "\(count)" : nil
+            UIApplication.shared.applicationIconBadgeNumber = count
+        }
+    }
+}
+
 
 // extension类似于OC中的分类,在 Swift 中还可以用来切分代码块
 // 可以把相近功能的函数，放在一个extension中

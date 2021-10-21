@@ -25,13 +25,15 @@ class GLHomeViewController: GLBaseViewController {
     
     override func loadData() {
         print("开始加载....")
-        listViewModel.loadStatus(isPull: self.isPullup) { (isSuccess) in
+        listViewModel.loadStatus(isPull: self.isPullup) { (isSuccess,shouldRefresh) in
             //将上拉标志设置回去
             self.isPullup = false
             // 结束刷新动画
             self.refreshControl?.endRefreshing()
             // 刷新表格
-            self.tableView?.reloadData()
+            if shouldRefresh {
+                self.tableView?.reloadData()
+            }
         }
     }
 }

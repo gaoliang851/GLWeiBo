@@ -50,8 +50,33 @@ class GLMianViewController: UITabBarController {
 // MARK: - UITabBarControllerDelegate
 extension GLMianViewController : UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-        // 防止中间的按钮点击穿帮
-        !viewController.isMember(of: UIViewController.self)
+        
+        // 获取要展示的Controller的索引
+        let index = (children as NSArray).index(of: viewController)
+        
+        // 如果当前是首页，并且用户点击了两次
+        if selectedIndex == 0 && index == selectedIndex {
+            print("点击了首页")
+            
+            // 获取控制器
+            let nav = viewController as! UINavigationController
+            let homeVC = nav.children[0] as! GLHomeViewController
+            
+            // 滚动到顶部
+            homeVC.tableView?.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+            
+            // 刷新数据 - 增加延迟，是保证表格先滚动到顶部在刷新
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                homeVC.loadData()
+            }
+            
+            // 清除tabItem的 badgeNumber
+            homeVC.tabBarItem.badgeValue = nil
+            UIApplication.shared.applicationIconBadgeNumber = 0
+        }
+        
+        // 防止空白的占位ViewController穿帮
+        return !viewController.isMember(of: UIViewController.self)
     }
 }
 

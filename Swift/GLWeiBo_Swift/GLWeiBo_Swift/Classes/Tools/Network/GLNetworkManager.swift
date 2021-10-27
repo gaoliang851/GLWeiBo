@@ -19,6 +19,11 @@ class GLNetworkManager: AFHTTPSessionManager {
     /// 网络工具单例
     static let shared = GLNetworkManager()
     
+    /// 是否登录的标志
+    var userLogin : Bool {
+        access_token != nil
+    }
+    
     var access_token: String? = "2.001EgCcG6tKNyBfcf41d17ccHDlRXE"
     
     var user_id: String? = "6058936132"

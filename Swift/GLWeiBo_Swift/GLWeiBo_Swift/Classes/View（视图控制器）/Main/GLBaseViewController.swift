@@ -17,8 +17,7 @@ class GLBaseViewController: UIViewController, UIGestureRecognizerDelegate {
     var tableView: UITableView?
     /// 下拉刷新控件
     var refreshControl: UIRefreshControl?
-    /// 是否登录的标志
-    var userLogin = true
+    
     /// 访客视图属性字典
     var vistorInfo: [String: String]?
     
@@ -31,7 +30,8 @@ class GLBaseViewController: UIViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        loadData()
+        // 用户登录才去请求，否则什么都不做
+        GLNetworkManager.shared.userLogin ? loadData() : ()
     }
     
     /// 网络加载的方法，在viewDidLoad中统一调用
@@ -46,7 +46,7 @@ extension GLBaseViewController {
     private func setupUI() {
         view.backgroundColor = UIColor.cz_random()
         setupNavigationBar()
-        userLogin ? setupTableView() : setupVistorView()
+        GLNetworkManager.shared.userLogin ? setupTableView() : setupVistorView()
     }
     
     /// 设置导航条的方法

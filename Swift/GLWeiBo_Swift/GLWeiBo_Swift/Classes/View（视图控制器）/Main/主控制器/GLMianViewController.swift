@@ -83,10 +83,14 @@ extension GLMianViewController : UITabBarControllerDelegate {
 // MARK: - 时钟设置
 extension GLMianViewController {
     private func setupTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(timerUpdata), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 60.0, target: self, selector: #selector(timerUpdata), userInfo: nil, repeats: true)
     }
     
     @objc private func timerUpdata() {
+        
+        //用户登录才去请求未读微博，否则不做任何处理
+        if !GLNetworkManager.shared.userLogin { return }
+        
         GLNetworkManager.shared.unreadCount { (count) in
             print("检测到 \(count)条 微博未读")
             self.tabBar.items?.first?.badgeValue = count > 0 ? "\(count)" : nil
@@ -94,7 +98,6 @@ extension GLMianViewController {
         }
     }
 }
-
 
 // extension类似于OC中的分类,在 Swift 中还可以用来切分代码块
 // 可以把相近功能的函数，放在一个extension中

@@ -24,7 +24,7 @@ class GLNetworkManager: AFHTTPSessionManager {
         access_token != nil
     }
     
-    var access_token: String? = "2.001EgCcG6tKNyBfcf41d17ccHDlRXE"
+    var access_token: String? //= "2.001EgCcG6tKNyBfcf41d17ccHDlRXE"
     
     var user_id: String? = "6058936132"
     

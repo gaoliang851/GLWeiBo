@@ -24,12 +24,19 @@ class GLMianViewController: UITabBarController {
         
         // 设置代理
         delegate = self
+        
+        //接受用户登录通知
+        NotificationCenter.default.addObserver(self, selector: #selector(userLogin(n:)), name: NSNotification.Name(rawValue: GLUserShouldLoginNotification), object: nil)
     }
     
     /// 撰写按钮的点击事件
     /// @objc：允许方法以OC的消息发送机制调用方法
     @objc private func composeStatus() {
         NSLog("撰写微博")
+    }
+    
+    @objc private func userLogin(n: Notification) {
+        print("用户登录 \(n)")
     }
     
     /// 设置支持的方向
@@ -44,6 +51,8 @@ class GLMianViewController: UITabBarController {
     
     deinit {
         timer?.invalidate()
+        // 移除通知
+        NotificationCenter.default.removeObserver(self)
     }
 }
 

@@ -10,6 +10,7 @@
 		04136F9127167C5C003A2CC8 /* GLNetworkManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04136F9027167C5C003A2CC8 /* GLNetworkManager+Extension.swift */; };
 		04136F942716AB06003A2CC8 /* GLStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04136F932716AB06003A2CC8 /* GLStatus.swift */; };
 		04136F972716AE8C003A2CC8 /* GLStatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04136F962716AE8C003A2CC8 /* GLStatusListViewModel.swift */; };
+		043B210A2728FD68001A9DDF /* GLWeiBoCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043B21092728FD68001A9DDF /* GLWeiBoCommon.swift */; };
 		043F02352700817800B40465 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F02342700817800B40465 /* UIBarButtonItem+Extension.swift */; };
 		043F023827015B3D00B40465 /* UINavigationBar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F023727015B3D00B40465 /* UINavigationBar+Extension.swift */; };
 		043F023C270165E000B40465 /* GLNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F023B270165E000B40465 /* GLNavigationBar.swift */; };
@@ -48,6 +49,7 @@
 		04136F9027167C5C003A2CC8 /* GLNetworkManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GLNetworkManager+Extension.swift"; sourceTree = "<group>"; };
 		04136F932716AB06003A2CC8 /* GLStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLStatus.swift; sourceTree = "<group>"; };
 		04136F962716AE8C003A2CC8 /* GLStatusListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLStatusListViewModel.swift; sourceTree = "<group>"; };
+		043B21092728FD68001A9DDF /* GLWeiBoCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLWeiBoCommon.swift; sourceTree = "<group>"; };
 		043F02342700817800B40465 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		043F023727015B3D00B40465 /* UINavigationBar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Extension.swift"; sourceTree = "<group>"; };
 		043F023B270165E000B40465 /* GLNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLNavigationBar.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				0494491927157896005748C4 /* Network */,
 				04F27C7C270049BA006F5B01 /* Extension */,
 				04F27C52270021E5006F5B01 /* Additions */,
+				043B21092728FD68001A9DDF /* GLWeiBoCommon.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				043B210A2728FD68001A9DDF /* GLWeiBoCommon.swift in Sources */,
 				04F27C4327001DCC006F5B01 /* GLBaseViewController.swift in Sources */,
 				04F27C7E270049D5006F5B01 /* Bundle+Extension.swift in Sources */,
 				04F27C70270021E5006F5B01 /* NSString+CZBase64.m in Sources */,

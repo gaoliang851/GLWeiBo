@@ -35,8 +35,13 @@ class GLMianViewController: UITabBarController {
         NSLog("撰写微博")
     }
     
+    
+    /// 该方法是接收到用户登录的通知后调用的方法
+    /// - Parameter n: 通知
     @objc private func userLogin(n: Notification) {
-        print("用户登录 \(n)")
+        let nav = UINavigationController(rootViewController: GLOAuthViewController())
+        nav.modalPresentationStyle = .fullScreen
+        present(nav, animated: true, completion: nil)
     }
     
     /// 设置支持的方向

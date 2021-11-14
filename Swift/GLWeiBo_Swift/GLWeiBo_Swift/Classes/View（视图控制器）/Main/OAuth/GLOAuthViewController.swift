@@ -8,10 +8,9 @@
 import UIKit
 import WebKit
 
+/// 登录界面
 class GLOAuthViewController: UIViewController {
-    
     private lazy var webView = WKWebView()
-    
     override func loadView() {
         // 修改根view
         view = webView

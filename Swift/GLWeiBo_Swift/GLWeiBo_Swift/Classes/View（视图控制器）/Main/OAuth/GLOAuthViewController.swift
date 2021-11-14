@@ -22,6 +22,20 @@ class GLOAuthViewController: UIViewController {
         title = "登录GL微博"
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        //拼接授权地址
+        let urlString = "https://api.weibo.com/oauth2/authorize?client_id=\(GLAppKey)&redirect_uri=\(GLRedirectURI)"
+        
+        guard let url = URL(string: urlString) else {
+            return
+        }
+        let request = URLRequest(url: url)
+        
+        webView.load(request)
+    }
+    
     @objc private func close() {
         dismiss(animated: true, completion: nil)
     }

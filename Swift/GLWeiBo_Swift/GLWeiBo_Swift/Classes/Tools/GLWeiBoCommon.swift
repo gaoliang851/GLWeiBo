@@ -12,8 +12,8 @@ let GLUserShouldLoginNotification = "GLUserShouldLoginNotification"
 
 //MARK: - 应用程序信息
 // 应用程序ID
-let GLAppKey = "1805853131"
+let GLAppKey = "2913690478"
 // 应用程序加密信息
-let GLAppSecret = "47573d2be75c23541274f33eec28a86d"
+let GLAppSecret = "52dd305c7269cad9129fc21e88393e61"
 // 回调地址
-let GLRedirectURI = "https://baidu.com"
+let GLRedirectURI = "https://www.baidu.com"

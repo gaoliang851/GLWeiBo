@@ -14,6 +14,7 @@ class GLOAuthViewController: UIViewController {
     override func loadView() {
         // 修改根view
         view = webView
+        webView.navigationDelegate = self
         //view.backgroundColor = .white
     
         //设置导航栏的返回按钮
@@ -38,5 +39,37 @@ class GLOAuthViewController: UIViewController {
     
     @objc private func close() {
         dismiss(animated: true, completion: nil)
+    }
+}
+
+extension GLOAuthViewController : WKNavigationDelegate {
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        print("加载URL：" + (navigationAction.request.url?.absoluteString ?? "default"))
+        
+        //如果没有跳转到指定地址就直接返回
+        if navigationAction.request.url?.absoluteString.hasPrefix(GLRedirectURI) == false {
+            decisionHandler(.allow)
+            return
+        }
+        
+        //跳转到回调地址，但是没有code参数，则认为取消了授权
+        if navigationAction.request.url?.query?.hasPrefix("code=") == false {
+            print("用户取消了授权")
+        } else {
+            
+            /**
+             Swift3废除了subString(from\to\with:)字符串截取方法。
+             而截取方法改成了：
+             let newStr = String(str[..<index]) // = str.substring(to: index) In Swift 3
+             let newStr = String(str[index...]) // = str.substring(from: index) In Swif 3
+             let newStr = String(str[range]) // = str.substring(with: range) In Swift 3
+             */
+            //获取code
+            let code = navigationAction.request.url?.query?["code=".endIndex...] ?? ""
+            print("获取code：\(code)")
+        }
+        
+        close()
+        decisionHandler(.cancel)
     }
 }

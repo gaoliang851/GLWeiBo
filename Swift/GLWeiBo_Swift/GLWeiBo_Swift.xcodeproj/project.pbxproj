@@ -652,7 +652,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.welink.mobile.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = ios_app_development_Provisioning_Profile;
+				PROVISIONING_PROFILE_SPECIFIER = dev_Q4RK7D73P6.com.welink.mobile.ios.pp;
 				SWIFT_OBJC_BRIDGING_HEADER = "GLWeiBo_Swift/GLWeiBo-Bridge.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -677,7 +677,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.welink.mobile.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = ios_app_development_Provisioning_Profile;
+				PROVISIONING_PROFILE_SPECIFIER = dev_Q4RK7D73P6.com.welink.mobile.ios.pp;
 				SWIFT_OBJC_BRIDGING_HEADER = "GLWeiBo_Swift/GLWeiBo-Bridge.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

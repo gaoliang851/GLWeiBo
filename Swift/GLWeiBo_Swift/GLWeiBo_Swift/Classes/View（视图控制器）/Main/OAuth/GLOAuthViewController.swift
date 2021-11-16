@@ -19,6 +19,8 @@ class GLOAuthViewController: UIViewController {
     
         //设置导航栏的返回按钮
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "返回",  target: self, action: #selector(close), isBack: true)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "自动填充", target: self, action: #selector(autoFill))
         // 设置标题
         title = "登录GL微博"
     }
@@ -39,6 +41,17 @@ class GLOAuthViewController: UIViewController {
     
     @objc private func close() {
         dismiss(animated: true, completion: nil)
+    }
+    
+    /**
+     自动填充
+     */
+    @objc private func autoFill() {
+        let userName = "15010253680"
+        let passwd = "GAOliang851*"
+        let autoFillJavaScript = "document.getElementById(\"loginName\").value=\"\(userName)\";"
+        + "document.getElementById(\"loginPassword\").value=\"\(passwd)\""
+        webView.evaluateJavaScript(autoFillJavaScript,completionHandler: nil)
     }
 }
 

@@ -15,6 +15,8 @@ class GLOAuthViewController: UIViewController {
         // 修改根view
         view = webView
         webView.navigationDelegate = self
+        // 取消滚动
+        webView.scrollView.isScrollEnabled = false
         //view.backgroundColor = .white
     
         //设置导航栏的返回按钮
@@ -35,7 +37,6 @@ class GLOAuthViewController: UIViewController {
             return
         }
         let request = URLRequest(url: url)
-        
         webView.load(request)
     }
     
@@ -81,7 +82,6 @@ extension GLOAuthViewController : WKNavigationDelegate {
             let code = navigationAction.request.url?.query?["code=".endIndex...] ?? ""
             print("获取code：\(code)")
         }
-        
         close()
         decisionHandler(.cancel)
     }

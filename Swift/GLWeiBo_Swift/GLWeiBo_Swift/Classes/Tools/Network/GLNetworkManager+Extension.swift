@@ -52,3 +52,24 @@ extension GLNetworkManager {
         }
     }
 }
+
+
+// MARK: 用于加载用户授权
+extension GLNetworkManager {
+    
+    func loadToken(code : String) {
+        let urlString = "https://api.weibo.com/oauth2/access_token"
+        let params = ["client_id":GLAppKey,
+                      "client_secret":GLAppSecret,
+                      "grant_type":"authorization_code",
+                      "code": code,
+                      "redirect_uri":GLRedirectURI]
+        
+        request(method: .POST,
+                URLString:urlString ,
+                paramters: params) { json, isSuccess in
+            logi(json)
+        }
+    }
+    
+}

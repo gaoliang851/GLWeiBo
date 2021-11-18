@@ -37,7 +37,7 @@ class GLStatusListViewModel  {
         
         // 判断是否是上拉加载,同时检查刷新错误
         if isPull && pullupErrorTimes > maxPullupTryTimes {
-            print("次数超过限制")
+            logi("次数超过限制")
             completion(true,false)
             return
         }

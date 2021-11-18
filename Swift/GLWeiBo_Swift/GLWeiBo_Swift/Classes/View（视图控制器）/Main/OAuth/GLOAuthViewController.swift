@@ -7,6 +7,7 @@
 
 import UIKit
 import WebKit
+import SVProgressHUD
 
 /// 登录界面
 class GLOAuthViewController: UIViewController {
@@ -41,6 +42,7 @@ class GLOAuthViewController: UIViewController {
     }
     
     @objc private func close() {
+        SVProgressHUD.dismiss()
         dismiss(animated: true, completion: nil)
     }
     
@@ -58,7 +60,7 @@ class GLOAuthViewController: UIViewController {
 
 extension GLOAuthViewController : WKNavigationDelegate {
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        print("加载URL：" + (navigationAction.request.url?.absoluteString ?? "default"))
+        logi("加载URL：" + (navigationAction.request.url?.absoluteString ?? "default"))
         
         //如果没有跳转到指定地址就直接返回
         if navigationAction.request.url?.absoluteString.hasPrefix(GLRedirectURI) == false {
@@ -68,7 +70,7 @@ extension GLOAuthViewController : WKNavigationDelegate {
         
         //跳转到回调地址，但是没有code参数，则认为取消了授权
         if navigationAction.request.url?.query?.hasPrefix("code=") == false {
-            print("用户取消了授权")
+            logi("用户取消了授权")
         } else {
             
             /**
@@ -79,10 +81,20 @@ extension GLOAuthViewController : WKNavigationDelegate {
              let newStr = String(str[range]) // = str.substring(with: range) In Swift 3
              */
             //获取code
-            let code = navigationAction.request.url?.query?["code=".endIndex...] ?? ""
-            print("获取code：\(code)")
+            let code = String(navigationAction.request.url?.query?["code=".endIndex...] ?? "")
+            logi("获取code：\(code)")
+            GLNetworkManager.shared.loadToken(code: code)
         }
-        close()
         decisionHandler(.cancel)
+    }
+    
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        SVProgressHUD.show()
+    }
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        SVProgressHUD.dismiss()
+    }
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        SVProgressHUD.dismiss()
     }
 }

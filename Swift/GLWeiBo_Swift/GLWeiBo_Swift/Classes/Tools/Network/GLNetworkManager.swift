@@ -39,11 +39,9 @@ class GLNetworkManager: AFHTTPSessionManager {
         // 处理token 字典
         // 0> 判断 token 是否为 nil, 为nil直接返回，程序执行过程中，一般token不会nil
         guard let token = access_token else {
-            print("没有token！需要登录")
-            
+            logi("没有token！需要登录")
             //FIXME: 处理没有token
             completion(nil,false)
-            
             return
         }
         
@@ -80,12 +78,12 @@ class GLNetworkManager: AFHTTPSessionManager {
             //针对 403 处理用户 token 过期
             // 对于测试用户(应用程序还没提交给新浪微博审核)每天的刷新量是有限的!
             if (task?.response as? HTTPURLResponse)?.statusCode == 403 {
-                print("Token 过期了")
+                logi("Token 过期了")
                 
                 // FIXME: Token过期了
             }
             
-            print("网络请求错误 \(error)")
+            logi("网络请求错误 \(error)")
             
             completion(nil,false)
         }

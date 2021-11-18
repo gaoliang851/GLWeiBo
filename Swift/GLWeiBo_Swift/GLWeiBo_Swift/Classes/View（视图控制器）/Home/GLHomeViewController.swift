@@ -24,7 +24,7 @@ class GLHomeViewController: GLBaseViewController {
     }
     
     override func loadData() {
-        print("开始加载....")
+        logi("开始加载....")
         refreshControl?.beginRefreshing()
         listViewModel.loadStatus(isPull: self.isPullup) { (isSuccess,shouldRefresh) in
             //将上拉标志设置回去
@@ -76,7 +76,7 @@ extension GLHomeViewController {
         let row = tableView.numberOfRows(inSection: section) - 1
         // 3. section匹配，row匹配，则认为是最后一行，开始上拉刷新
         if indexPath.row == row && indexPath.section == section && !isPullup {
-            print("上拉加载")
+            logi("上拉加载")
             isPullup = true
             // 开始刷新
             loadData()

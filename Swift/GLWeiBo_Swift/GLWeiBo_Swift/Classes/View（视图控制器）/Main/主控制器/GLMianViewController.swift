@@ -70,7 +70,7 @@ extension GLMianViewController : UITabBarControllerDelegate {
         
         // 如果当前是首页，并且用户点击了两次
         if selectedIndex == 0 && index == selectedIndex {
-            print("点击了首页")
+            logi("点击了首页")
             
             // 获取控制器
             let nav = viewController as! UINavigationController
@@ -106,7 +106,7 @@ extension GLMianViewController {
         if !GLNetworkManager.shared.userLogin { return }
         
         GLNetworkManager.shared.unreadCount { (count) in
-            print("检测到 \(count)条 微博未读")
+            logi("检测到 \(count)条 微博未读")
             self.tabBar.items?.first?.badgeValue = count > 0 ? "\(count)" : nil
             UIApplication.shared.applicationIconBadgeNumber = count
         }

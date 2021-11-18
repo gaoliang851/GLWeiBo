@@ -129,14 +129,14 @@ extension GLBaseViewController : UITableViewDelegate, UITableViewDataSource {
 //MARK: - 注册和登录按钮事件
 extension GLBaseViewController {
     @objc func login() {
-        print("用户登录")
+        logi("用户登录")
         
         //发送用户需要登录通知
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: GLUserShouldLoginNotification), object: nil)
     }
     
     @objc func register() {
-        print("用户注册")
+        logi("用户注册")
     }
     
 }

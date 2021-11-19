@@ -40,7 +40,7 @@ extension GLNetworkManager {
     /// 检测未读微博的数量
     func unreadCount(completion: @escaping (_ count: Int)->() ) {
         let urlString = "https://rm.api.weibo.com/2/remind/unread_count.json"
-        guard let user_id = user_id else {
+        guard let user_id = userAccount.uid else {
             return
         }
         
@@ -68,7 +68,8 @@ extension GLNetworkManager {
         request(method: .POST,
                 URLString:urlString ,
                 paramters: params) { json, isSuccess in
-            logi(json)
+            self.userAccount.yy_modelSet(with: (json as? [String: AnyObject]) ?? [:])
+            logi(self.userAccount)
         }
     }
     

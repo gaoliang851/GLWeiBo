@@ -19,14 +19,12 @@ class GLNetworkManager: AFHTTPSessionManager {
     /// 网络工具单例
     static let shared = GLNetworkManager()
     
+    lazy var userAccount = GLUserAccount()
+    
     /// 是否登录的标志
     var userLogin : Bool {
-        access_token != nil
+        userAccount.access_token != nil
     }
-    
-    var access_token: String? //= "2.001EgCcG6tKNyBfcf41d17ccHDlRXE"
-    
-    var user_id: String? = "6058936132"
     
     /// 专门负责拼接 token 的网络请求方法
     /// - Parameters:
@@ -38,7 +36,7 @@ class GLNetworkManager: AFHTTPSessionManager {
     func tokenRequest(method: GLHTTPMethod = .GET,URLString: String,paramters: [String: Any]?,completion: @escaping (Any?,Bool)->()) {
         // 处理token 字典
         // 0> 判断 token 是否为 nil, 为nil直接返回，程序执行过程中，一般token不会nil
-        guard let token = access_token else {
+        guard let token = userAccount.access_token else {
             logi("没有token！需要登录")
             //FIXME: 处理没有token
             completion(nil,false)

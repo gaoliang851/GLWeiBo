@@ -70,6 +70,8 @@ extension GLNetworkManager {
                 paramters: params) { json, isSuccess in
             self.userAccount.yy_modelSet(with: (json as? [String: AnyObject]) ?? [:])
             logi(self.userAccount)
+            /// 保存账户
+            self.userAccount.saveAccount()
         }
     }
     

@@ -88,10 +88,14 @@ extension GLBaseViewController {
             // iOS11及以上的系统该属性失效
             automaticallyAdjustsScrollViewInsets = false
         }
+        // 处理表格内容的缩进
         tableView?.contentInset = UIEdgeInsets(top: navigationBar.bounds.height,
                                                left: 0,
                                                bottom: tabBarController?.tabBar.bounds.height ?? 0,
                                                right: 0)
+        // 处理导航条的缩进
+        // TODO: FIX ME
+        tableView?.scrollIndicatorInsets = tableView!.contentInset
         
         // 1.> 创建下拉刷新控件,UIRefreshControl的frame是固定
         refreshControl = UIRefreshControl()
@@ -144,6 +148,9 @@ extension GLBaseViewController {
         // 在访问 view 的 getter 时，如果 view == nil,
         // 则会调用 loadView -> viewDidLoad
         view = nil
+        
+        navItem.leftBarButtonItem = nil
+        navItem.rightBarButtonItem = nil
         
         // 注销通知 -> 重新执行 viewDidLoad 会被再次注册! 避免通知被多次注册，会造成多次回调
         NotificationCenter.default.removeObserver(self)

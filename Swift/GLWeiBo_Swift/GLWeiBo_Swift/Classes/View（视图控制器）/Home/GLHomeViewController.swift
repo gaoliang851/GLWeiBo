@@ -48,7 +48,7 @@ extension GLHomeViewController {
     }
     
     private func setupNavigationBar() {
-        navItem.rightBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showFirends))
+        navItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showFirends))
         tableView?.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
     }
 }

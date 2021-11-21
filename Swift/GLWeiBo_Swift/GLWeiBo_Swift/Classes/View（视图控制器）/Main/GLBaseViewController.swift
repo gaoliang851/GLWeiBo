@@ -32,6 +32,16 @@ class GLBaseViewController: UIViewController, UIGestureRecognizerDelegate {
         setupUI()
         // 用户登录才去请求，否则什么都不做
         GLNetworkManager.shared.userLogin ? loadData() : ()
+        
+        // 注册通知
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(loginSuccess),
+                                               name: Notification.Name(rawValue: GLUserLoginSuccessNotification),
+                                               object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     /// 网络加载的方法，在viewDidLoad中统一调用
@@ -128,6 +138,17 @@ extension GLBaseViewController : UITableViewDelegate, UITableViewDataSource {
 
 //MARK: - 注册和登录按钮事件
 extension GLBaseViewController {
+    
+    @objc func loginSuccess(n: Notification) {
+        logi("登录成功：\(n)")
+        // 在访问 view 的 getter 时，如果 view == nil,
+        // 则会调用 loadView -> viewDidLoad
+        view = nil
+        
+        // 注销通知 -> 重新执行 viewDidLoad 会被再次注册! 避免通知被多次注册，会造成多次回调
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     @objc func login() {
         logi("用户登录")
         

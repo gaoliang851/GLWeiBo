@@ -35,7 +35,7 @@ class GLUserAccount: NSObject {
                   return
         }
         // 设置模型
-        //yy_modelSet(with: dict)
+        yy_modelSet(with: dict)
         logi("account info : \(self)")
             
         // expiresDate = Date(timeIntervalSince1970: 300)

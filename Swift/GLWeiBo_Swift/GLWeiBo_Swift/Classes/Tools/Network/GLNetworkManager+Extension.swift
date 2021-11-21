@@ -57,7 +57,7 @@ extension GLNetworkManager {
 // MARK: 用于加载用户授权
 extension GLNetworkManager {
     
-    func loadToken(code : String) {
+    func loadToken(code : String, completion : @escaping (_ isSuccess :Bool)->()) {
         let urlString = "https://api.weibo.com/oauth2/access_token"
         let params = ["client_id":GLAppKey,
                       "client_secret":GLAppSecret,
@@ -72,6 +72,8 @@ extension GLNetworkManager {
             logi(self.userAccount)
             /// 保存账户
             self.userAccount.saveAccount()
+            // 完成回调
+            completion(isSuccess)
         }
     }
     

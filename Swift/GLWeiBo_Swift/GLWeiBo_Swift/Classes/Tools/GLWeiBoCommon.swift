@@ -8,7 +8,11 @@
 import Foundation
 
 //MARK: - 全局的通知定义
+
+// 用户应该登录的通知
 let GLUserShouldLoginNotification = "GLUserShouldLoginNotification"
+// 用户登录成功的通知
+let GLUserLoginSuccessNotification = "GLUserLoginSuccessNotification"
 
 //MARK: - 应用程序信息
 // 应用程序ID

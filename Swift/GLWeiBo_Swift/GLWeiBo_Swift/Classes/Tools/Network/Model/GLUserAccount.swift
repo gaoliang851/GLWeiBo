@@ -34,8 +34,22 @@ class GLUserAccount: NSObject {
               let dict = try? JSONSerialization.jsonObject(with: data as Data, options: []) as? [String:Any] ?? [:] else {
                   return
         }
+        // 设置模型
         yy_modelSet(with: dict)
-        print("account info : \(self)")
+        logi("account info : \(self)")
+            
+        // expiresDate = Date(timeIntervalSince1970: 300)
+        
+        // 判断是否过期
+        if expiresDate?.isLaterThan(Date()) == false {
+            logi("access_token 过期")
+            // 清空 access_token
+            access_token = nil
+            // 清空 uid
+            uid = nil
+            // 删除磁盘上的用户文件
+            try? FileManager.default.removeItem(atPath: path)
+        }
     }
     
     /// 保存账号数据

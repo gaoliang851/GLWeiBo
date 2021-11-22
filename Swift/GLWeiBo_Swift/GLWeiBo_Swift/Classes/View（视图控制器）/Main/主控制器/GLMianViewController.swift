@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 /// 主控制器
 class GLMianViewController: UITabBarController {
@@ -32,16 +33,33 @@ class GLMianViewController: UITabBarController {
     /// 撰写按钮的点击事件
     /// @objc：允许方法以OC的消息发送机制调用方法
     @objc private func composeStatus() {
-        NSLog("撰写微博")
+        logi("撰写微博")
     }
     
     
     /// 该方法是接收到用户登录的通知后调用的方法
     /// - Parameter n: 通知
     @objc private func userLogin(n: Notification) {
-        let nav = UINavigationController(rootViewController: GLOAuthViewController())
-        nav.modalPresentationStyle = .fullScreen
-        present(nav, animated: true, completion: nil)
+        
+        //根据是否展示提示信息来决定是否延迟拉起授权页
+        var deadline = DispatchTime.now()
+        
+        // 如果object不为nil,需要提示用户登录
+        if n.object != nil {
+            SVProgressHUD.setDefaultMaskType(.gradient)
+            SVProgressHUD.showInfo(withStatus: "登录信息已过期，请重新登录")
+            deadline = .now() + 2
+        }
+        
+        //拉起授权页页面
+        DispatchQueue.main.asyncAfter(deadline: deadline) {
+            SVProgressHUD.setDefaultMaskType(.clear)
+            let nav = UINavigationController(rootViewController: GLOAuthViewController())
+            nav.modalPresentationStyle = .fullScreen
+            self.present(nav, animated: true, completion: nil)
+        }
+        
+        
     }
     
     /// 设置支持的方向

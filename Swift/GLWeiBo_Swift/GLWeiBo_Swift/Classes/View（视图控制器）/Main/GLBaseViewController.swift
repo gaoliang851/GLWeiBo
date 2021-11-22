@@ -158,7 +158,6 @@ extension GLBaseViewController {
     
     @objc func login() {
         logi("用户登录")
-        
         //发送用户需要登录通知
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: GLUserShouldLoginNotification), object: nil)
     }

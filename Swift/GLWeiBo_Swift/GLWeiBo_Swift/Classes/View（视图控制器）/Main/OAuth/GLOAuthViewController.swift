@@ -85,7 +85,6 @@ extension GLOAuthViewController : WKNavigationDelegate {
             logi("获取code：\(code)")
             GLNetworkManager.shared.loadToken(code: code) { (isSuccess) in
                 if isSuccess {
-                    SVProgressHUD.showInfo(withStatus: "登录成功")
                     NotificationCenter.default.post(
                         name: NSNotification.Name(rawValue: GLUserLoginSuccessNotification),
                         object: nil)

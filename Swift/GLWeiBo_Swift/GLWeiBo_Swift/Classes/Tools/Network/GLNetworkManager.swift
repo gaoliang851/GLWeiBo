@@ -38,7 +38,12 @@ class GLNetworkManager: AFHTTPSessionManager {
         // 0> 判断 token 是否为 nil, 为nil直接返回，程序执行过程中，一般token不会nil
         guard let token = userAccount.access_token else {
             logi("没有token！需要登录")
-            //FIXME: 处理没有token
+            
+            //处理没有token
+            NotificationCenter.default.post(
+                name: NSNotification.Name(rawValue: GLUserShouldLoginNotification),
+                object: nil)
+            
             completion(nil,false)
             return
         }
@@ -78,7 +83,10 @@ class GLNetworkManager: AFHTTPSessionManager {
             if (task?.response as? HTTPURLResponse)?.statusCode == 403 {
                 logi("Token 过期了")
                 
-                // FIXME: Token过期了
+                // Token过期了,这里object 参数有值，是代表需要提示用户请登录
+                NotificationCenter.default.post(
+                    name: NSNotification.Name(rawValue: GLUserShouldLoginNotification),
+                    object: "bad token")
             }
             
             logi("网络请求错误 \(error)")

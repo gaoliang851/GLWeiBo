@@ -23,6 +23,11 @@ class GLHomeViewController: GLBaseViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    @objc private func clickTitleBtn(button: UIButton) {
+        logi(#function)
+        button.isSelected = !button.isSelected
+    }
+    
     override func loadData() {
         logi("开始加载....")
         refreshControl?.beginRefreshing()
@@ -44,12 +49,21 @@ extension GLHomeViewController {
     
     override func setupTableView() {
         super.setupTableView()
+        tableView?.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
         setupNavigationBar()
     }
     
     private func setupNavigationBar() {
+        logi(#function)
+        
         navItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showFirends))
-        tableView?.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        
+        let title = GLNetworkManager.shared.userAccount.screen_name
+        let titleBtn = GLTitleButton(title: title)
+        
+        titleBtn.addTarget(self, action: #selector(clickTitleBtn), for: .touchUpInside)
+        
+        navItem.titleView = titleBtn
     }
 }
 

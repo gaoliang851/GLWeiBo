@@ -43,6 +43,7 @@
 		04F27C77270021E6006F5B01 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F27C6A270021E5006F5B01 /* NSArray+Log.m */; };
 		04F27C7E270049D5006F5B01 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F27C7D270049D5006F5B01 /* Bundle+Extension.swift */; };
 		04F27C82270070C0006F5B01 /* GLDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F27C81270070C0006F5B01 /* GLDemoViewController.swift */; };
+		48432636274B88A600C5F42E /* GLTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48432635274B88A600C5F42E /* GLTitleButton.swift */; };
 		48EAFAC92746220600F3A0BA /* Log4Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EAFAC82746220600F3A0BA /* Log4Swift.swift */; };
 		48EAFACC27462FD700F3A0BA /* GLUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EAFACB27462FD700F3A0BA /* GLUserAccount.swift */; };
 		48EAFACE274A2B0000F3A0BA /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EAFACD274A2B0000F3A0BA /* Date+Extension.swift */; };
@@ -102,6 +103,7 @@
 		04F27C7927002224006F5B01 /* GLWeiBo-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GLWeiBo-Bridge.h"; sourceTree = "<group>"; };
 		04F27C7D270049D5006F5B01 /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		04F27C81270070C0006F5B01 /* GLDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLDemoViewController.swift; sourceTree = "<group>"; };
+		48432635274B88A600C5F42E /* GLTitleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLTitleButton.swift; sourceTree = "<group>"; };
 		48EAFAC82746220600F3A0BA /* Log4Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log4Swift.swift; sourceTree = "<group>"; };
 		48EAFACB27462FD700F3A0BA /* GLUserAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLUserAccount.swift; sourceTree = "<group>"; };
 		48EAFACD274A2B0000F3A0BA /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 		04F27C3727001CD8006F5B01 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				48432634274B888700C5F42E /* TitleButton */,
 				04F27C4627001E12006F5B01 /* GLHomeViewController.swift */,
 			);
 			path = Home;
@@ -351,6 +354,14 @@
 				99C767F1A03101793C0BACF4 /* Pods_GLWeiBo_Swift.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		48432634274B888700C5F42E /* TitleButton */ = {
+			isa = PBXGroup;
+			children = (
+				48432635274B88A600C5F42E /* GLTitleButton.swift */,
+			);
+			path = TitleButton;
 			sourceTree = "<group>";
 		};
 		48EAFACA27462FBE00F3A0BA /* Model */ = {
@@ -515,6 +526,7 @@
 				049E6F4F26FF2A1700BD774F /* AppDelegate.swift in Sources */,
 				04F27C6F270021E5006F5B01 /* UILabel+CZAddition.m in Sources */,
 				04F27C71270021E5006F5B01 /* NSString+CZPath.m in Sources */,
+				48432636274B88A600C5F42E /* GLTitleButton.swift in Sources */,
 				04136F972716AE8C003A2CC8 /* GLStatusListViewModel.swift in Sources */,
 				04F27C6C270021E5006F5B01 /* UIColor+CZAddition.m in Sources */,
 				04F27C6D270021E5006F5B01 /* UIView+CZAddition.m in Sources */,

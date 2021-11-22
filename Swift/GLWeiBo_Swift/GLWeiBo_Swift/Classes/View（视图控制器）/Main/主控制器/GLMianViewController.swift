@@ -15,8 +15,7 @@ class GLMianViewController: UITabBarController {
     private var timer: Timer?
     
     /// 撰写添加按钮
-    private lazy var composeButton: UIButton = UIButton.cz_imageButton("tabbar_compose_icon_add",
-                                                             backgroundImageName: "tabbar_compose_button")
+    private lazy var composeButton: UIButton = UIButton.cz_imageButton("tabbar_compose_icon_add",backgroundImageName: "tabbar_compose_button")
     override func viewDidLoad() {
         super.viewDidLoad()
         setupChildControllers()

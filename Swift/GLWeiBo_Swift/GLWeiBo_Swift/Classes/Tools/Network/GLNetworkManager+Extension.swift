@@ -58,23 +58,40 @@ extension GLNetworkManager {
 extension GLNetworkManager {
     
     func loadToken(code : String, completion : @escaping (_ isSuccess :Bool)->()) {
+        
         let urlString = "https://api.weibo.com/oauth2/access_token"
+        
         let params = ["client_id":GLAppKey,
                       "client_secret":GLAppSecret,
                       "grant_type":"authorization_code",
                       "code": code,
                       "redirect_uri":GLRedirectURI]
         
-        request(method: .POST,
-                URLString:urlString ,
-                paramters: params) { json, isSuccess in
+        request(method: .POST,URLString:urlString,paramters: params) { json, isSuccess in
             self.userAccount.yy_modelSet(with: (json as? [String: AnyObject]) ?? [:])
-            logi(self.userAccount)
-            /// 保存账户
-            self.userAccount.saveAccount()
-            // 完成回调
-            completion(isSuccess)
+            /// 获取用户信息
+            self.loadUserInfo { userInfoDict in
+                self.userAccount.yy_modelSet(with: userInfoDict)
+                /// 保存账户
+                self.userAccount.saveAccount()
+                logi(self.userAccount)
+                // 完成回调
+                completion(isSuccess)
+            }
         }
     }
-    
+}
+
+// MARK: - 获取用户信息
+extension GLNetworkManager {
+    func loadUserInfo(completion: @escaping (_ dict: [String:Any])->()) {
+        guard let uid = userAccount.uid else {
+            return
+        }
+        let urlString = "https://api.weibo.com/2/users/show.json"
+        let params = ["uid":uid]
+        tokenRequest(method: .GET, URLString: urlString, paramters: params) { json, isSuccess in
+            completion(json as? [String:Any] ?? [:])
+        }
+    }
 }

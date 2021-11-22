@@ -23,6 +23,10 @@ class GLUserAccount: NSObject {
     }
     /// 过期日期
     var expiresDate: Date?
+    /// 用户昵称
+    var screen_name: String?
+    /// 用户头像地址（大图），180×180像素
+    var avatar_large: String?
     
     override init() {
         super.init()
@@ -65,7 +69,7 @@ class GLUserAccount: NSObject {
         }
         // 写入沙盒
         let result = (data as NSData).write(toFile: filePath, atomically: true)
-        logi("filePath is \(filePath),result = \(result)")
+        logi("保存用户信息 ： \(filePath),result = \(result)")
     }
     
     override var description: String {

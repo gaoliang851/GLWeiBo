@@ -44,6 +44,8 @@
 		04F27C7E270049D5006F5B01 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F27C7D270049D5006F5B01 /* Bundle+Extension.swift */; };
 		04F27C82270070C0006F5B01 /* GLDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F27C81270070C0006F5B01 /* GLDemoViewController.swift */; };
 		48432636274B88A600C5F42E /* GLTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48432635274B88A600C5F42E /* GLTitleButton.swift */; };
+		48B41639274CCAF60099E069 /* GLWeocomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B41638274CCAF60099E069 /* GLWeocomeView.swift */; };
+		48B4163B274CCB7F0099E069 /* GLNewFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B4163A274CCB7F0099E069 /* GLNewFeatureView.swift */; };
 		48EAFAC92746220600F3A0BA /* Log4Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EAFAC82746220600F3A0BA /* Log4Swift.swift */; };
 		48EAFACC27462FD700F3A0BA /* GLUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EAFACB27462FD700F3A0BA /* GLUserAccount.swift */; };
 		48EAFACE274A2B0000F3A0BA /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EAFACD274A2B0000F3A0BA /* Date+Extension.swift */; };
@@ -104,6 +106,8 @@
 		04F27C7D270049D5006F5B01 /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		04F27C81270070C0006F5B01 /* GLDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLDemoViewController.swift; sourceTree = "<group>"; };
 		48432635274B88A600C5F42E /* GLTitleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLTitleButton.swift; sourceTree = "<group>"; };
+		48B41638274CCAF60099E069 /* GLWeocomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLWeocomeView.swift; sourceTree = "<group>"; };
+		48B4163A274CCB7F0099E069 /* GLNewFeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLNewFeatureView.swift; sourceTree = "<group>"; };
 		48EAFAC82746220600F3A0BA /* Log4Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log4Swift.swift; sourceTree = "<group>"; };
 		48EAFACB27462FD700F3A0BA /* GLUserAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLUserAccount.swift; sourceTree = "<group>"; };
 		48EAFACD274A2B0000F3A0BA /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
@@ -253,6 +257,7 @@
 		04F27C3627001CD1006F5B01 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				48B41637274CCAD00099E069 /* NewFeature */,
 				04DD04E2272D37F7005809D7 /* OAuth */,
 				0480C9F22701C1BD00AF92F1 /* 主控制器 */,
 				049AB0C627044C2800FCD619 /* NavigationBar */,
@@ -362,6 +367,15 @@
 				48432635274B88A600C5F42E /* GLTitleButton.swift */,
 			);
 			path = TitleButton;
+			sourceTree = "<group>";
+		};
+		48B41637274CCAD00099E069 /* NewFeature */ = {
+			isa = PBXGroup;
+			children = (
+				48B41638274CCAF60099E069 /* GLWeocomeView.swift */,
+				48B4163A274CCB7F0099E069 /* GLNewFeatureView.swift */,
+			);
+			path = NewFeature;
 			sourceTree = "<group>";
 		};
 		48EAFACA27462FBE00F3A0BA /* Model */ = {
@@ -505,12 +519,14 @@
 				04F27C73270021E5006F5B01 /* NSObject+CZRuntime.m in Sources */,
 				043F023827015B3D00B40465 /* UINavigationBar+Extension.swift in Sources */,
 				04F27C76270021E6006F5B01 /* NSAttributedString+CZAdditon.m in Sources */,
+				48B41639274CCAF60099E069 /* GLWeocomeView.swift in Sources */,
 				04F27C77270021E6006F5B01 /* NSArray+Log.m in Sources */,
 				04F27C6E270021E5006F5B01 /* UIScreen+CZAddition.m in Sources */,
 				04136F942716AB06003A2CC8 /* GLStatus.swift in Sources */,
 				04F27C4D27001E2B006F5B01 /* GLDiscoverViewController.swift in Sources */,
 				043F02352700817800B40465 /* UIBarButtonItem+Extension.swift in Sources */,
 				04F27C5027001E3D006F5B01 /* GLProfileViewController.swift in Sources */,
+				48B4163B274CCB7F0099E069 /* GLNewFeatureView.swift in Sources */,
 				043F024027016A9000B40465 /* UIImage+Extension.swift in Sources */,
 				04F27C4027001DB8006F5B01 /* GLNavigationController.swift in Sources */,
 				48EAFACE274A2B0000F3A0BA /* Date+Extension.swift in Sources */,
@@ -682,6 +698,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.welink.mobile.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = dev_Q4RK7D73P6.com.welink.mobile.ios.pp;
@@ -707,6 +724,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.welink.mobile.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = dev_Q4RK7D73P6.com.welink.mobile.ios.pp;

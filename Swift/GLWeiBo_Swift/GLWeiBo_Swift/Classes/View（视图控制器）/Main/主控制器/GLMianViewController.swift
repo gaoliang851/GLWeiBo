@@ -21,6 +21,7 @@ class GLMianViewController: UITabBarController {
         setupChildControllers()
         setupComposeButton()
         setupTimer()
+        setupNewFeaturesView()
         
         // 设置代理
         delegate = self
@@ -217,5 +218,36 @@ extension GLMianViewController {
         // 5. 设置NavgationController
         let navgationController = GLNavigationController(rootViewController: vc)
         return navgationController
+    }
+}
+
+
+fileprivate let KeyOfTheVersion = "version"
+
+// MARK: - 新特性视图的处理
+extension GLMianViewController {
+    
+    private var isNewVersion: Bool {
+        // 1.获取app的版本
+        let currentVersion = Bundle.main.appVersion
+        // 2.获取存偏好设置中的版本
+        let version = UserDefaults.standard.string(forKey: KeyOfTheVersion) ?? ""
+        // 3.将app的版本存到偏好设置中
+        UserDefaults.standard.set(currentVersion, forKey: KeyOfTheVersion)
+        // 4.如果版本不相等，就是新版本
+        return  currentVersion != version
+    }
+    
+    private func setupNewFeaturesView() {
+        // 0. 判断是否登录
+        if !GLNetworkManager.shared.userLogin {
+            return
+        }
+        // 如果更新,显示新特性，否则显示欢迎
+        let v = isNewVersion ? GLNewFeatureView(): GLWeocomeView()
+        
+        // 添加视图
+        v.frame = view.bounds
+        view.addSubview(v)
     }
 }

@@ -11,4 +11,8 @@ extension Bundle {
     var namespace : String {
         infoDictionary?["CFBundleName"] as? String ?? ""
     }
+    
+    var appVersion : String {
+        infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
+    }
 }

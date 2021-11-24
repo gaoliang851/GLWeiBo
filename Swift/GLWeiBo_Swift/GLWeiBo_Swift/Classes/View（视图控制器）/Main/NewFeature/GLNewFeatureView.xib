@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="GLNewFeatureView" customModule="GLWeiBo_Swift" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQ4-cU-lDC">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="dzR-ZC-3nR"/>
+                    </connections>
+                </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L5H-bb-IO0">
+                    <rect key="frame" x="154.66666666666666" y="570" width="104.99999999999997" height="36"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="进入微博" backgroundImage="new_feature_finish_button">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="new_feature_finish_button_highlighted"/>
+                    <connections>
+                        <action selector="enterStatus" destination="iN0-l3-epB" eventType="touchUpInside" id="fI9-NF-ASm"/>
+                    </connections>
+                </button>
+                <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="tJH-i4-WuQ">
+                    <rect key="frame" x="120.66666666666667" y="621" width="172.66666666666663" height="25"/>
+                    <color key="pageIndicatorTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="currentPageIndicatorTintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </pageControl>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="tJH-i4-WuQ" firstAttribute="top" secondItem="L5H-bb-IO0" secondAttribute="bottom" constant="15" id="9D7-q3-AFf"/>
+                <constraint firstAttribute="trailing" secondItem="SQ4-cU-lDC" secondAttribute="trailing" id="Bya-iG-vZp"/>
+                <constraint firstAttribute="bottom" secondItem="L5H-bb-IO0" secondAttribute="bottom" constant="130" id="VkI-a6-2oK"/>
+                <constraint firstItem="L5H-bb-IO0" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="clW-ui-ui2"/>
+                <constraint firstItem="SQ4-cU-lDC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="drH-Ne-uHp"/>
+                <constraint firstItem="tJH-i4-WuQ" firstAttribute="centerX" secondItem="L5H-bb-IO0" secondAttribute="centerX" id="pCV-Yv-JJS"/>
+                <constraint firstItem="SQ4-cU-lDC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="sHl-Ja-tIP"/>
+                <constraint firstAttribute="bottom" secondItem="SQ4-cU-lDC" secondAttribute="bottom" id="yCW-Yl-y1u"/>
+            </constraints>
+            <connections>
+                <outlet property="enterButton" destination="L5H-bb-IO0" id="qyn-Bp-9Rh"/>
+                <outlet property="pageControl" destination="tJH-i4-WuQ" id="vmS-jK-mzV"/>
+                <outlet property="scrollView" destination="SQ4-cU-lDC" id="LJ0-sP-5QL"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="59.510869565217398"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="new_feature_finish_button" width="105" height="36"/>
+        <image name="new_feature_finish_button_highlighted" width="105" height="36"/>
+    </resources>
+</document>

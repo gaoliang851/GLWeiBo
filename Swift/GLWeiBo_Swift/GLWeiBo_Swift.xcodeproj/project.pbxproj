@@ -45,6 +45,7 @@
 		04F27C82270070C0006F5B01 /* GLDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F27C81270070C0006F5B01 /* GLDemoViewController.swift */; };
 		48432636274B88A600C5F42E /* GLTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48432635274B88A600C5F42E /* GLTitleButton.swift */; };
 		485F8945274DD77D00FE4A87 /* GLWeocomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 485F8944274DD77D00FE4A87 /* GLWeocomeView.xib */; };
+		485F8947274E2C9800FE4A87 /* GLNewFeatureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 485F8946274E2C9800FE4A87 /* GLNewFeatureView.xib */; };
 		48B41639274CCAF60099E069 /* GLWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B41638274CCAF60099E069 /* GLWelcomeView.swift */; };
 		48B4163B274CCB7F0099E069 /* GLNewFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B4163A274CCB7F0099E069 /* GLNewFeatureView.swift */; };
 		48EAFAC92746220600F3A0BA /* Log4Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EAFAC82746220600F3A0BA /* Log4Swift.swift */; };
@@ -108,6 +109,7 @@
 		04F27C81270070C0006F5B01 /* GLDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLDemoViewController.swift; sourceTree = "<group>"; };
 		48432635274B88A600C5F42E /* GLTitleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLTitleButton.swift; sourceTree = "<group>"; };
 		485F8944274DD77D00FE4A87 /* GLWeocomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GLWeocomeView.xib; sourceTree = "<group>"; };
+		485F8946274E2C9800FE4A87 /* GLNewFeatureView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GLNewFeatureView.xib; sourceTree = "<group>"; };
 		48B41638274CCAF60099E069 /* GLWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLWelcomeView.swift; sourceTree = "<group>"; };
 		48B4163A274CCB7F0099E069 /* GLNewFeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLNewFeatureView.swift; sourceTree = "<group>"; };
 		48EAFAC82746220600F3A0BA /* Log4Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log4Swift.swift; sourceTree = "<group>"; };
@@ -377,6 +379,7 @@
 				48B41638274CCAF60099E069 /* GLWelcomeView.swift */,
 				485F8944274DD77D00FE4A87 /* GLWeocomeView.xib */,
 				48B4163A274CCB7F0099E069 /* GLNewFeatureView.swift */,
+				485F8946274E2C9800FE4A87 /* GLNewFeatureView.xib */,
 			);
 			path = NewFeature;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04CBE9D0270EDF66009CF637 /* main.json in Resources */,
+				485F8947274E2C9800FE4A87 /* GLNewFeatureView.xib in Resources */,
 				049E6F5B26FF2A1A00BD774F /* LaunchScreen.storyboard in Resources */,
 				049E6F5826FF2A1A00BD774F /* Assets.xcassets in Resources */,
 				485F8945274DD77D00FE4A87 /* GLWeocomeView.xib in Resources */,

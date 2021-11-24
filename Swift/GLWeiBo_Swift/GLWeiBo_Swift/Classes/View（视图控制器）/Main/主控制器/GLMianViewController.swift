@@ -235,7 +235,7 @@ extension GLMianViewController {
         // 3.将app的版本存到偏好设置中
         UserDefaults.standard.set(currentVersion, forKey: KeyOfTheVersion)
         // 4.如果版本不相等，就是新版本
-        return  currentVersion != version
+        return  currentVersion == version
     }
     
     private func setupNewFeaturesView() {
@@ -244,7 +244,7 @@ extension GLMianViewController {
             return
         }
         // 如果更新,显示新特性，否则显示欢迎
-        let v = isNewVersion ? GLNewFeatureView(): GLWelcomeView.welcomeView()
+        let v = isNewVersion ? GLNewFeatureView.newFeatureView(): GLWelcomeView.welcomeView()
         
         view.addSubview(v)
     }

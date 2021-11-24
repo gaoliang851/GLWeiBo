@@ -24,7 +24,7 @@
                         <constraint firstAttribute="height" constant="85" id="omn-VC-zBS"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="欢迎回来" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KbG-Zn-gRv">
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="欢迎回来" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KbG-Zn-gRv">
                     <rect key="frame" x="168" y="561" width="78" height="23"/>
                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                     <nil key="textColor"/>
@@ -42,6 +42,11 @@
                 <constraint firstAttribute="bottom" secondItem="w4d-04-QeC" secondAttribute="bottom" id="efO-Ic-Qa8"/>
                 <constraint firstAttribute="bottom" secondItem="5Lg-DC-1jQ" secondAttribute="bottom" constant="200" id="nhy-kb-Swd"/>
             </constraints>
+            <connections>
+                <outlet property="bottomCons" destination="nhy-kb-Swd" id="wOA-8Q-7Kg"/>
+                <outlet property="iconView" destination="5Lg-DC-1jQ" id="gad-a4-gff"/>
+                <outlet property="tipLabel" destination="KbG-Zn-gRv" id="9MC-i5-aPu"/>
+            </connections>
             <point key="canvasLocation" x="131.8840579710145" y="61.607142857142854"/>
         </view>
     </objects>

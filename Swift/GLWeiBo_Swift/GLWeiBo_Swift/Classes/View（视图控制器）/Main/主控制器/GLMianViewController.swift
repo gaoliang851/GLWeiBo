@@ -244,10 +244,8 @@ extension GLMianViewController {
             return
         }
         // 如果更新,显示新特性，否则显示欢迎
-        let v = isNewVersion ? GLNewFeatureView(): GLWeocomeView()
+        let v = isNewVersion ? GLNewFeatureView(): GLWelcomeView.welcomeView()
         
-        // 添加视图
-        v.frame = view.bounds
         view.addSubview(v)
     }
 }

@@ -44,7 +44,8 @@
 		04F27C7E270049D5006F5B01 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F27C7D270049D5006F5B01 /* Bundle+Extension.swift */; };
 		04F27C82270070C0006F5B01 /* GLDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F27C81270070C0006F5B01 /* GLDemoViewController.swift */; };
 		48432636274B88A600C5F42E /* GLTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48432635274B88A600C5F42E /* GLTitleButton.swift */; };
-		48B41639274CCAF60099E069 /* GLWeocomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B41638274CCAF60099E069 /* GLWeocomeView.swift */; };
+		485F8945274DD77D00FE4A87 /* GLWeocomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 485F8944274DD77D00FE4A87 /* GLWeocomeView.xib */; };
+		48B41639274CCAF60099E069 /* GLWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B41638274CCAF60099E069 /* GLWelcomeView.swift */; };
 		48B4163B274CCB7F0099E069 /* GLNewFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B4163A274CCB7F0099E069 /* GLNewFeatureView.swift */; };
 		48EAFAC92746220600F3A0BA /* Log4Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EAFAC82746220600F3A0BA /* Log4Swift.swift */; };
 		48EAFACC27462FD700F3A0BA /* GLUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EAFACB27462FD700F3A0BA /* GLUserAccount.swift */; };
@@ -106,7 +107,8 @@
 		04F27C7D270049D5006F5B01 /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		04F27C81270070C0006F5B01 /* GLDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLDemoViewController.swift; sourceTree = "<group>"; };
 		48432635274B88A600C5F42E /* GLTitleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLTitleButton.swift; sourceTree = "<group>"; };
-		48B41638274CCAF60099E069 /* GLWeocomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLWeocomeView.swift; sourceTree = "<group>"; };
+		485F8944274DD77D00FE4A87 /* GLWeocomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GLWeocomeView.xib; sourceTree = "<group>"; };
+		48B41638274CCAF60099E069 /* GLWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLWelcomeView.swift; sourceTree = "<group>"; };
 		48B4163A274CCB7F0099E069 /* GLNewFeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLNewFeatureView.swift; sourceTree = "<group>"; };
 		48EAFAC82746220600F3A0BA /* Log4Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log4Swift.swift; sourceTree = "<group>"; };
 		48EAFACB27462FD700F3A0BA /* GLUserAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLUserAccount.swift; sourceTree = "<group>"; };
@@ -372,7 +374,8 @@
 		48B41637274CCAD00099E069 /* NewFeature */ = {
 			isa = PBXGroup;
 			children = (
-				48B41638274CCAF60099E069 /* GLWeocomeView.swift */,
+				48B41638274CCAF60099E069 /* GLWelcomeView.swift */,
+				485F8944274DD77D00FE4A87 /* GLWeocomeView.xib */,
 				48B4163A274CCB7F0099E069 /* GLNewFeatureView.swift */,
 			);
 			path = NewFeature;
@@ -458,6 +461,7 @@
 				04CBE9D0270EDF66009CF637 /* main.json in Resources */,
 				049E6F5B26FF2A1A00BD774F /* LaunchScreen.storyboard in Resources */,
 				049E6F5826FF2A1A00BD774F /* Assets.xcassets in Resources */,
+				485F8945274DD77D00FE4A87 /* GLWeocomeView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,7 +523,7 @@
 				04F27C73270021E5006F5B01 /* NSObject+CZRuntime.m in Sources */,
 				043F023827015B3D00B40465 /* UINavigationBar+Extension.swift in Sources */,
 				04F27C76270021E6006F5B01 /* NSAttributedString+CZAdditon.m in Sources */,
-				48B41639274CCAF60099E069 /* GLWeocomeView.swift in Sources */,
+				48B41639274CCAF60099E069 /* GLWelcomeView.swift in Sources */,
 				04F27C77270021E6006F5B01 /* NSArray+Log.m in Sources */,
 				04F27C6E270021E5006F5B01 /* UIScreen+CZAddition.m in Sources */,
 				04136F942716AB06003A2CC8 /* GLStatus.swift in Sources */,

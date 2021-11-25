@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 /// 新特性视图
 class GLNewFeatureView: UIView {
 
@@ -24,7 +23,6 @@ class GLNewFeatureView: UIView {
         v.frame = UIScreen.main.bounds
         return v
     }
-    
     
     /// 进入微博
     @IBAction func enterStatus() {
@@ -74,6 +72,7 @@ extension GLNewFeatureView: UIScrollViewDelegate {
         // 3. 如果是倒数第2页，显示按钮
         enterButton.isHidden = (page != scrollView.subviews.count - 1)
     }
+    
     // any offset changes 调用
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         // 0. 一旦滚动隐藏汗牛

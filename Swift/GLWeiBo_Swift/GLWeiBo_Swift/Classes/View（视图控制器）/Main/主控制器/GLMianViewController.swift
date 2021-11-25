@@ -105,6 +105,7 @@ extension GLMianViewController : UITabBarControllerDelegate {
             // 清除tabItem的 badgeNumber
             homeVC.tabBarItem.badgeValue = nil
             UIApplication.shared.applicationIconBadgeNumber = 0
+            
         }
         
         // 防止空白的占位ViewController穿帮

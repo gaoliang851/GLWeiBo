@@ -46,6 +46,8 @@
 		48432636274B88A600C5F42E /* GLTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48432635274B88A600C5F42E /* GLTitleButton.swift */; };
 		485F8945274DD77D00FE4A87 /* GLWeocomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 485F8944274DD77D00FE4A87 /* GLWeocomeView.xib */; };
 		485F8947274E2C9800FE4A87 /* GLNewFeatureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 485F8946274E2C9800FE4A87 /* GLNewFeatureView.xib */; };
+		4885F8872752060100E74DDA /* GLStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4885F8862752060100E74DDA /* GLStatusCell.swift */; };
+		4885F8892752061800E74DDA /* GLStatusNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4885F8882752061800E74DDA /* GLStatusNormalCell.xib */; };
 		48B41639274CCAF60099E069 /* GLWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B41638274CCAF60099E069 /* GLWelcomeView.swift */; };
 		48B4163B274CCB7F0099E069 /* GLNewFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B4163A274CCB7F0099E069 /* GLNewFeatureView.swift */; };
 		48EAFAC92746220600F3A0BA /* Log4Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EAFAC82746220600F3A0BA /* Log4Swift.swift */; };
@@ -110,6 +112,8 @@
 		48432635274B88A600C5F42E /* GLTitleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLTitleButton.swift; sourceTree = "<group>"; };
 		485F8944274DD77D00FE4A87 /* GLWeocomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GLWeocomeView.xib; sourceTree = "<group>"; };
 		485F8946274E2C9800FE4A87 /* GLNewFeatureView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GLNewFeatureView.xib; sourceTree = "<group>"; };
+		4885F8862752060100E74DDA /* GLStatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLStatusCell.swift; sourceTree = "<group>"; };
+		4885F8882752061800E74DDA /* GLStatusNormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GLStatusNormalCell.xib; sourceTree = "<group>"; };
 		48B41638274CCAF60099E069 /* GLWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLWelcomeView.swift; sourceTree = "<group>"; };
 		48B4163A274CCB7F0099E069 /* GLNewFeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLNewFeatureView.swift; sourceTree = "<group>"; };
 		48EAFAC82746220600F3A0BA /* Log4Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log4Swift.swift; sourceTree = "<group>"; };
@@ -275,6 +279,7 @@
 		04F27C3727001CD8006F5B01 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				4885F885275205D900E74DDA /* StatusCell */,
 				48432634274B888700C5F42E /* TitleButton */,
 				04F27C4627001E12006F5B01 /* GLHomeViewController.swift */,
 			);
@@ -373,6 +378,15 @@
 			path = TitleButton;
 			sourceTree = "<group>";
 		};
+		4885F885275205D900E74DDA /* StatusCell */ = {
+			isa = PBXGroup;
+			children = (
+				4885F8862752060100E74DDA /* GLStatusCell.swift */,
+				4885F8882752061800E74DDA /* GLStatusNormalCell.xib */,
+			);
+			path = StatusCell;
+			sourceTree = "<group>";
+		};
 		48B41637274CCAD00099E069 /* NewFeature */ = {
 			isa = PBXGroup;
 			children = (
@@ -464,6 +478,7 @@
 				04CBE9D0270EDF66009CF637 /* main.json in Resources */,
 				485F8947274E2C9800FE4A87 /* GLNewFeatureView.xib in Resources */,
 				049E6F5B26FF2A1A00BD774F /* LaunchScreen.storyboard in Resources */,
+				4885F8892752061800E74DDA /* GLStatusNormalCell.xib in Resources */,
 				049E6F5826FF2A1A00BD774F /* Assets.xcassets in Resources */,
 				485F8945274DD77D00FE4A87 /* GLWeocomeView.xib in Resources */,
 			);
@@ -522,6 +537,7 @@
 				04F27C4327001DCC006F5B01 /* GLBaseViewController.swift in Sources */,
 				04F27C7E270049D5006F5B01 /* Bundle+Extension.swift in Sources */,
 				04F27C70270021E5006F5B01 /* NSString+CZBase64.m in Sources */,
+				4885F8872752060100E74DDA /* GLStatusCell.swift in Sources */,
 				04F27C3C27001DA1006F5B01 /* GLMianViewController.swift in Sources */,
 				043F023C270165E000B40465 /* GLNavigationBar.swift in Sources */,
 				04F27C73270021E5006F5B01 /* NSObject+CZRuntime.m in Sources */,

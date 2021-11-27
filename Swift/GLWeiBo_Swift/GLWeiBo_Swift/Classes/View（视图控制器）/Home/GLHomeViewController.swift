@@ -49,7 +49,8 @@ extension GLHomeViewController {
     
     override func setupTableView() {
         super.setupTableView()
-        tableView?.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        tableView?.register(UINib(nibName: "GLStatusNormalCell", bundle: nil), forCellReuseIdentifier: cellId)
+        
         setupNavigationBar()
     }
     

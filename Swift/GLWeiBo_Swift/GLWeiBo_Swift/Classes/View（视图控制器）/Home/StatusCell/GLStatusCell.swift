@@ -27,6 +27,9 @@ class GLStatusCell: UITableViewCell {
             // 设置头像
             let iconUrlString = viewModel?.status.user?.profile_image_url ?? ""
             iconView.cz_setWebImage(urlString: iconUrlString, placeholderImage: UIImage(named: "avatar_default_big"), isAvatar: true)
+            
+            // 设置底部工具栏按钮
+            toolbar.statusViewModel = viewModel
         }
     }
     
@@ -44,6 +47,8 @@ class GLStatusCell: UITableViewCell {
     @IBOutlet weak var memberIconView: UIImageView!
     /// 认证图标
     @IBOutlet weak var vipIconView: UIImageView!
+    /// 底部工具栏
+    @IBOutlet weak var toolbar: GLStatusToolBar!
     
     override func awakeFromNib() {
         super.awakeFromNib()

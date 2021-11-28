@@ -22,12 +22,16 @@ class GLStatus: NSObject {
     /// 微博ID
     /// Int 类型在64位上是64位，32位上是32位
     var id: Int64 = 0
-    
     /// 微博信心内容
     var text: String?
-    
+    /// 微博作者
     var user: GLUser?
-    
+    /// 转发数
+    var reposts_count: Int = 0
+    /// 评论数
+    var comments_count: Int = 0
+    /// 点赞数
+    var attitudes_count: Int = 0
     /// 重写 description 属性
     override var description: String {
         yy_modelDescription()

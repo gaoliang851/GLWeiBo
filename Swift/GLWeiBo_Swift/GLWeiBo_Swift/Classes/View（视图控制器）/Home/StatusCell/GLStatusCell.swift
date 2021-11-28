@@ -8,7 +8,21 @@
 import UIKit
 
 class GLStatusCell: UITableViewCell {
-
+    /// 头像
+    @IBOutlet weak var iconView: UIImageView!
+    /// 姓名
+    @IBOutlet weak var nameLabel: UILabel!
+    /// 时间
+    @IBOutlet weak var timeLabel: UILabel!
+    /// 来源
+    @IBOutlet weak var sourceLabel: UILabel!
+    /// 微博正文
+    @IBOutlet weak var stausLabel: UILabel!
+    /// 会员图标
+    @IBOutlet weak var memberIconView: UIImageView!
+    /// 认证图标
+    @IBOutlet weak var vipIconView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

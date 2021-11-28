@@ -26,6 +26,8 @@ class GLStatus: NSObject {
     /// 微博信心内容
     var text: String?
     
+    var user: GLUser?
+    
     /// 重写 description 属性
     override var description: String {
         yy_modelDescription()

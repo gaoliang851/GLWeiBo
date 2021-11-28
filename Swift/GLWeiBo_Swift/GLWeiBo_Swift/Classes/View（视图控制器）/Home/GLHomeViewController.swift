@@ -51,6 +51,13 @@ extension GLHomeViewController {
         super.setupTableView()
         tableView?.register(UINib(nibName: "GLStatusNormalCell", bundle: nil), forCellReuseIdentifier: cellId)
         
+        // 设置自动行高
+        tableView?.rowHeight = UITableView.automaticDimension
+        tableView?.estimatedRowHeight = 300
+        
+        // 取消cell下面的黑线
+        tableView?.separatorStyle = .none
+        
         setupNavigationBar()
     }
     
@@ -72,9 +79,10 @@ extension GLHomeViewController {
 extension GLHomeViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //1. 取cell
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! GLStatusCell
         //2. 设置cell
-        cell.textLabel?.text = listViewModel.statusList[indexPath.row].text
+        // 设置微博内容
+        cell.stausLabel?.text = listViewModel.statusList[indexPath.row].text
         //3. 返回cell
         return cell
     }

@@ -56,7 +56,7 @@ class GLStatusListViewModel  {
                 return
             }
             
-            print("loadStatus Count: \(array.count)")
+            logi("loadStatus Count: \(array.count) , content = \(array)")
             
             // 2. 拼接数据
             if isPull {

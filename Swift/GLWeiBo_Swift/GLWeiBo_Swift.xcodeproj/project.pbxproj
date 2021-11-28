@@ -48,6 +48,7 @@
 		485F8947274E2C9800FE4A87 /* GLNewFeatureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 485F8946274E2C9800FE4A87 /* GLNewFeatureView.xib */; };
 		4885F8872752060100E74DDA /* GLStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4885F8862752060100E74DDA /* GLStatusCell.swift */; };
 		4885F8892752061800E74DDA /* GLStatusNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4885F8882752061800E74DDA /* GLStatusNormalCell.xib */; };
+		4885F88B27532BE800E74DDA /* GLUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4885F88A27532BE800E74DDA /* GLUser.swift */; };
 		48B41639274CCAF60099E069 /* GLWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B41638274CCAF60099E069 /* GLWelcomeView.swift */; };
 		48B4163B274CCB7F0099E069 /* GLNewFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B4163A274CCB7F0099E069 /* GLNewFeatureView.swift */; };
 		48EAFAC92746220600F3A0BA /* Log4Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EAFAC82746220600F3A0BA /* Log4Swift.swift */; };
@@ -114,6 +115,7 @@
 		485F8946274E2C9800FE4A87 /* GLNewFeatureView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GLNewFeatureView.xib; sourceTree = "<group>"; };
 		4885F8862752060100E74DDA /* GLStatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLStatusCell.swift; sourceTree = "<group>"; };
 		4885F8882752061800E74DDA /* GLStatusNormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GLStatusNormalCell.xib; sourceTree = "<group>"; };
+		4885F88A27532BE800E74DDA /* GLUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLUser.swift; sourceTree = "<group>"; };
 		48B41638274CCAF60099E069 /* GLWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLWelcomeView.swift; sourceTree = "<group>"; };
 		48B4163A274CCB7F0099E069 /* GLNewFeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLNewFeatureView.swift; sourceTree = "<group>"; };
 		48EAFAC82746220600F3A0BA /* Log4Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log4Swift.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				04136F932716AB06003A2CC8 /* GLStatus.swift */,
+				4885F88A27532BE800E74DDA /* GLUser.swift */,
 			);
 			path = "Model（模型）";
 			sourceTree = "<group>";
@@ -565,6 +568,7 @@
 				0494491B2715790B005748C4 /* GLNetworkManager.swift in Sources */,
 				049E6F4F26FF2A1700BD774F /* AppDelegate.swift in Sources */,
 				04F27C6F270021E5006F5B01 /* UILabel+CZAddition.m in Sources */,
+				4885F88B27532BE800E74DDA /* GLUser.swift in Sources */,
 				04F27C71270021E5006F5B01 /* NSString+CZPath.m in Sources */,
 				48432636274B88A600C5F42E /* GLTitleButton.swift in Sources */,
 				04136F972716AE8C003A2CC8 /* GLStatusListViewModel.swift in Sources */,

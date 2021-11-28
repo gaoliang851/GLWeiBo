@@ -26,7 +26,7 @@ fileprivate let maxPullupTryTimes = 3
 class GLStatusListViewModel  {
     
     /// 微博数组懒加载
-    lazy var statusList = [GLStatus]()
+    lazy var statusList = [GLStatusViewModel]()
     /// 上拉刷新错误次数
     private var pullupErrorTimes = 0
     
@@ -43,20 +43,29 @@ class GLStatusListViewModel  {
         }
         
         /// 如果是上拉加载，则since_id 为0,since_id 取出数组中第一条微博的 id
-        let since_id = isPull ? 0 : statusList.first?.id ?? 0
+        let since_id = isPull ? 0 : statusList.first?.status.id ?? 0
         /// 如果是下拉竖线，则max_id 为0
-        let max_id = !isPull ? 0: statusList.last?.id ?? 0
+        let max_id = !isPull ? 0: statusList.last?.status.id ?? 0
         
         GLNetworkManager.shared.statusList(since_id: since_id, max_id: max_id) { (list, isSuccess) in
             
-            // 1. 字典转模型
-            guard let array = NSArray.yy_modelArray(with: GLStatus.self, json: list ?? []) as? [GLStatus] else {
-                // 转换失败, 不刷新表格
+            // 0 判断网络请求是否成功
+            if !isSuccess {
                 completion(false,false)
                 return
             }
             
-            logi("loadStatus Count: \(array.count) , content = \(array)")
+            //1 定义一个可变数组
+            var array = [GLStatusViewModel]()
+            
+            // 2> 遍历服务器返回的字典数组,字典转模型
+            for dict in list ?? [] {
+                guard let model = GLStatus.yy_model(with: dict) else {
+                    continue
+                }
+                
+                array.append(GLStatusViewModel(model: model))
+            }
             
             // 2. 拼接数据
             if isPull {

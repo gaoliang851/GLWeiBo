@@ -82,7 +82,7 @@ extension GLHomeViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! GLStatusCell
         //2. 设置cell
         // 设置微博内容
-        cell.stausLabel?.text = listViewModel.statusList[indexPath.row].text
+        cell.stausLabel?.text = listViewModel.statusList[indexPath.row].status.text
         //3. 返回cell
         return cell
     }

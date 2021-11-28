@@ -15,6 +15,8 @@ class GLStatusViewModel {
     var status: GLStatus
     /// 会员图标
     var memberIcon: UIImage?
+    /// 认证图标
+    var vipIcon: UIImage?
     
     /// 单条微博的视图模型的构造器
     /// - Parameter model: 微博model
@@ -26,6 +28,18 @@ class GLStatusViewModel {
         if mbrank > 0 && mbrank < 7 {
             let imageName = "common_icon_membership_level\(mbrank)"
             memberIcon = UIImage(named: imageName)
+        }
+        
+        let v = model.user?.verifiend_type ?? -1
+        switch v {
+        case 0: //认证用户
+            vipIcon = UIImage(named: "avatar_vip")
+        case 2,3,5://企业用户
+            vipIcon = UIImage(named: "avatar_enterprise_vip")
+        case 220://达人
+            vipIcon = UIImage(named: "avatar_grassroot")
+        default:
+            break
         }
     }
 }

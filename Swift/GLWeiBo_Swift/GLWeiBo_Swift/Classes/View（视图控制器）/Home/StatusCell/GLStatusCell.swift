@@ -8,6 +8,19 @@
 import UIKit
 
 class GLStatusCell: UITableViewCell {
+    
+    /// 微博视图模型
+    var viewModel: GLStatusViewModel? {
+        didSet {
+            // 微博文本
+            stausLabel.text = viewModel?.status.text
+            // 姓名
+            nameLabel.text = viewModel?.status.user?.screen_name
+            // 设置会员图标 - 直接获取属性，不需要计算
+            memberIconView.image = viewModel?.memberIcon
+        }
+    }
+    
     /// 头像
     @IBOutlet weak var iconView: UIImageView!
     /// 姓名

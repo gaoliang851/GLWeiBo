@@ -63,7 +63,6 @@ class GLStatusListViewModel  {
                 guard let model = GLStatus.yy_model(with: dict) else {
                     continue
                 }
-                
                 array.append(GLStatusViewModel(model: model))
             }
             

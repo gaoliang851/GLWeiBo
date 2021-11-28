@@ -52,7 +52,7 @@
                         <rect key="frame" x="94.5" y="25.5" width="14" height="14"/>
                     </imageView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_vip" translatesAutoresizingMaskIntoConstraints="NO" id="yWt-hv-t6A" userLabel="认证图标">
-                        <rect key="frame" x="38" y="47" width="14" height="14"/>
+                        <rect key="frame" x="34" y="43" width="14" height="14"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zkl-yi-mYF" userLabel="正文">
                         <rect key="frame" x="11" y="65" width="39.5" height="19.5"/>
@@ -67,7 +67,7 @@
                     <constraint firstItem="zkl-yi-mYF" firstAttribute="top" secondItem="0gs-xM-mfB" secondAttribute="bottom" constant="11" id="9oq-1Q-b8t"/>
                     <constraint firstItem="hsI-iy-acb" firstAttribute="leading" secondItem="nYD-oF-GO5" secondAttribute="leading" id="AUq-VP-9co"/>
                     <constraint firstItem="ZDS-wp-6ck" firstAttribute="leading" secondItem="0gs-xM-mfB" secondAttribute="trailing" constant="11" id="F4h-eF-YXt"/>
-                    <constraint firstItem="yWt-hv-t6A" firstAttribute="centerX" secondItem="0gs-xM-mfB" secondAttribute="trailing" id="LIv-6v-pTs"/>
+                    <constraint firstItem="yWt-hv-t6A" firstAttribute="centerX" secondItem="0gs-xM-mfB" secondAttribute="trailing" constant="-4" id="LIv-6v-pTs"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="zkl-yi-mYF" secondAttribute="bottom" constant="9" id="LWF-S2-7jn"/>
                     <constraint firstItem="Tzz-De-S1E" firstAttribute="leading" secondItem="ZDS-wp-6ck" secondAttribute="trailing" constant="3" id="Mw9-98-ShS"/>
                     <constraint firstItem="0gs-xM-mfB" firstAttribute="leading" secondItem="nYD-oF-GO5" secondAttribute="leading" constant="11" id="P2C-Bp-Ss8"/>
@@ -79,7 +79,7 @@
                     <constraint firstItem="7VH-O8-rWS" firstAttribute="leading" secondItem="mxJ-Jh-jq9" secondAttribute="trailing" constant="6" id="haw-ml-JXl"/>
                     <constraint firstItem="ZDS-wp-6ck" firstAttribute="top" secondItem="0gs-xM-mfB" secondAttribute="top" constant="4" id="hyZ-Ne-5Df"/>
                     <constraint firstItem="mxJ-Jh-jq9" firstAttribute="bottom" secondItem="0gs-xM-mfB" secondAttribute="bottom" id="lti-X3-qvE"/>
-                    <constraint firstItem="yWt-hv-t6A" firstAttribute="centerY" secondItem="0gs-xM-mfB" secondAttribute="bottom" id="vbi-oJ-rpi"/>
+                    <constraint firstItem="yWt-hv-t6A" firstAttribute="centerY" secondItem="0gs-xM-mfB" secondAttribute="bottom" constant="-4" id="vbi-oJ-rpi"/>
                     <constraint firstAttribute="trailing" secondItem="hsI-iy-acb" secondAttribute="trailing" id="vwU-MH-3ch"/>
                 </constraints>
             </tableViewCellContentView>

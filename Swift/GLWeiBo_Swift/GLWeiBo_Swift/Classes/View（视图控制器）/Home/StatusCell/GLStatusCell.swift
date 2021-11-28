@@ -14,12 +14,19 @@ class GLStatusCell: UITableViewCell {
         didSet {
             // 微博文本
             stausLabel.text = viewModel?.status.text
+            
             // 姓名
             nameLabel.text = viewModel?.status.user?.screen_name
+            
             // 设置会员图标 - 直接获取属性，不需要计算
             memberIconView.image = viewModel?.memberIcon
+            
             // 设置认证图标
             vipIconView.image = viewModel?.vipIcon
+            
+            // 设置头像
+            let iconUrlString = viewModel?.status.user?.profile_image_url ?? ""
+            iconView.cz_setWebImage(urlString: iconUrlString, placeholderImage: UIImage(named: "avatar_default_big"), isAvatar: true)
         }
     }
     

@@ -36,16 +36,15 @@ class GLStatusViewModel {
         }
         
         /// 设置认证图标
-        let v = model.user?.verifiend_type ?? -1
-        switch v {
+        let verifiend_type = model.user?.verifiend_type ?? -1
+        switch verifiend_type {
         case 0: //认证用户
             vipIcon = UIImage(named: "avatar_vip")
-        case 2,3,5://企业用户
+        case 2,3,5: //企业用户
             vipIcon = UIImage(named: "avatar_enterprise_vip")
-        case 220://达人
+        case 220: //达人
             vipIcon = UIImage(named: "avatar_grassroot")
-        default:
-            break
+        default: break
         }
         
         // 设置转发字符串

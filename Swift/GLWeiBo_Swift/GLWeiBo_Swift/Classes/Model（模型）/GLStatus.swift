@@ -26,6 +26,9 @@ class GLStatus: NSObject {
     var text: String?
     /// 微博作者
     var user: GLUser?
+    /// 微博配图模型数组
+    var pic_urls: [GLStatusPicture]?
+    
     /// 转发数
     var reposts_count: Int = 0
     /// 评论数
@@ -35,5 +38,13 @@ class GLStatus: NSObject {
     /// 重写 description 属性
     override var description: String {
         yy_modelDescription()
+    }
+    
+    /// 类函数 -> 告诉第三方框架 YY_Model 如果遇到数组类型的属性，数组中存放的对理想是什么类？
+    /// NSArray 中保存对象的类型通常是 `id` 类型
+    /// OC 中泛型是 Swift 退出后，苹果为了兼容给 OC 增加的
+    /// 从运行时角度，仍然不知道数组中应该存放什么类型的对象
+    class func modelContainerPropertyGenericClass() -> [String: AnyClass] {
+        ["pic_urls":GLStatusPicture.self]
     }
 }

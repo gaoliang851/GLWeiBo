@@ -30,6 +30,8 @@ class GLStatusCell: UITableViewCell {
             
             // 设置底部工具栏按钮
             toolbar.statusViewModel = viewModel
+            
+            pictureView.heightCons.constant = 0
         }
     }
     
@@ -49,7 +51,8 @@ class GLStatusCell: UITableViewCell {
     @IBOutlet weak var vipIconView: UIImageView!
     /// 底部工具栏
     @IBOutlet weak var toolbar: GLStatusToolBar!
-    
+    /// 底部配图视图
+    @IBOutlet weak var pictureView: GLStatusPictureView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

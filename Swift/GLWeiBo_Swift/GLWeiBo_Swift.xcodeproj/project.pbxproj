@@ -53,6 +53,7 @@
 		4885F88F275361A300E74DDA /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4885F88E275361A200E74DDA /* UIImageView+Extension.swift */; };
 		4885F89127537EFE00E74DDA /* GLStatusToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4885F89027537EFE00E74DDA /* GLStatusToolBar.swift */; };
 		4885F8952754C5CF00E74DDA /* GLStatusPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4885F8942754C5CF00E74DDA /* GLStatusPicture.swift */; };
+		4885F8972754C94900E74DDA /* GLStatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4885F8962754C94900E74DDA /* GLStatusPictureView.swift */; };
 		48B41639274CCAF60099E069 /* GLWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B41638274CCAF60099E069 /* GLWelcomeView.swift */; };
 		48B4163B274CCB7F0099E069 /* GLNewFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B4163A274CCB7F0099E069 /* GLNewFeatureView.swift */; };
 		48EAFAC92746220600F3A0BA /* Log4Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EAFAC82746220600F3A0BA /* Log4Swift.swift */; };
@@ -124,6 +125,7 @@
 		4885F88E275361A200E74DDA /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		4885F89027537EFE00E74DDA /* GLStatusToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLStatusToolBar.swift; sourceTree = "<group>"; };
 		4885F8942754C5CF00E74DDA /* GLStatusPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLStatusPicture.swift; sourceTree = "<group>"; };
+		4885F8962754C94900E74DDA /* GLStatusPictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLStatusPictureView.swift; sourceTree = "<group>"; };
 		48B41638274CCAF60099E069 /* GLWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLWelcomeView.swift; sourceTree = "<group>"; };
 		48B4163A274CCB7F0099E069 /* GLNewFeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLNewFeatureView.swift; sourceTree = "<group>"; };
 		48EAFAC82746220600F3A0BA /* Log4Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log4Swift.swift; sourceTree = "<group>"; };
@@ -398,6 +400,7 @@
 				4885F8862752060100E74DDA /* GLStatusCell.swift */,
 				4885F8882752061800E74DDA /* GLStatusNormalCell.xib */,
 				4885F89027537EFE00E74DDA /* GLStatusToolBar.swift */,
+				4885F8962754C94900E74DDA /* GLStatusPictureView.swift */,
 			);
 			path = StatusCell;
 			sourceTree = "<group>";
@@ -560,6 +563,7 @@
 				4885F8952754C5CF00E74DDA /* GLStatusPicture.swift in Sources */,
 				04F27C76270021E6006F5B01 /* NSAttributedString+CZAdditon.m in Sources */,
 				48B41639274CCAF60099E069 /* GLWelcomeView.swift in Sources */,
+				4885F8972754C94900E74DDA /* GLStatusPictureView.swift in Sources */,
 				04F27C77270021E6006F5B01 /* NSArray+Log.m in Sources */,
 				04F27C6E270021E5006F5B01 /* UIScreen+CZAddition.m in Sources */,
 				04136F942716AB06003A2CC8 /* GLStatus.swift in Sources */,

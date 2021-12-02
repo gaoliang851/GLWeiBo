@@ -60,7 +60,7 @@
                         <rect key="frame" x="34" y="47" width="14" height="14"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zkl-yi-mYF" userLabel="正文">
-                        <rect key="frame" x="11" y="70" width="37.5" height="18"/>
+                        <rect key="frame" x="11" y="70" width="37.5" height="108"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -129,7 +129,7 @@
                         </connections>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P9d-W7-gVB" customClass="GLStatusPictureView" customModule="GLWeiBo_Swift" customModuleProvider="target">
-                        <rect key="frame" x="11" y="100" width="391" height="300"/>
+                        <rect key="frame" x="11" y="178" width="391" height="300"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                         <constraints>
                             <constraint firstAttribute="height" priority="999" constant="300" id="geX-oL-fIM"/>
@@ -145,7 +145,7 @@
                     <constraint firstItem="Tzz-De-S1E" firstAttribute="centerY" secondItem="ZDS-wp-6ck" secondAttribute="centerY" id="94M-q8-k5H"/>
                     <constraint firstItem="zkl-yi-mYF" firstAttribute="top" secondItem="0gs-xM-mfB" secondAttribute="bottom" constant="12" id="9oq-1Q-b8t"/>
                     <constraint firstItem="hsI-iy-acb" firstAttribute="leading" secondItem="nYD-oF-GO5" secondAttribute="leading" id="AUq-VP-9co"/>
-                    <constraint firstItem="P9d-W7-gVB" firstAttribute="top" secondItem="zkl-yi-mYF" secondAttribute="bottom" constant="12" id="CND-bH-DsU"/>
+                    <constraint firstItem="P9d-W7-gVB" firstAttribute="top" secondItem="zkl-yi-mYF" secondAttribute="bottom" id="CND-bH-DsU"/>
                     <constraint firstItem="ZDS-wp-6ck" firstAttribute="leading" secondItem="0gs-xM-mfB" secondAttribute="trailing" constant="11" id="F4h-eF-YXt"/>
                     <constraint firstItem="yWt-hv-t6A" firstAttribute="centerX" secondItem="0gs-xM-mfB" secondAttribute="trailing" constant="-4" id="LIv-6v-pTs"/>
                     <constraint firstItem="Tzz-De-S1E" firstAttribute="leading" secondItem="ZDS-wp-6ck" secondAttribute="trailing" constant="3" id="Mw9-98-ShS"/>
@@ -155,7 +155,7 @@
                     <constraint firstItem="mxJ-Jh-jq9" firstAttribute="leading" secondItem="ZDS-wp-6ck" secondAttribute="leading" id="TM2-QL-zoP"/>
                     <constraint firstItem="7VH-O8-rWS" firstAttribute="bottom" secondItem="mxJ-Jh-jq9" secondAttribute="bottom" id="boW-yJ-1xK"/>
                     <constraint firstAttribute="bottom" secondItem="tdJ-BS-iTQ" secondAttribute="bottom" id="cOY-ck-jGr"/>
-                    <constraint firstItem="tdJ-BS-iTQ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="P9d-W7-gVB" secondAttribute="bottom" constant="12" id="dIu-Yf-sXB"/>
+                    <constraint firstItem="tdJ-BS-iTQ" firstAttribute="top" secondItem="P9d-W7-gVB" secondAttribute="bottom" constant="12" id="dIu-Yf-sXB"/>
                     <constraint firstItem="zkl-yi-mYF" firstAttribute="leading" secondItem="0gs-xM-mfB" secondAttribute="leading" id="eUZ-mX-UtJ"/>
                     <constraint firstItem="tdJ-BS-iTQ" firstAttribute="leading" secondItem="nYD-oF-GO5" secondAttribute="leading" id="ecm-0c-ajd"/>
                     <constraint firstItem="7VH-O8-rWS" firstAttribute="leading" secondItem="mxJ-Jh-jq9" secondAttribute="trailing" constant="6" id="haw-ml-JXl"/>

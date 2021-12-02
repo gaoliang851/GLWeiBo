@@ -22,7 +22,6 @@ class GLStatusPictureView: UIView {
             var index = 0 //for循环的索引
             for i in viewModel?.status.pic_urls ?? [] {
                 
-                
                 let iv = subviews[index] as! UIImageView
                 
                 /// 当遇到四张图时，需要跳过第三个imageView布局

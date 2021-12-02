@@ -8,7 +8,7 @@
 import UIKit
 
 /// 微博配图模型
-class GLStatusPicture: NSObject {
+@objcMembers class GLStatusPicture: NSObject {
     /// 图片地址
     var thumbnail_pic: String?
     

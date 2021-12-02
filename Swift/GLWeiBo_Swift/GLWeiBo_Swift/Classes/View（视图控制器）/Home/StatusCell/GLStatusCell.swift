@@ -31,7 +31,8 @@ class GLStatusCell: UITableViewCell {
             // 设置底部工具栏按钮
             toolbar.statusViewModel = viewModel
             
-            pictureView.heightCons.constant = 0
+            // 配图视图视图模型
+            pictureView.viewModel = viewModel
         }
     }
     

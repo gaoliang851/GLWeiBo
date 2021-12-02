@@ -5,10 +5,11 @@
 //  Created by gaoliang on 2021/11/28.
 //
 
-import Foundation
+import YYModel
+import UIKit
 
 /// 单条微博的视图模型
-class GLStatusViewModel {
+class GLStatusViewModel: CustomStringConvertible {
     /// 微博模型
     var status: GLStatus
     /// 会员图标
@@ -21,6 +22,8 @@ class GLStatusViewModel {
     var commentStr: String?
     /// 点赞字符串
     var likeStr: String?
+    /// 微博配图的大小
+    var pictureViewSize = CGSize()
     
     /// 单条微博的视图模型的构造器
     /// - Parameter model: 微博model
@@ -53,6 +56,9 @@ class GLStatusViewModel {
         commentStr = countString(count: model.comments_count, defaultString: "评论")
         // 点赞
         likeStr = countString(count: model.attitudes_count, defaultString: "赞")
+        
+        // 计算配图视图大小
+        pictureViewSize = calcPictureViewSize(count: model.pic_urls?.count)
     }
     
     
@@ -75,6 +81,34 @@ class GLStatusViewModel {
         
         // count > 10000
         return String(format: "%.02f 万", Double(count) / 10000)
+    }
+    
+    
+    /// 计算指定数量的图片对应的配图视图的大小
+    /// - Parameter count: 配图数量
+    /// - Returns: 配图视图的大小
+    private func calcPictureViewSize(count: Int?) -> CGSize {
+        if count == 0 || count == nil {
+            return CGSize()
+        }
+        
+        // 计算行
+        /**
+            1 2 3 = 0 1 2 / 3 = 0 + 1 = 1
+            4 5 6 = 3 4 5 / 3 = 1 + 1 = 2
+            7 8 9 = 6 7 8 / 3 = 2 + 1 = 3
+        */
+        let row = CGFloat((count! - 1) / 3 + 1)
+        // 计算高度
+        var height = GLStatusPictureViewOutterMargin // 顶部空白一个距离
+        height += row * GLStatusPictureItemWidth // 行 * 行高
+        height += (row - 1) * GLStatusPictureViewInnerMargin
+        
+        return CGSize(width: GLStatusPictureViewWidth, height: height)
+    }
+    
+    var description: String {
+        status.description
     }
     
 }

@@ -21,3 +21,14 @@ let GLAppKey = "2913690478"
 let GLAppSecret = "52dd305c7269cad9129fc21e88393e61"
 // 回调地址
 let GLRedirectURI = "https://www.baidu.com"
+
+
+// MARK: - 微博配图视图常量
+// 配图视图外侧的间距
+let GLStatusPictureViewOutterMargin = CGFloat(12)
+// 配图视图内部图像视图的间距
+let GLStatusPictureViewInnerMargin = CGFloat(3)
+// 视图的宽度的宽度
+let GLStatusPictureViewWidth = UIScreen.cz_screenWidth() - 2 * GLStatusPictureViewOutterMargin
+// 每个 Item 默认的宽度
+let GLStatusPictureItemWidth = (GLStatusPictureViewWidth - 2 * GLStatusPictureViewInnerMargin) / 3

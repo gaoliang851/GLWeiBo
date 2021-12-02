@@ -14,14 +14,14 @@ public func setLoggerEnable(enable: Bool) {
 }
 
 fileprivate func log(tag :String, object: Any?) {
-    print("\(tag) : \((object ?? "nil"))")
+    print("\(tag)\((object ?? "nil"))")
 }
 
 public func logi(_ object: Any?) {
     guard loggerEnable else {
         return
     }
-    log(tag: "[info]", object: object)
+    log(tag: "[info:=>]", object: object)
 }
 
 public func loge(_ object: Any?) {

@@ -10,7 +10,7 @@ import YYModel
 
 /*
 问题：使用YYModel和MJExtension的时候发现正常使用字典转模型怎么都无法实现,转换后的模型一直为nil?
-解决：在属性前面加上@objc，或者在类的上面加上@objcMembers。
+解决：在属性前面加上@objc，或者在类的上面加上 @objcMembers。
 原因是因为在 Swift4 中继承 NSObject 的 swift class 不再默认全部 bridge 到 OC。
 */
 

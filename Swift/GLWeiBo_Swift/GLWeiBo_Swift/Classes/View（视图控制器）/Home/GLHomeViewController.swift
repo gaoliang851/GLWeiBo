@@ -8,8 +8,10 @@
 import UIKit
 import AFNetworking
 
-//tableView的cell identifier
-fileprivate let cellId = "cellId"
+/// 原创微博可重用 cellid
+fileprivate let originalCellId = "originalCellId"
+/// 被转发微博可重用cellid
+fileprivate let retweetedCellId = "retweetedCellId"
 
 class GLHomeViewController: GLBaseViewController {
     
@@ -49,8 +51,10 @@ extension GLHomeViewController {
     
     override func setupTableView() {
         super.setupTableView()
-        tableView?.register(UINib(nibName: "GLStatusNormalCell", bundle: nil), forCellReuseIdentifier: cellId)
-        
+        /// 原创微博的cell注册
+        tableView?.register(UINib(nibName: "GLStatusNormalCell", bundle: nil), forCellReuseIdentifier: originalCellId)
+        /// 被转发微博的cell注册
+        tableView?.register(UINib(nibName: "GLStatusRetweedCell", bundle: nil), forCellReuseIdentifier: retweetedCellId)
         // 设置自动行高
         tableView?.rowHeight = UITableView.automaticDimension
         tableView?.estimatedRowHeight = 300
@@ -79,7 +83,7 @@ extension GLHomeViewController {
 extension GLHomeViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //1. 取cell
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! GLStatusCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: retweetedCellId, for: indexPath) as! GLStatusCell
         //2. 设置cell
         // 设置微博内容
         let vm = listViewModel.statusList[indexPath.row]

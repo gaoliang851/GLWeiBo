@@ -33,6 +33,9 @@ class GLStatusCell: UITableViewCell {
             
             // 配图视图视图模型
             pictureView.viewModel = viewModel
+            
+            // 设置转发微博的内容
+            retweedStatusLabel?.text = viewModel?.retweetedStatusText
         }
     }
     
@@ -54,6 +57,10 @@ class GLStatusCell: UITableViewCell {
     @IBOutlet weak var toolbar: GLStatusToolBar!
     /// 底部配图视图
     @IBOutlet weak var pictureView: GLStatusPictureView!
+    
+    /// 被转发微博的正文, 因为该控件可能为空,
+    /// 必须使用 `?`
+    @IBOutlet weak var retweedStatusLabel: UILabel?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

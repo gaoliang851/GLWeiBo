@@ -32,6 +32,9 @@ class GLStatusViewModel: CustomStringConvertible {
         status.retweeted_status?.pic_urls ?? status.pic_urls
     }
     
+    /// 转发微博内容
+    var retweetedStatusText: String?
+    
     /// 单条微博的视图模型的构造器
     /// - Parameter model: 微博model
     init(model: GLStatus) {
@@ -66,6 +69,12 @@ class GLStatusViewModel: CustomStringConvertible {
         
         // 计算配图视图大小
         pictureViewSize = calcPictureViewSize(count: picURLs?.count)
+        
+        // 设置转发微博的内容
+        retweetedStatusText = "@"
+        + (status.retweeted_status?.user?.screen_name ?? "")
+        + ":"
+        + (status.retweeted_status?.text ?? "")
     }
     
     

@@ -190,6 +190,7 @@
                 <outlet property="memberIconView" destination="Tzz-De-S1E" id="Jem-s3-107"/>
                 <outlet property="nameLabel" destination="ZDS-wp-6ck" id="oGp-9i-yp7"/>
                 <outlet property="pictureView" destination="P9d-W7-gVB" id="bFY-dK-7rH"/>
+                <outlet property="retweedStatusLabel" destination="392-kY-hmU" id="wk0-ue-Vdh"/>
                 <outlet property="sourceLabel" destination="7VH-O8-rWS" id="pKg-7u-zUA"/>
                 <outlet property="stausLabel" destination="zkl-yi-mYF" id="IX8-sS-sZo"/>
                 <outlet property="timeLabel" destination="mxJ-Jh-jq9" id="I6E-Ra-pcA"/>

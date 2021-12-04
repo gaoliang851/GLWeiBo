@@ -24,6 +24,13 @@ class GLStatusViewModel: CustomStringConvertible {
     var likeStr: String?
     /// 微博配图的大小
     var pictureViewSize = CGSize()
+    /// 如果是被转发的微博，原创微博一定没有图
+    var picURLs: [GLStatusPicture]? {
+        // 如果有被转发的微博，返回被转发微博的配图
+        // 如果没有被转发的微博，返回原创微博的配图
+        // 如果都没有,返回nil
+        status.retweeted_status?.pic_urls ?? status.pic_urls
+    }
     
     /// 单条微博的视图模型的构造器
     /// - Parameter model: 微博model
@@ -58,7 +65,7 @@ class GLStatusViewModel: CustomStringConvertible {
         likeStr = countString(count: model.attitudes_count, defaultString: "赞")
         
         // 计算配图视图大小
-        pictureViewSize = calcPictureViewSize(count: model.pic_urls?.count)
+        pictureViewSize = calcPictureViewSize(count: picURLs?.count)
     }
     
     

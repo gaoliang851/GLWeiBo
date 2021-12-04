@@ -28,6 +28,8 @@ class GLStatus: NSObject {
     var user: GLUser?
     /// 微博配图模型数组
     var pic_urls: [GLStatusPicture]?
+    /// 原创微博
+    var retweeted_status: GLStatus?
     
     /// 转发数
     var reposts_count: Int = 0

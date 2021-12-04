@@ -20,7 +20,7 @@ class GLStatusPictureView: UIView {
                 v.isHidden = true
             }
             var index = 0 //for循环的索引
-            for i in viewModel?.status.pic_urls ?? [] {
+            for i in viewModel?.picURLs ?? [] {
                 
                 let iv = subviews[index] as! UIImageView
                 

@@ -82,11 +82,14 @@ extension GLHomeViewController {
 // MARK: - tableView的数据源
 extension GLHomeViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //1. 取cell
-        let cell = tableView.dequeueReusableCell(withIdentifier: retweetedCellId, for: indexPath) as! GLStatusCell
-        //2. 设置cell
-        // 设置微博内容
+        
         let vm = listViewModel.statusList[indexPath.row]
+        // cellid
+        let cellid = vm.status.retweeted_status == nil ? originalCellId:retweetedCellId
+        
+        //1. 取cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellid, for: indexPath) as! GLStatusCell
+        //2. 设置cell ,设置微博内容
         cell.viewModel = vm
         //3. 返回cell
         return cell

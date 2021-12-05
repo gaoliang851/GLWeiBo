@@ -94,6 +94,10 @@ class GLStatusListViewModel  {
     /// - Parameter list: vm list
     private func cacheSignleImage(list: [GLStatusViewModel]) {
         
+        let group = DispatchGroup()
+        // 缓存图片总大小
+        var length = 0
+        
         for vm in list {
             // 如果图片的数量不是一张，就跳过
             if vm.picURLs?.count != 1 {
@@ -107,14 +111,27 @@ class GLStatusListViewModel  {
             
             logi("要缓存图像的url : \(url)")
             
+            // A> 入组
+            group.enter()
+            
             // 下载图像
             // 该方法是 SDWebImage的核心方法
             // 图像下载完成会自动保存在沙盒中，文件路径是 URL 的 md5
             // 如果沙盒中已经存在缓存的图像，后续使用SD 通过 URL加载图像，都会加载本地沙盒的图像
             // 不会发起网络请求，同时，回调方法同样会回调，
-            SDWebImageManager.shared.loadImage(with: url, options: [], progress: nil) { image, _, _, _, _, _ in
-                logi("缓存的图像是 \(image)")
+            SDWebImageManager.shared.loadImage(with: url, options: [], progress: nil) { image, data, _, _, _, _ in
+                
+                logi("缓存的图像是 \(image), 长度是 \(data?.count)")
+                
+                length += data?.count ?? 0
+                
+                group.leave()
+                
             }
+        }
+        
+        group.notify(queue: DispatchQueue.main) {
+            logi("缓存完成，缓存了 \(length / 1024) KB")
         }
         
     }

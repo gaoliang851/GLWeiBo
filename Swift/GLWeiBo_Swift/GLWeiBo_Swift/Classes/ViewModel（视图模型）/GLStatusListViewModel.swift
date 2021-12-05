@@ -7,6 +7,7 @@
 
 import Foundation
 import YYModel
+import SDWebImage
 
 
 /**
@@ -80,10 +81,41 @@ class GLStatusListViewModel  {
                 self.pullupErrorTimes += 1
                 completion(isSuccess,false)
             } else {
+                self.cacheSignleImage(list: array)
                 // 4. 回调
                 completion(true,true)
             }
             
         }
+    }
+    
+    
+    /// 缓存单张图片
+    /// - Parameter list: vm list
+    private func cacheSignleImage(list: [GLStatusViewModel]) {
+        
+        for vm in list {
+            // 如果图片的数量不是一张，就跳过
+            if vm.picURLs?.count != 1 {
+                continue
+            }
+            
+            guard let picUrlStr = vm.picURLs?.first?.thumbnail_pic,
+            let url = URL(string: picUrlStr) else {
+                continue
+            }
+            
+            logi("要缓存图像的url : \(url)")
+            
+            // 下载图像
+            // 该方法是 SDWebImage的核心方法
+            // 图像下载完成会自动保存在沙盒中，文件路径是 URL 的 md5
+            // 如果沙盒中已经存在缓存的图像，后续使用SD 通过 URL加载图像，都会加载本地沙盒的图像
+            // 不会发起网络请求，同时，回调方法同样会回调，
+            SDWebImageManager.shared.loadImage(with: url, options: [], progress: nil) { image, _, _, _, _, _ in
+                logi("缓存的图像是 \(image)")
+            }
+        }
+        
     }
 }

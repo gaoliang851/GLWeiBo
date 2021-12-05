@@ -81,9 +81,12 @@ class GLStatusListViewModel  {
                 self.pullupErrorTimes += 1
                 completion(isSuccess,false)
             } else {
-                self.cacheSignleImage(list: array)
-                // 4. 回调
-                completion(true,true)
+                /// 缓存玩单张图片之后，再回调
+                self.cacheSignleImage(list: array) {
+                    // 4. 回调
+                    completion(true,true)
+                }
+                
             }
             
         }
@@ -92,7 +95,7 @@ class GLStatusListViewModel  {
     
     /// 缓存单张图片
     /// - Parameter list: vm list
-    private func cacheSignleImage(list: [GLStatusViewModel]) {
+    private func cacheSignleImage(list: [GLStatusViewModel],execute work: @escaping () -> Void) {
         
         let group = DispatchGroup()
         // 缓存图片总大小
@@ -132,6 +135,7 @@ class GLStatusListViewModel  {
         
         group.notify(queue: DispatchQueue.main) {
             logi("缓存完成，缓存了 \(length / 1024) KB")
+            work()
         }
         
     }

@@ -81,14 +81,12 @@ class GLStatusListViewModel  {
                 self.pullupErrorTimes += 1
                 completion(isSuccess,false)
             } else {
-                /// 缓存玩单张图片之后，再回调
+                /// 缓存完单张图片之后，再回调
                 self.cacheSignleImage(list: array) {
                     // 4. 回调
                     completion(true,true)
                 }
-                
             }
-            
         }
     }
     
@@ -124,9 +122,15 @@ class GLStatusListViewModel  {
             // 不会发起网络请求，同时，回调方法同样会回调，
             SDWebImageManager.shared.loadImage(with: url, options: [], progress: nil) { image, data, _, _, _, _ in
                 
-                logi("缓存的图像是 \(image), 长度是 \(data?.count)")
                 
-                length += data?.count ?? 0
+                // 已经拿到下载的图片
+                if let image = image,let data = data {
+                    logi("缓存的图像是 \(image), 长度是 \(data.count)")
+                    
+                    length += data.count
+                    // 更新视图模型中的数据
+                    vm.updateSignleImageSize(image: image)
+                }
                 
                 group.leave()
                 

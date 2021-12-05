@@ -127,4 +127,14 @@ class GLStatusViewModel: CustomStringConvertible {
         status.description
     }
     
+    // 单图微博的图片处理
+    func updateSignleImageSize(image: UIImage) {
+        // 图片的尺寸
+        var size = image.size
+        // 底部视图的高度 = 图片的高度 + 12
+        size.height += GLStatusPictureViewOutterMargin
+
+        pictureViewSize = size
+    }
+    
 }

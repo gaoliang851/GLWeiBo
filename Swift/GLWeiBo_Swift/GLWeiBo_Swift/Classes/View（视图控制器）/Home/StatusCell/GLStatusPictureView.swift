@@ -13,6 +13,9 @@ class GLStatusPictureView: UIView {
     
     var viewModel: GLStatusViewModel? {
         didSet {
+            
+            calcViewSize()
+            
             /// 更新高度
             heightCons.constant = viewModel?.pictureViewSize.height ?? 0
             /// 循环放置图片
@@ -35,6 +38,30 @@ class GLStatusPictureView: UIView {
                 
                 index += 1
             }
+        }
+    }
+    
+    /// 处理单条微博的情况下，subviews[0]的大小
+    /// 多图或无图情况下，subviews[0]变成标准的九宫格位置
+    private func calcViewSize() {
+        // 处理高度
+        // 1. 单图，根据配图视图的大小，修改第一个imageView的大小
+        if viewModel?.picURLs?.count == 1 {
+            let viewSize = viewModel?.pictureViewSize ?? CGSize()
+            
+            // a> 获取第 0 个 imageView
+            let v = subviews[0]
+            v.frame = CGRect(x: 0,
+                             y: GLStatusPictureViewOutterMargin,
+                             width: viewSize.width,
+                             height: viewSize.height)
+        } else {
+            //多图(无图)，恢复 subview[0] 的宽高，保证九宫格布局的完整
+            let v = subviews[0]
+            v.frame = CGRect(x: 0,
+                             y: GLStatusPictureViewOutterMargin,
+                             width: GLStatusPictureItemWidth,
+                             height: GLStatusPictureItemWidth)
         }
     }
     

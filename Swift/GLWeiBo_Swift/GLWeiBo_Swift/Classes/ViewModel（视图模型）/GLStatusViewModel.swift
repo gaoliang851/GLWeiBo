@@ -34,6 +34,8 @@ class GLStatusViewModel: CustomStringConvertible {
     
     /// 转发微博内容
     var retweetedStatusText: String?
+    /// 高度
+    var rowHeight: CGFloat = 0
     
     /// 单条微博的视图模型的构造器
     /// - Parameter model: 微博model
@@ -75,6 +77,51 @@ class GLStatusViewModel: CustomStringConvertible {
         + (status.retweeted_status?.user?.screen_name ?? "")
         + ":"
         + (status.retweeted_status?.text ?? "")
+        
+        // 计算row的高度
+        updateRowHeight()
+    }
+    
+    func updateRowHeight() {
+        // 原创微博的高度 = 顶部间距视图(12) + margin(12) + 头像视图高度(34) + 正文的高度 + 配图视图的高度 + margin(12) + 底部工具栏的视图（38）
+        // 转发微博的高度 = 顶部间距视图(12) + margin(12) + 头像视图高度(34) + 正文的高度 + margin(12) + 转发微博正文的高度 + 配图视图的高度 + margin(12) + 底部工具栏的视图（38）
+        let margin: CGFloat = 12
+        let iconHeight: CGFloat = 34
+        let toolbarHeight: CGFloat = 38
+        
+        var height: CGFloat = 0
+        
+        let orginalFont = UIFont.systemFont(ofSize: 15)
+        let retweetedFont = UIFont.systemFont(ofSize: 14)
+        
+        // 顶部：顶部间距视图(12) + margin(12) + 头像视图高度(34)
+        height += margin * 2 + iconHeight
+        //正文的高度
+        let viewSize = CGSize(width: UIScreen.cz_screenWidth() - 2 * margin, height: CGFloat.greatestFiniteMagnitude)
+        if let text = status.text {
+            height += (text as NSString).boundingRect(with: viewSize,
+                                                      options: [.usesLineFragmentOrigin],
+                                                      attributes: [.font:orginalFont],
+                                                      context: nil).height
+        }
+        
+        //转发微博
+        if status.retweeted_status != nil {
+            height += margin
+            height += (retweetedStatusText as NSString).boundingRect(with: viewSize,
+                                                                     options: [.usesLineFragmentOrigin],
+                                                                     attributes: [.font:retweetedFont],
+                                                                     context: nil).height
+        }
+        
+        // 配图高度
+        height += pictureViewSize.height
+        height += margin
+        //底部工具栏高度
+        height += toolbarHeight
+        
+        rowHeight = height
+        
     }
     
     

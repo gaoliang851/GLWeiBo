@@ -83,8 +83,8 @@ class GLStatusViewModel: CustomStringConvertible {
     }
     
     func updateRowHeight() {
-        // 原创微博的高度 = 顶部间距视图(12) + margin(12) + 头像视图高度(34) + 正文的高度 + 配图视图的高度 + margin(12) + 底部工具栏的视图（38）
-        // 转发微博的高度 = 顶部间距视图(12) + margin(12) + 头像视图高度(34) + 正文的高度 + margin(12) + 转发微博正文的高度 + 配图视图的高度 + margin(12) + 底部工具栏的视图（38）
+        // 原创微博的高度 = 顶部间距视图(12) + margin(12) + 头像视图高度(34) + 间距 + 正文的高度 + 配图视图的高度 + margin(12) + 底部工具栏的视图（38）
+        // 转发微博的高度 = 顶部间距视图(12) + margin(12) + 头像视图高度(34) + 间距 + 正文的高度 + margin(12) + 转发微博正文的高度 + 配图视图的高度 + margin(12) + 底部工具栏的视图（38）
         let margin: CGFloat = 12
         let iconHeight: CGFloat = 34
         let toolbarHeight: CGFloat = 38
@@ -95,7 +95,7 @@ class GLStatusViewModel: CustomStringConvertible {
         let retweetedFont = UIFont.systemFont(ofSize: 14)
         
         // 顶部：顶部间距视图(12) + margin(12) + 头像视图高度(34)
-        height += margin * 2 + iconHeight
+        height += margin * 2 + iconHeight + margin
         //正文的高度
         let viewSize = CGSize(width: UIScreen.cz_screenWidth() - 2 * margin, height: CGFloat.greatestFiniteMagnitude)
         if let text = status.text {
@@ -107,11 +107,14 @@ class GLStatusViewModel: CustomStringConvertible {
         
         //转发微博
         if status.retweeted_status != nil {
-            height += margin
-            height += (retweetedStatusText as NSString).boundingRect(with: viewSize,
-                                                                     options: [.usesLineFragmentOrigin],
-                                                                     attributes: [.font:retweetedFont],
-                                                                     context: nil).height
+            height += margin * 2
+            if let text = retweetedStatusText {
+                height += (text as NSString).boundingRect(with: viewSize,
+                                                          options: [.usesLineFragmentOrigin],
+                                                          attributes: [.font:retweetedFont],
+                                                          context: nil).height
+            }
+            
         }
         
         // 配图高度
@@ -182,6 +185,8 @@ class GLStatusViewModel: CustomStringConvertible {
         size.height += GLStatusPictureViewOutterMargin
 
         pictureViewSize = size
+        // 更新高度
+        updateRowHeight()
     }
     
 }

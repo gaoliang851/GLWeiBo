@@ -56,7 +56,8 @@ extension GLHomeViewController {
         /// 被转发微博的cell注册
         tableView?.register(UINib(nibName: "GLStatusRetweedCell", bundle: nil), forCellReuseIdentifier: retweetedCellId)
         // 设置自动行高
-        tableView?.rowHeight = UITableView.automaticDimension
+        // 取消自动行高
+        //tableView?.rowHeight = UITableView.automaticDimension
         tableView?.estimatedRowHeight = 300
         
         // 取消cell下面的黑线
@@ -97,6 +98,13 @@ extension GLHomeViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         listViewModel.statusList.count
+    }
+    
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let vm = listViewModel.statusList[indexPath.row]
+        
+        return vm.rowHeight
     }
     
     /// 无缝上拉加载

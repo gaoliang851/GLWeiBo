@@ -64,12 +64,17 @@ class GLStatusCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
+        // 异步绘制 - 离屏渲染
+        // 该属性对传入-drawLayer:inContext:的CGContext进行改动，
+        // 允许CGContext延缓绘制命令的执行以至于不阻塞用户交互。
+        // 适用于图层内容需要反复重绘的情况。
+        self.layer.drawsAsynchronously = true
+    
+        //手动启用栅格化
+        self.layer.shouldRasterize = true
+        
+        //https://www.it610.com/article/1241798950760075264.htm
     }
 
 }

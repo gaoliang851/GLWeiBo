@@ -181,6 +181,32 @@ class GLStatusViewModel: CustomStringConvertible {
     func updateSignleImageSize(image: UIImage) {
         // 图片的尺寸
         var size = image.size
+        logi("image size: \(size)")
+        
+        let maxWidth: CGFloat = 300
+        let minWidth: CGFloat = 50
+        
+        let maxHeight: CGFloat = 200
+        
+        //图片过宽的处理
+        if size.width > maxWidth {
+            size.width = maxWidth
+            // 等比例缩放
+            size.height = image.size.height / image.size.width * size.width
+        }
+        
+        // 过窄的图片处理
+        if size.width < minWidth {
+            size.width = minWidth
+            // 等比例缩放
+            size.height = image.size.height / image.size.width * size.width
+        }
+        
+        // 过高图片处理，图片填充模式就是 scaleToFill，高度减小，会自动裁切
+        if size.height > maxHeight {
+            size.height = maxHeight
+        }
+        
         // 底部视图的高度 = 图片的高度 + 12
         size.height += GLStatusPictureViewOutterMargin
 

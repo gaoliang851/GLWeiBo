@@ -103,7 +103,6 @@ extension GLHomeViewController {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let vm = listViewModel.statusList[indexPath.row]
-        logi("index: \(indexPath), rowHeight = \(vm.rowHeight)")
         return vm.rowHeight
     }
     

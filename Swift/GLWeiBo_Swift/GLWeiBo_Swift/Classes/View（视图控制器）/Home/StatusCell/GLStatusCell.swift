@@ -73,6 +73,8 @@ class GLStatusCell: UITableViewCell {
     
         //手动启用栅格化
         self.layer.shouldRasterize = true
+        // 一定要指定倍数
+        self.layer.rasterizationScale = UIScreen.main.scale
         
         //https://www.it610.com/article/1241798950760075264.htm
     }

@@ -60,13 +60,13 @@
                         <rect key="frame" x="34" y="47" width="14" height="14"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zkl-yi-mYF" userLabel="正文">
-                        <rect key="frame" x="11" y="70" width="32.5" height="108"/>
+                        <rect key="frame" x="11" y="70" width="32.5" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P9d-W7-gVB" customClass="GLStatusPictureView" customModule="GLWeiBo_Swift" customModuleProvider="target">
-                        <rect key="frame" x="11" y="178" width="391" height="300"/>
+                        <rect key="frame" x="11" y="88" width="391" height="300"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="300" id="geX-oL-fIM"/>
@@ -76,7 +76,7 @@
                         </connections>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tdJ-BS-iTQ" userLabel="toolbar" customClass="GLStatusToolBar" customModule="GLWeiBo_Swift" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="490" width="414" height="38"/>
+                        <rect key="frame" x="0.0" y="400" width="414" height="38"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKR-CU-FIb">
                                 <rect key="frame" x="0.0" y="0.0" width="138" height="36"/>
@@ -144,7 +144,6 @@
                     <constraint firstItem="hsI-iy-acb" firstAttribute="leading" secondItem="nYD-oF-GO5" secondAttribute="leading" id="AUq-VP-9co"/>
                     <constraint firstItem="P9d-W7-gVB" firstAttribute="top" secondItem="zkl-yi-mYF" secondAttribute="bottom" id="CND-bH-DsU"/>
                     <constraint firstItem="ZDS-wp-6ck" firstAttribute="leading" secondItem="0gs-xM-mfB" secondAttribute="trailing" constant="11" id="F4h-eF-YXt"/>
-                    <constraint firstAttribute="bottom" secondItem="tdJ-BS-iTQ" secondAttribute="bottom" id="LCI-Yk-OES"/>
                     <constraint firstItem="yWt-hv-t6A" firstAttribute="centerX" secondItem="0gs-xM-mfB" secondAttribute="trailing" constant="-4" id="LIv-6v-pTs"/>
                     <constraint firstItem="Tzz-De-S1E" firstAttribute="leading" secondItem="ZDS-wp-6ck" secondAttribute="trailing" constant="3" id="Mw9-98-ShS"/>
                     <constraint firstItem="0gs-xM-mfB" firstAttribute="leading" secondItem="nYD-oF-GO5" secondAttribute="leading" constant="11" id="P2C-Bp-Ss8"/>

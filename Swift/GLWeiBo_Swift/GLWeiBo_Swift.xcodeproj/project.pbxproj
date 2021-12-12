@@ -55,6 +55,7 @@
 		4885F8952754C5CF00E74DDA /* GLStatusPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4885F8942754C5CF00E74DDA /* GLStatusPicture.swift */; };
 		4885F8972754C94900E74DDA /* GLStatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4885F8962754C94900E74DDA /* GLStatusPictureView.swift */; };
 		48A6BBA02758B68A004DDF47 /* GLStatusRetweedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48A6BB9F2758B68A004DDF47 /* GLStatusRetweedCell.xib */; };
+		48B130FD276329250051E382 /* GLRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B130FC276329250051E382 /* GLRefreshControl.swift */; };
 		48B41639274CCAF60099E069 /* GLWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B41638274CCAF60099E069 /* GLWelcomeView.swift */; };
 		48B4163B274CCB7F0099E069 /* GLNewFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B4163A274CCB7F0099E069 /* GLNewFeatureView.swift */; };
 		48EAFAC92746220600F3A0BA /* Log4Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EAFAC82746220600F3A0BA /* Log4Swift.swift */; };
@@ -128,6 +129,7 @@
 		4885F8942754C5CF00E74DDA /* GLStatusPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLStatusPicture.swift; sourceTree = "<group>"; };
 		4885F8962754C94900E74DDA /* GLStatusPictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLStatusPictureView.swift; sourceTree = "<group>"; };
 		48A6BB9F2758B68A004DDF47 /* GLStatusRetweedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GLStatusRetweedCell.xib; sourceTree = "<group>"; };
+		48B130FC276329250051E382 /* GLRefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLRefreshControl.swift; sourceTree = "<group>"; };
 		48B41638274CCAF60099E069 /* GLWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLWelcomeView.swift; sourceTree = "<group>"; };
 		48B4163A274CCB7F0099E069 /* GLNewFeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLNewFeatureView.swift; sourceTree = "<group>"; };
 		48EAFAC82746220600F3A0BA /* Log4Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log4Swift.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 		04F27C3427001B7C006F5B01 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				48B130F72763289A0051E382 /* UI框架 */,
 				0494491927157896005748C4 /* Network */,
 				04F27C7C270049BA006F5B01 /* Extension */,
 				04F27C52270021E5006F5B01 /* Additions */,
@@ -406,6 +409,22 @@
 				4885F8962754C94900E74DDA /* GLStatusPictureView.swift */,
 			);
 			path = StatusCell;
+			sourceTree = "<group>";
+		};
+		48B130F72763289A0051E382 /* UI框架 */ = {
+			isa = PBXGroup;
+			children = (
+				48B130FE2763377E0051E382 /* GLRefreshControl */,
+			);
+			path = "UI框架";
+			sourceTree = "<group>";
+		};
+		48B130FE2763377E0051E382 /* GLRefreshControl */ = {
+			isa = PBXGroup;
+			children = (
+				48B130FC276329250051E382 /* GLRefreshControl.swift */,
+			);
+			path = GLRefreshControl;
 			sourceTree = "<group>";
 		};
 		48B41637274CCAD00099E069 /* NewFeature */ = {
@@ -564,6 +583,7 @@
 				043F023C270165E000B40465 /* GLNavigationBar.swift in Sources */,
 				04F27C73270021E5006F5B01 /* NSObject+CZRuntime.m in Sources */,
 				043F023827015B3D00B40465 /* UINavigationBar+Extension.swift in Sources */,
+				48B130FD276329250051E382 /* GLRefreshControl.swift in Sources */,
 				4885F8952754C5CF00E74DDA /* GLStatusPicture.swift in Sources */,
 				04F27C76270021E6006F5B01 /* NSAttributedString+CZAdditon.m in Sources */,
 				48B41639274CCAF60099E069 /* GLWelcomeView.swift in Sources */,

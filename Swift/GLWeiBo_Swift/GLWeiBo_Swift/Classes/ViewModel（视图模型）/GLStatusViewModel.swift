@@ -181,7 +181,7 @@ class GLStatusViewModel: CustomStringConvertible {
     func updateSignleImageSize(image: UIImage) {
         // 图片的尺寸
         var size = image.size
-        logi("image size: \(size)")
+        // logi("image size: \(size)")
         
         let maxWidth: CGFloat = 300
         let minWidth: CGFloat = 50

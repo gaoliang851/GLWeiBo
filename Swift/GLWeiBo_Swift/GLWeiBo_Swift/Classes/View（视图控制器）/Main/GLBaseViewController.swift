@@ -16,7 +16,7 @@ class GLBaseViewController: UIViewController, UIGestureRecognizerDelegate {
     /// 这里定义成可选的，原因是当用户没有登录是，tableView是不需要创建的
     var tableView: UITableView?
     /// 下拉刷新控件
-    var refreshControl: UIRefreshControl?
+    var refreshControl: GLRefreshControl?
     
     /// 访客视图属性字典
     var vistorInfo: [String: String]?
@@ -98,7 +98,7 @@ extension GLBaseViewController {
         tableView?.scrollIndicatorInsets = tableView!.contentInset
         
         // 1.> 创建下拉刷新控件,UIRefreshControl的frame是固定
-        refreshControl = UIRefreshControl()
+        refreshControl = GLRefreshControl()
         // 2.> 添加到tableview
         tableView?.addSubview(refreshControl!)
         // 3.> 添加点击事件，当UIRefreshControl开始旋转的时候，会触发 UIControl.Event.valueChanged事件

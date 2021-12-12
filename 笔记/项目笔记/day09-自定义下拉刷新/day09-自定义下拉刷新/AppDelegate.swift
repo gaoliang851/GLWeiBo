@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = .white
         
         
-        let nav = UINavigationController(rootViewController: CZTableViewController())
+        let nav = UINavigationController(rootViewController: CZViewController())
         window?.rootViewController = nav;
         
         window?.makeKeyAndVisible()

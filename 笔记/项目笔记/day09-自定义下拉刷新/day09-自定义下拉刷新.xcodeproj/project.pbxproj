@@ -14,6 +14,7 @@
 		4851FE162765D34100632607 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4851FE142765D34100632607 /* LaunchScreen.storyboard */; };
 		4851FE1E2765DA7900632607 /* CZTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4851FE1D2765DA7900632607 /* CZTableViewController.swift */; };
 		4851FE242765DD4F00632607 /* GLRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4851FE232765DD4F00632607 /* GLRefreshControl.swift */; };
+		4851FE262765EE5500632607 /* CZViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4851FE252765EE5500632607 /* CZViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		4851FE172765D34100632607 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4851FE1D2765DA7900632607 /* CZTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CZTableViewController.swift; sourceTree = "<group>"; };
 		4851FE232765DD4F00632607 /* GLRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLRefreshControl.swift; sourceTree = "<group>"; };
+		4851FE252765EE5500632607 /* CZViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CZViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -56,6 +58,7 @@
 				4851FE122765D34100632607 /* Assets.xcassets */,
 				4851FE142765D34100632607 /* LaunchScreen.storyboard */,
 				4851FE172765D34100632607 /* Info.plist */,
+				4851FE252765EE5500632607 /* CZViewController.swift */,
 			);
 			path = "day09-自定义下拉刷新";
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 				4851FE242765DD4F00632607 /* GLRefreshControl.swift in Sources */,
 				4851FE0E2765D33F00632607 /* ViewController.swift in Sources */,
 				4851FE1E2765DA7900632607 /* CZTableViewController.swift in Sources */,
+				4851FE262765EE5500632607 /* CZViewController.swift in Sources */,
 				4851FE0A2765D33F00632607 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

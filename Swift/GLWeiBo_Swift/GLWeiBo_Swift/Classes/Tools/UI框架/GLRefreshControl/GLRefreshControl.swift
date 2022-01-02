@@ -6,6 +6,19 @@
 //
 
 import UIKit
+/// 刷新状态切换的临界点
+private let GLRefreshOffset: CGFloat = 126
+
+/// 刷新状态
+///
+/// - Normal:       普通状态，什么都不做
+/// - Pulling:      超过连接点，如果放手，开始刷新
+/// - WillRefresh:  用户超过临界点,并且放手
+enum GLRefreshState {
+    case Normal
+    case Pulling
+    case WillRefresh
+}
 
 class GLRefreshControl: UIControl {
     
@@ -66,13 +79,36 @@ class GLRefreshControl: UIControl {
             return
         }
         
-        print("scrollview: \(sv.contentOffset), \(sv.contentOffset.y),--\(sv.contentInset.top)")
-        
+        /// 修改刷新控件的大小
         let height = -(sv.contentOffset.y + sv.contentInset.top)
-        print("height is \(height)")
+        
+        if height < 0 {
+            return
+        }
+        
+        // 用户是否正在滚动
+        if sv.isDragging {
+            /// 高度已经超过阈值，并且之前的状态是正常状态
+            if height > GLRefreshOffset && refreshView.refreshState == .Normal {
+                print("放手刷新...")
+                refreshView.refreshState = .Pulling
+                
+            }
+            /// 用户又把控件拖回去了
+            else if height <= GLRefreshOffset && refreshView.refreshState == .Pulling {
+                print("继续使劲...")
+                refreshView.refreshState = .Normal
+            }
+            
+        } else { //用户放手了
+            if refreshView.refreshState == .Pulling {
+                print("准备开始刷新...")
+            }
+        }
+        
         frame = CGRect(x: 0, y: 0, width: sv.bounds.width, height: -height)
-        print("sv bounds is \(sv.bounds)")
 
+        print("height=\(height)")
     }
 }
 

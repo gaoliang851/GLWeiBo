@@ -15,6 +15,8 @@
 		4851FE1E2765DA7900632607 /* CZTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4851FE1D2765DA7900632607 /* CZTableViewController.swift */; };
 		4851FE242765DD4F00632607 /* GLRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4851FE232765DD4F00632607 /* GLRefreshControl.swift */; };
 		4851FE262765EE5500632607 /* CZViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4851FE252765EE5500632607 /* CZViewController.swift */; };
+		48F044E72781927200B60B33 /* GLRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48F044E62781927200B60B33 /* GLRefreshView.xib */; };
+		48F044E92781949F00B60B33 /* GLRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F044E82781949F00B60B33 /* GLRefreshView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		4851FE1D2765DA7900632607 /* CZTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CZTableViewController.swift; sourceTree = "<group>"; };
 		4851FE232765DD4F00632607 /* GLRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLRefreshControl.swift; sourceTree = "<group>"; };
 		4851FE252765EE5500632607 /* CZViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CZViewController.swift; sourceTree = "<group>"; };
+		48F044E62781927200B60B33 /* GLRefreshView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GLRefreshView.xib; sourceTree = "<group>"; };
+		48F044E82781949F00B60B33 /* GLRefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLRefreshView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -67,6 +71,8 @@
 			isa = PBXGroup;
 			children = (
 				4851FE232765DD4F00632607 /* GLRefreshControl.swift */,
+				48F044E62781927200B60B33 /* GLRefreshView.xib */,
+				48F044E82781949F00B60B33 /* GLRefreshView.swift */,
 			);
 			name = GLRefreshControl;
 			path = "../../../../Swift/GLWeiBo_Swift/GLWeiBo_Swift/Classes/Tools/UI框架/GLRefreshControl";
@@ -132,6 +138,7 @@
 				4851FE162765D34100632607 /* LaunchScreen.storyboard in Resources */,
 				4851FE132765D34100632607 /* Assets.xcassets in Resources */,
 				4851FE112765D33F00632607 /* Main.storyboard in Resources */,
+				48F044E72781927200B60B33 /* GLRefreshView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4851FE242765DD4F00632607 /* GLRefreshControl.swift in Sources */,
+				48F044E92781949F00B60B33 /* GLRefreshView.swift in Sources */,
 				4851FE0E2765D33F00632607 /* ViewController.swift in Sources */,
 				4851FE1E2765DA7900632607 /* CZTableViewController.swift in Sources */,
 				4851FE262765EE5500632607 /* CZViewController.swift in Sources */,

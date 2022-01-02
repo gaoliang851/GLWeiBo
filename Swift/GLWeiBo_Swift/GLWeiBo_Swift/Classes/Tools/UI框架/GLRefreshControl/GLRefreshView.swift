@@ -29,6 +29,11 @@ class GLRefreshView: UIView {
                 }
             case .WillRefresh:
                 tipLabel.text = "正在刷新中..."
+                
+                // 隐藏icon
+                tipicon.isHidden = true
+                // 显示指示器
+                indicator.startAnimating()
             }
         }
     }

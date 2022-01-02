@@ -27,10 +27,6 @@ class GLRefreshControl: UIControl {
     
     private lazy var refreshView = GLRefreshView.refreshView()
     
-    func beginRefreshing() {}
-    
-    func endRefreshing() {}
-    
     init() {
         super.init(frame: CGRect())
         setupUI()
@@ -103,6 +99,8 @@ class GLRefreshControl: UIControl {
         } else { //用户放手了
             if refreshView.refreshState == .Pulling {
                 print("准备开始刷新...")
+                
+                beginRefreshing()
             }
         }
         
@@ -110,14 +108,35 @@ class GLRefreshControl: UIControl {
 
         print("height=\(height)")
     }
+    
+    func beginRefreshing() {
+        // 判断父视图
+        guard let sv = scrollView else { return }
+        
+        // 判断是否正在刷新,如果正在刷新，直接返回
+        if refreshView.refreshState == .WillRefresh {
+            return
+        }
+        
+        // 设置刷新视图状态
+        refreshView.refreshState = .WillRefresh
+        
+        // 调整表格间距
+        var inset = sv.contentInset
+        inset.top += GLRefreshOffset
+        sv.contentInset = inset
+
+    }
+    
+    func endRefreshing() {}
 }
 
 extension GLRefreshControl {
     private func setupUI() {
-        backgroundColor = .orange
+        backgroundColor = super.backgroundColor
         
         // 设置超出边界 不显示
-        clipsToBounds = true
+        // clipsToBounds = true
         
         // 添加刷新视图 - 从xib 加载出来，默认是xib中指定的宽高
         addSubview(refreshView)

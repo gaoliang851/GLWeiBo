@@ -101,6 +101,9 @@ class GLRefreshControl: UIControl {
                 print("准备开始刷新...")
                 
                 beginRefreshing()
+                
+                //发送事件
+                sendActions(for: .valueChanged)
             }
         }
         
@@ -109,6 +112,7 @@ class GLRefreshControl: UIControl {
         print("height=\(height)")
     }
     
+    /// 开始刷新
     func beginRefreshing() {
         // 判断父视图
         guard let sv = scrollView else { return }
@@ -121,6 +125,9 @@ class GLRefreshControl: UIControl {
         // 设置刷新视图状态
         refreshView.refreshState = .WillRefresh
         
+        //
+        //clipsToBounds = false
+        
         // 调整表格间距
         var inset = sv.contentInset
         inset.top += GLRefreshOffset
@@ -128,7 +135,30 @@ class GLRefreshControl: UIControl {
 
     }
     
-    func endRefreshing() {}
+    /// 结束刷新
+    func endRefreshing() {
+        guard let sv = scrollView else { return }
+        
+        // 判断状态,防止begin和 end不是成对出现
+        if refreshView.refreshState != .WillRefresh {
+            return
+        }
+        
+        // 修改状态
+        refreshView.refreshState = .Normal
+        
+        
+        // 把表格间距调整回来
+        var inset = sv.contentInset
+        inset.top -= GLRefreshOffset
+        UIView.animate(withDuration: 0.4) {
+            sv.contentInset = inset
+        }
+        
+        //clipsToBounds = true
+
+        
+    }
 }
 
 extension GLRefreshControl {
@@ -136,7 +166,7 @@ extension GLRefreshControl {
         backgroundColor = super.backgroundColor
         
         // 设置超出边界 不显示
-        // clipsToBounds = true
+         clipsToBounds = true
         
         // 添加刷新视图 - 从xib 加载出来，默认是xib中指定的宽高
         addSubview(refreshView)

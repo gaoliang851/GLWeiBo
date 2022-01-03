@@ -8,6 +8,8 @@
 import UIKit
 
 class CZTableViewController: UITableViewController {
+    
+    lazy var _refreshControl = GLRefreshControl()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,7 +17,7 @@ class CZTableViewController: UITableViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
 //        let v: GLRefreshControl = GLRefreshControl()
         
-        tableView.addSubview(GLRefreshControl())
+        tableView.addSubview(_refreshControl)
         
         tableView.contentInset = UIEdgeInsets(top: 64, left: 0, bottom: 0, right: 0)
         
@@ -23,6 +25,21 @@ class CZTableViewController: UITableViewController {
             tableView.contentInsetAdjustmentBehavior = .never
         } else {
             automaticallyAdjustsScrollViewInsets = false
+        }
+        
+        _refreshControl.addTarget(self, action: #selector(loadData), for: .valueChanged)
+        
+        loadData()
+    }
+    
+    @objc func loadData() {
+        print("开始刷新")
+        
+        _refreshControl.beginRefreshing()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            print("结束刷新")
+            self._refreshControl.endRefreshing()
         }
     }
 

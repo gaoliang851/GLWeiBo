@@ -19,6 +19,8 @@ class GLRefreshView: UIView {
             switch refreshState {
             case .Normal:
                 tipLabel.text = "继续使劲拉..."
+                tipicon.isHidden = false
+                indicator.stopAnimating()
                 UIView.animate(withDuration: 0.25) {
                     self.tipicon.transform = CGAffineTransform.identity
                 }

@@ -17,6 +17,10 @@
 		4851FE262765EE5500632607 /* CZViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4851FE252765EE5500632607 /* CZViewController.swift */; };
 		48F044E72781927200B60B33 /* GLRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48F044E62781927200B60B33 /* GLRefreshView.xib */; };
 		48F044E92781949F00B60B33 /* GLRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F044E82781949F00B60B33 /* GLRefreshView.swift */; };
+		48F044EF2782A93300B60B33 /* GLHumanRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48F044EE2782A93300B60B33 /* GLHumanRefreshView.xib */; };
+		48F044F12782AA4500B60B33 /* Log4Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F044F02782AA4500B60B33 /* Log4Swift.swift */; };
+		48F044F32782E4BC00B60B33 /* GLMeiTuanRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F044F22782E4BC00B60B33 /* GLMeiTuanRefreshView.swift */; };
+		48F044F72782E57100B60B33 /* GLMeiTuanRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48F044F62782E57100B60B33 /* GLMeiTuanRefreshView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		4851FE252765EE5500632607 /* CZViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CZViewController.swift; sourceTree = "<group>"; };
 		48F044E62781927200B60B33 /* GLRefreshView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GLRefreshView.xib; sourceTree = "<group>"; };
 		48F044E82781949F00B60B33 /* GLRefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLRefreshView.swift; sourceTree = "<group>"; };
+		48F044EE2782A93300B60B33 /* GLHumanRefreshView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GLHumanRefreshView.xib; sourceTree = "<group>"; };
+		48F044F02782AA4500B60B33 /* Log4Swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Log4Swift.swift; path = ../../Log4Swift.swift; sourceTree = "<group>"; };
+		48F044F22782E4BC00B60B33 /* GLMeiTuanRefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLMeiTuanRefreshView.swift; sourceTree = "<group>"; };
+		48F044F62782E57100B60B33 /* GLMeiTuanRefreshView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GLMeiTuanRefreshView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -73,10 +81,14 @@
 				4851FE232765DD4F00632607 /* GLRefreshControl.swift */,
 				48F044E62781927200B60B33 /* GLRefreshView.xib */,
 				48F044E82781949F00B60B33 /* GLRefreshView.swift */,
+				48F044EE2782A93300B60B33 /* GLHumanRefreshView.xib */,
+				48F044F02782AA4500B60B33 /* Log4Swift.swift */,
+				48F044F22782E4BC00B60B33 /* GLMeiTuanRefreshView.swift */,
+				48F044F62782E57100B60B33 /* GLMeiTuanRefreshView.xib */,
 			);
 			name = GLRefreshControl;
-			path = "../../../../Swift/GLWeiBo_Swift/GLWeiBo_Swift/Classes/Tools/UI框架/GLRefreshControl";
-			sourceTree = "<group>";
+			path = "../../../Swift/GLWeiBo_Swift/GLWeiBo_Swift/Classes/Tools/UI框架/GLRefreshControl";
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -137,6 +149,8 @@
 			files = (
 				4851FE162765D34100632607 /* LaunchScreen.storyboard in Resources */,
 				4851FE132765D34100632607 /* Assets.xcassets in Resources */,
+				48F044EF2782A93300B60B33 /* GLHumanRefreshView.xib in Resources */,
+				48F044F72782E57100B60B33 /* GLMeiTuanRefreshView.xib in Resources */,
 				4851FE112765D33F00632607 /* Main.storyboard in Resources */,
 				48F044E72781927200B60B33 /* GLRefreshView.xib in Resources */,
 			);
@@ -153,6 +167,8 @@
 				48F044E92781949F00B60B33 /* GLRefreshView.swift in Sources */,
 				4851FE0E2765D33F00632607 /* ViewController.swift in Sources */,
 				4851FE1E2765DA7900632607 /* CZTableViewController.swift in Sources */,
+				48F044F12782AA4500B60B33 /* Log4Swift.swift in Sources */,
+				48F044F32782E4BC00B60B33 /* GLMeiTuanRefreshView.swift in Sources */,
 				4851FE262765EE5500632607 /* CZViewController.swift in Sources */,
 				4851FE0A2765D33F00632607 /* AppDelegate.swift in Sources */,
 			);

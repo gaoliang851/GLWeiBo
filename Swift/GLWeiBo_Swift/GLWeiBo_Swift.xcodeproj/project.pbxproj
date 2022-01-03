@@ -63,6 +63,9 @@
 		48EAFACE274A2B0000F3A0BA /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EAFACD274A2B0000F3A0BA /* Date+Extension.swift */; };
 		48F044EC2781C53200B60B33 /* GLRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48F044EA2781C53100B60B33 /* GLRefreshView.xib */; };
 		48F044ED2781C53200B60B33 /* GLRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F044EB2781C53200B60B33 /* GLRefreshView.swift */; };
+		48F044FB2782F8E800B60B33 /* GLMeiTuanRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F044F82782F8E800B60B33 /* GLMeiTuanRefreshView.swift */; };
+		48F044FC2782F8E800B60B33 /* GLMeiTuanRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48F044F92782F8E800B60B33 /* GLMeiTuanRefreshView.xib */; };
+		48F044FD2782F8E800B60B33 /* GLHumanRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48F044FA2782F8E800B60B33 /* GLHumanRefreshView.xib */; };
 		A0895A5F335C51AAA90CA1CA /* Pods_GLWeiBo_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C767F1A03101793C0BACF4 /* Pods_GLWeiBo_Swift.framework */; };
 /* End PBXBuildFile section */
 
@@ -139,6 +142,9 @@
 		48EAFACD274A2B0000F3A0BA /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		48F044EA2781C53100B60B33 /* GLRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GLRefreshView.xib; sourceTree = "<group>"; };
 		48F044EB2781C53200B60B33 /* GLRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLRefreshView.swift; sourceTree = "<group>"; };
+		48F044F82782F8E800B60B33 /* GLMeiTuanRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLMeiTuanRefreshView.swift; sourceTree = "<group>"; };
+		48F044F92782F8E800B60B33 /* GLMeiTuanRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GLMeiTuanRefreshView.xib; sourceTree = "<group>"; };
+		48F044FA2782F8E800B60B33 /* GLHumanRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GLHumanRefreshView.xib; sourceTree = "<group>"; };
 		99C767F1A03101793C0BACF4 /* Pods_GLWeiBo_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GLWeiBo_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC2DEFC70E860BB1137A4690 /* Pods-GLWeiBo_Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GLWeiBo_Swift.release.xcconfig"; path = "Target Support Files/Pods-GLWeiBo_Swift/Pods-GLWeiBo_Swift.release.xcconfig"; sourceTree = "<group>"; };
 		F472C15FC148BAE310D9B455 /* Pods-GLWeiBo_Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GLWeiBo_Swift.debug.xcconfig"; path = "Target Support Files/Pods-GLWeiBo_Swift/Pods-GLWeiBo_Swift.debug.xcconfig"; sourceTree = "<group>"; };
@@ -426,6 +432,9 @@
 		48B130FE2763377E0051E382 /* GLRefreshControl */ = {
 			isa = PBXGroup;
 			children = (
+				48F044FA2782F8E800B60B33 /* GLHumanRefreshView.xib */,
+				48F044F82782F8E800B60B33 /* GLMeiTuanRefreshView.swift */,
+				48F044F92782F8E800B60B33 /* GLMeiTuanRefreshView.xib */,
 				48F044EB2781C53200B60B33 /* GLRefreshView.swift */,
 				48F044EA2781C53100B60B33 /* GLRefreshView.xib */,
 				48B130FC276329250051E382 /* GLRefreshControl.swift */,
@@ -527,6 +536,8 @@
 				049E6F5B26FF2A1A00BD774F /* LaunchScreen.storyboard in Resources */,
 				4885F8892752061800E74DDA /* GLStatusNormalCell.xib in Resources */,
 				049E6F5826FF2A1A00BD774F /* Assets.xcassets in Resources */,
+				48F044FC2782F8E800B60B33 /* GLMeiTuanRefreshView.xib in Resources */,
+				48F044FD2782F8E800B60B33 /* GLHumanRefreshView.xib in Resources */,
 				485F8945274DD77D00FE4A87 /* GLWeocomeView.xib in Resources */,
 				48F044EC2781C53200B60B33 /* GLRefreshView.xib in Resources */,
 			);
@@ -618,6 +629,7 @@
 				049E6F4F26FF2A1700BD774F /* AppDelegate.swift in Sources */,
 				04F27C6F270021E5006F5B01 /* UILabel+CZAddition.m in Sources */,
 				4885F88B27532BE800E74DDA /* GLUser.swift in Sources */,
+				48F044FB2782F8E800B60B33 /* GLMeiTuanRefreshView.swift in Sources */,
 				4885F88F275361A300E74DDA /* UIImageView+Extension.swift in Sources */,
 				04F27C71270021E5006F5B01 /* NSString+CZPath.m in Sources */,
 				48432636274B88A600C5F42E /* GLTitleButton.swift in Sources */,
@@ -773,7 +785,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = Q4RK7D73P6;
 				INFOPLIST_FILE = GLWeiBo_Swift/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -799,7 +811,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = Q4RK7D73P6;
 				INFOPLIST_FILE = GLWeiBo_Swift/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

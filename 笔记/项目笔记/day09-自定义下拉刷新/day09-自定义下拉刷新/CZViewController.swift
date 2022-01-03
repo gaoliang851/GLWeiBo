@@ -20,6 +20,11 @@ class CZViewController: UIViewController {
         button.backgroundColor = .orange
         
         button.addTarget(self, action: #selector(test), for: .touchUpInside)
+        
+        title = "测试"
+        
+        
+        
     }
     
     

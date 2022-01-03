@@ -25,7 +25,11 @@ class GLRefreshControl: UIControl {
     // MARK: - 属性
     private weak var scrollView: UIScrollView?
     
-    private lazy var refreshView = GLRefreshView.refreshView()
+//    private lazy var refreshView = GLRefreshView.refreshView()
+    
+//    private lazy var refreshView = GLRefreshView.humanRefreshView()
+    
+    private lazy var refreshView: GLRefreshView = GLMeiTuanRefreshView.instanceView()
     
     init() {
         super.init(frame: CGRect())
@@ -82,23 +86,26 @@ class GLRefreshControl: UIControl {
             return
         }
         
+        // 传递父视图的高度
+        refreshView.parentViewHeight = height
+        
         // 用户是否正在滚动
         if sv.isDragging {
             /// 高度已经超过阈值，并且之前的状态是正常状态
             if height > GLRefreshOffset && refreshView.refreshState == .Normal {
-                print("放手刷新...")
+                logi("放手刷新...")
                 refreshView.refreshState = .Pulling
                 
             }
             /// 用户又把控件拖回去了
             else if height <= GLRefreshOffset && refreshView.refreshState == .Pulling {
-                print("继续使劲...")
+                logi("继续使劲...")
                 refreshView.refreshState = .Normal
             }
             
         } else { //用户放手了
             if refreshView.refreshState == .Pulling {
-                print("准备开始刷新...")
+                logi("准备开始刷新...")
                 
                 beginRefreshing()
                 
@@ -108,8 +115,6 @@ class GLRefreshControl: UIControl {
         }
         
         frame = CGRect(x: 0, y: 0, width: sv.bounds.width, height: -height)
-
-        print("height=\(height)")
     }
     
     /// 开始刷新
@@ -125,14 +130,13 @@ class GLRefreshControl: UIControl {
         // 设置刷新视图状态
         refreshView.refreshState = .WillRefresh
         
-        //
-        //clipsToBounds = false
-        
         // 调整表格间距
         var inset = sv.contentInset
         inset.top += GLRefreshOffset
         sv.contentInset = inset
 
+        // 修改 refreshView的frame
+        refreshView.parentViewHeight = GLRefreshOffset
     }
     
     /// 结束刷新
@@ -154,10 +158,7 @@ class GLRefreshControl: UIControl {
         UIView.animate(withDuration: 0.4) {
             sv.contentInset = inset
         }
-        
-        //clipsToBounds = true
 
-        
     }
 }
 
@@ -166,7 +167,7 @@ extension GLRefreshControl {
         backgroundColor = super.backgroundColor
         
         // 设置超出边界 不显示
-         clipsToBounds = true
+        // clipsToBounds = true
         
         // 添加刷新视图 - 从xib 加载出来，默认是xib中指定的宽高
         addSubview(refreshView)

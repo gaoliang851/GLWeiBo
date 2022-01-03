@@ -9,6 +9,9 @@ import UIKit
 
 class GLRefreshView: UIView {
     
+    /// 父视图的高度
+    var parentViewHeight: CGFloat = 0
+    
     /// 刷新状态
     /// iOS系统中 UIView 封装的旋转动画
     /// 默认是顺时针旋转,并且就近原则(顺时针一样近，就顺时针旋转)
@@ -18,37 +21,42 @@ class GLRefreshView: UIView {
         didSet {
             switch refreshState {
             case .Normal:
-                tipLabel.text = "继续使劲拉..."
-                tipicon.isHidden = false
-                indicator.stopAnimating()
+                tipLabel?.text = "继续使劲拉..."
+                tipicon?.isHidden = false
+                indicator?.stopAnimating()
                 UIView.animate(withDuration: 0.25) {
-                    self.tipicon.transform = CGAffineTransform.identity
+                    self.tipicon?.transform = CGAffineTransform.identity
                 }
             case .Pulling:
-                tipLabel.text = "放手就刷新..."
+                tipLabel?.text = "放手就刷新..."
                 UIView.animate(withDuration: 0.25) {
-                    self.tipicon.transform = CGAffineTransform(rotationAngle: .pi - 0.001)
+                    self.tipicon?.transform = CGAffineTransform(rotationAngle: .pi - 0.001)
                 }
             case .WillRefresh:
-                tipLabel.text = "正在刷新中..."
+                tipLabel?.text = "正在刷新中..."
                 
                 // 隐藏icon
-                tipicon.isHidden = true
+                tipicon?.isHidden = true
                 // 显示指示器
-                indicator.startAnimating()
+                indicator?.startAnimating()
             }
         }
     }
     
     /// 指示器
-    @IBOutlet weak var indicator: UIActivityIndicatorView!
+    @IBOutlet weak var indicator: UIActivityIndicatorView?
     /// 提示图片
-    @IBOutlet weak var tipicon: UIImageView!
+    @IBOutlet weak var tipicon: UIImageView?
     /// 提示文字
-    @IBOutlet weak var tipLabel: UILabel!
+    @IBOutlet weak var tipLabel: UILabel?
     
     class func refreshView() -> GLRefreshView {
         let nib = UINib(nibName: "GLRefreshView", bundle: nil)
+        return nib.instantiate(withOwner: nil, options: nil)[0]  as! GLRefreshView
+    }
+    
+    class func humanRefreshView() -> GLRefreshView {
+        let nib = UINib(nibName: "GLHumanRefreshView", bundle: nil)
         return nib.instantiate(withOwner: nil, options: nil)[0]  as! GLRefreshView
     }
 }

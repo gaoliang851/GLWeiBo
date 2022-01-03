@@ -13,6 +13,8 @@ class CZTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
 
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
 //        let v: GLRefreshControl = GLRefreshControl()

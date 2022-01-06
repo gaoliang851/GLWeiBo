@@ -26,5 +26,24 @@ class GLComposeTypeView: UIView {
         
         vc?.view.addSubview(self)
     }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setupUI()
+    }
+    
+    @objc func clickBtn() {
+        logi("点击了按钮")
+    }
+}
 
+private extension GLComposeTypeView {
+    func setupUI() {
+        let btn = GLComposeTypeButton.composeTypeButton(imageName: "tabbar_compose_music", title: "test")
+        btn.addTarget(self, action: #selector(clickBtn), for: .touchUpInside)
+        
+        addSubview(btn)
+        
+//        addSubview()
+    }
 }

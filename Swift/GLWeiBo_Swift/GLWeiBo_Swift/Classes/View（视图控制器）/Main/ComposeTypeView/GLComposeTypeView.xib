@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="GLComposeTypeView" customModule="GLWeiBo_Swift" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p9I-5A-siF">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="7ah-28-ydE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="compose_slogan" translatesAutoresizingMaskIntoConstraints="NO" id="NTC-Tt-MW3">
+                                <rect key="frame" x="130" y="100" width="154" height="48"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bgM-dm-Tiu">
+                                <rect key="frame" x="0.0" y="692" width="414" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Wg-07-ePn">
+                                        <rect key="frame" x="193.66666666666666" y="8.6666666666666288" width="27" height="27"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="tabbar_compose_background_icon_close"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="1Wg-07-ePn" firstAttribute="centerY" secondItem="bgM-dm-Tiu" secondAttribute="centerY" id="5S6-cv-WAV"/>
+                                    <constraint firstItem="1Wg-07-ePn" firstAttribute="centerX" secondItem="bgM-dm-Tiu" secondAttribute="centerX" id="M12-VQ-afT"/>
+                                    <constraint firstAttribute="height" constant="44" id="Nnj-QY-1O5"/>
+                                </constraints>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nu9-wb-kut">
+                                <rect key="frame" x="0.0" y="359" width="414" height="224"/>
+                                <color key="backgroundColor" red="1" green="0.42352941179999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="224" id="XsU-6h-YLt"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="NTC-Tt-MW3" firstAttribute="centerX" secondItem="7ah-28-ydE" secondAttribute="centerX" id="3V7-y9-gbb"/>
+                            <constraint firstItem="NTC-Tt-MW3" firstAttribute="top" secondItem="7ah-28-ydE" secondAttribute="top" constant="100" id="9aA-E5-mdO"/>
+                            <constraint firstAttribute="trailing" secondItem="bgM-dm-Tiu" secondAttribute="trailing" id="IFV-bR-8F2"/>
+                            <constraint firstItem="bgM-dm-Tiu" firstAttribute="leading" secondItem="7ah-28-ydE" secondAttribute="leading" id="MPb-q1-624"/>
+                            <constraint firstItem="bgM-dm-Tiu" firstAttribute="top" secondItem="nu9-wb-kut" secondAttribute="bottom" constant="56" id="QbB-iv-SBh"/>
+                            <constraint firstAttribute="trailing" secondItem="nu9-wb-kut" secondAttribute="trailing" id="UT0-a9-kYh"/>
+                            <constraint firstAttribute="bottom" secondItem="bgM-dm-Tiu" secondAttribute="bottom" id="dY7-6q-3Yu"/>
+                            <constraint firstItem="nu9-wb-kut" firstAttribute="leading" secondItem="7ah-28-ydE" secondAttribute="leading" id="wFT-dd-6TV"/>
+                        </constraints>
+                    </view>
+                    <blurEffect style="light"/>
+                </visualEffectView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="p9I-5A-siF" secondAttribute="bottom" id="4r6-Kb-Zha"/>
+                <constraint firstItem="p9I-5A-siF" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="aMu-bd-mQ1"/>
+                <constraint firstItem="p9I-5A-siF" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="rLE-x4-9hd"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="p9I-5A-siF" secondAttribute="trailing" id="xcN-iX-Ifl"/>
+            </constraints>
+            <point key="canvasLocation" x="131.8840579710145" y="34.239130434782609"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="compose_slogan" width="154" height="48"/>
+        <image name="tabbar_compose_background_icon_close" width="26.666666030883789" height="26.666666030883789"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

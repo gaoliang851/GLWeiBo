@@ -34,6 +34,8 @@ class GLMianViewController: UITabBarController {
     /// @objc：允许方法以OC的消息发送机制调用方法
     @objc private func composeStatus() {
         logi("撰写微博")
+        let composeTypeView = GLComposeTypeView.composeTypeView()
+        composeTypeView.show()
     }
     
     

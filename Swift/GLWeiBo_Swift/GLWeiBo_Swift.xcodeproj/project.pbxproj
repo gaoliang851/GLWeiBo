@@ -46,6 +46,8 @@
 		48432636274B88A600C5F42E /* GLTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48432635274B88A600C5F42E /* GLTitleButton.swift */; };
 		485F8945274DD77D00FE4A87 /* GLWeocomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 485F8944274DD77D00FE4A87 /* GLWeocomeView.xib */; };
 		485F8947274E2C9800FE4A87 /* GLNewFeatureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 485F8946274E2C9800FE4A87 /* GLNewFeatureView.xib */; };
+		486699012787030D00B5211C /* GLComposeTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486699002787030D00B5211C /* GLComposeTypeButton.swift */; };
+		486699032787039E00B5211C /* GLComposeTypeButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 486699022787039E00B5211C /* GLComposeTypeButton.xib */; };
 		4885F8872752060100E74DDA /* GLStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4885F8862752060100E74DDA /* GLStatusCell.swift */; };
 		4885F8892752061800E74DDA /* GLStatusNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4885F8882752061800E74DDA /* GLStatusNormalCell.xib */; };
 		4885F88B27532BE800E74DDA /* GLUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4885F88A27532BE800E74DDA /* GLUser.swift */; };
@@ -66,6 +68,8 @@
 		48F044FB2782F8E800B60B33 /* GLMeiTuanRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F044F82782F8E800B60B33 /* GLMeiTuanRefreshView.swift */; };
 		48F044FC2782F8E800B60B33 /* GLMeiTuanRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48F044F92782F8E800B60B33 /* GLMeiTuanRefreshView.xib */; };
 		48F044FD2782F8E800B60B33 /* GLHumanRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48F044FA2782F8E800B60B33 /* GLHumanRefreshView.xib */; };
+		48F045002783209900B60B33 /* GLComposeTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F044FF2783209900B60B33 /* GLComposeTypeView.swift */; };
+		48F04502278320AE00B60B33 /* GLComposeTypeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48F04501278320AE00B60B33 /* GLComposeTypeView.xib */; };
 		A0895A5F335C51AAA90CA1CA /* Pods_GLWeiBo_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C767F1A03101793C0BACF4 /* Pods_GLWeiBo_Swift.framework */; };
 /* End PBXBuildFile section */
 
@@ -125,6 +129,8 @@
 		48432635274B88A600C5F42E /* GLTitleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLTitleButton.swift; sourceTree = "<group>"; };
 		485F8944274DD77D00FE4A87 /* GLWeocomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GLWeocomeView.xib; sourceTree = "<group>"; };
 		485F8946274E2C9800FE4A87 /* GLNewFeatureView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GLNewFeatureView.xib; sourceTree = "<group>"; };
+		486699002787030D00B5211C /* GLComposeTypeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLComposeTypeButton.swift; sourceTree = "<group>"; };
+		486699022787039E00B5211C /* GLComposeTypeButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GLComposeTypeButton.xib; sourceTree = "<group>"; };
 		4885F8862752060100E74DDA /* GLStatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLStatusCell.swift; sourceTree = "<group>"; };
 		4885F8882752061800E74DDA /* GLStatusNormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GLStatusNormalCell.xib; sourceTree = "<group>"; };
 		4885F88A27532BE800E74DDA /* GLUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLUser.swift; sourceTree = "<group>"; };
@@ -145,6 +151,8 @@
 		48F044F82782F8E800B60B33 /* GLMeiTuanRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLMeiTuanRefreshView.swift; sourceTree = "<group>"; };
 		48F044F92782F8E800B60B33 /* GLMeiTuanRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GLMeiTuanRefreshView.xib; sourceTree = "<group>"; };
 		48F044FA2782F8E800B60B33 /* GLHumanRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GLHumanRefreshView.xib; sourceTree = "<group>"; };
+		48F044FF2783209900B60B33 /* GLComposeTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLComposeTypeView.swift; sourceTree = "<group>"; };
+		48F04501278320AE00B60B33 /* GLComposeTypeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GLComposeTypeView.xib; sourceTree = "<group>"; };
 		99C767F1A03101793C0BACF4 /* Pods_GLWeiBo_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GLWeiBo_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC2DEFC70E860BB1137A4690 /* Pods-GLWeiBo_Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GLWeiBo_Swift.release.xcconfig"; path = "Target Support Files/Pods-GLWeiBo_Swift/Pods-GLWeiBo_Swift.release.xcconfig"; sourceTree = "<group>"; };
 		F472C15FC148BAE310D9B455 /* Pods-GLWeiBo_Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GLWeiBo_Swift.debug.xcconfig"; path = "Target Support Files/Pods-GLWeiBo_Swift/Pods-GLWeiBo_Swift.debug.xcconfig"; sourceTree = "<group>"; };
@@ -295,6 +303,7 @@
 		04F27C3627001CD1006F5B01 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				48F044FE2783207200B60B33 /* ComposeTypeView */,
 				48B41637274CCAD00099E069 /* NewFeature */,
 				04DD04E2272D37F7005809D7 /* OAuth */,
 				0480C9F22701C1BD00AF92F1 /* 主控制器 */,
@@ -461,6 +470,17 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		48F044FE2783207200B60B33 /* ComposeTypeView */ = {
+			isa = PBXGroup;
+			children = (
+				48F044FF2783209900B60B33 /* GLComposeTypeView.swift */,
+				48F04501278320AE00B60B33 /* GLComposeTypeView.xib */,
+				486699002787030D00B5211C /* GLComposeTypeButton.swift */,
+				486699022787039E00B5211C /* GLComposeTypeButton.xib */,
+			);
+			path = ComposeTypeView;
+			sourceTree = "<group>";
+		};
 		8DAE05B2A570449C0AB5D379 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -539,7 +559,9 @@
 				48F044FC2782F8E800B60B33 /* GLMeiTuanRefreshView.xib in Resources */,
 				48F044FD2782F8E800B60B33 /* GLHumanRefreshView.xib in Resources */,
 				485F8945274DD77D00FE4A87 /* GLWeocomeView.xib in Resources */,
+				48F04502278320AE00B60B33 /* GLComposeTypeView.xib in Resources */,
 				48F044EC2781C53200B60B33 /* GLRefreshView.xib in Resources */,
+				486699032787039E00B5211C /* GLComposeTypeButton.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,6 +618,7 @@
 				04F27C4327001DCC006F5B01 /* GLBaseViewController.swift in Sources */,
 				04F27C7E270049D5006F5B01 /* Bundle+Extension.swift in Sources */,
 				04F27C70270021E5006F5B01 /* NSString+CZBase64.m in Sources */,
+				486699012787030D00B5211C /* GLComposeTypeButton.swift in Sources */,
 				4885F8872752060100E74DDA /* GLStatusCell.swift in Sources */,
 				04F27C3C27001DA1006F5B01 /* GLMianViewController.swift in Sources */,
 				043F023C270165E000B40465 /* GLNavigationBar.swift in Sources */,
@@ -624,6 +647,7 @@
 				04F27C75270021E6006F5B01 /* NSString+CZHash.m in Sources */,
 				04DD04E4272D3835005809D7 /* GLOAuthViewController.swift in Sources */,
 				04F27C74270021E6006F5B01 /* UIViewController+CZAddition.m in Sources */,
+				48F045002783209900B60B33 /* GLComposeTypeView.swift in Sources */,
 				04F27C4727001E12006F5B01 /* GLHomeViewController.swift in Sources */,
 				0494491B2715790B005748C4 /* GLNetworkManager.swift in Sources */,
 				049E6F4F26FF2A1700BD774F /* AppDelegate.swift in Sources */,

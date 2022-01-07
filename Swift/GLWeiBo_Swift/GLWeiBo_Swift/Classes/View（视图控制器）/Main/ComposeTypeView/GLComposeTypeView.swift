@@ -15,7 +15,7 @@ class GLComposeTypeView: UIView {
                             ["imageName":"tabbar_compose_weibo","title": "长微博"],
                             ["imageName":"tabbar_compose_lbs","title": "签到"],
                             ["imageName":"tabbar_compose_review","title": "点评"],
-                            ["imageName":"tabbar_compose_more","title": "更多"],
+                            ["imageName":"tabbar_compose_more","title": "更多","actionName":"clickMore"],
                             ["imageName":"tabbar_compose_friend","title": "好友圈"],
                             ["imageName":"tabbar_compose_wbcamera","title": "微博相机"],
                             ["imageName":"tabbar_compose_music","title": "音乐"],
@@ -56,6 +56,10 @@ class GLComposeTypeView: UIView {
         logi("点击了按钮")
     }
     
+    @objc func clickMore() {
+        logi("more")
+    }
+    
     @IBAction func close(_ sender: UIButton) {
         removeFromSuperview()
     }
@@ -64,22 +68,27 @@ class GLComposeTypeView: UIView {
 
 private extension GLComposeTypeView {
     func setupUI() {
-        //let btn = GLComposeTypeButton.composeTypeButton(imageName: "tabbar_compose_music", title: "test")
-        //btn.addTarget(self, action: #selector(clickBtn), for: .touchUpInside)
-        
-        //addSubview(btn)
-        
-//        addSubview()
         
         //强制更新约束
         layoutIfNeeded()
         
-        let v = UIView(frame: scrollView.bounds)
+        let rect = scrollView.bounds
+        let width = scrollView.bounds.width
+        /// 循环创建2个viw
+        for i in 0..<2 {
+            let v = UIView(frame: rect.offsetBy(dx: CGFloat(i) * width, dy: 0))
+            
+            addButtons(v: v, idx: i * 6)
+            
+            scrollView.addSubview(v)
+        }
         
-        addButtons(v: v, idx: 0)
         
-        scrollView.addSubview(v)
+        //如果通过XIB在ScrollView内部添加了一个View用于撑起ScrollView的contentSize
+        // 但是ScrollView接受不到手势事件
+        scrollView.contentSize = CGSize(width: width * 2, height: scrollView.bounds.height)
         
+//        print("contentSize: \(scrollView.contentSize)")
     }
     
     
@@ -104,7 +113,11 @@ private extension GLComposeTypeView {
             // 添加到视图
             v.addSubview(btn)
             // 添加监听方法
-            btn.addTarget(self, action: #selector(clickBtn), for: .touchUpInside)
+            if let actionName = dict["actionName"] {
+                btn.addTarget(self, action: Selector(actionName), for: .touchUpInside)
+            } else {
+                btn.addTarget(self, action: #selector(clickBtn), for: .touchUpInside)
+            }
         }
         /// 定义常量
         // 按钮尺寸

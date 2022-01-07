@@ -46,6 +46,7 @@
 		48432636274B88A600C5F42E /* GLTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48432635274B88A600C5F42E /* GLTitleButton.swift */; };
 		485F8945274DD77D00FE4A87 /* GLWeocomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 485F8944274DD77D00FE4A87 /* GLWeocomeView.xib */; };
 		485F8947274E2C9800FE4A87 /* GLNewFeatureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 485F8946274E2C9800FE4A87 /* GLNewFeatureView.xib */; };
+		48645C49278867FA00A36E28 /* GLComposeTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48645C48278867FA00A36E28 /* GLComposeTestView.swift */; };
 		486699012787030D00B5211C /* GLComposeTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486699002787030D00B5211C /* GLComposeTypeButton.swift */; };
 		486699032787039E00B5211C /* GLComposeTypeButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 486699022787039E00B5211C /* GLComposeTypeButton.xib */; };
 		4885F8872752060100E74DDA /* GLStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4885F8862752060100E74DDA /* GLStatusCell.swift */; };
@@ -129,6 +130,7 @@
 		48432635274B88A600C5F42E /* GLTitleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLTitleButton.swift; sourceTree = "<group>"; };
 		485F8944274DD77D00FE4A87 /* GLWeocomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GLWeocomeView.xib; sourceTree = "<group>"; };
 		485F8946274E2C9800FE4A87 /* GLNewFeatureView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GLNewFeatureView.xib; sourceTree = "<group>"; };
+		48645C48278867FA00A36E28 /* GLComposeTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLComposeTestView.swift; sourceTree = "<group>"; };
 		486699002787030D00B5211C /* GLComposeTypeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLComposeTypeButton.swift; sourceTree = "<group>"; };
 		486699022787039E00B5211C /* GLComposeTypeButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GLComposeTypeButton.xib; sourceTree = "<group>"; };
 		4885F8862752060100E74DDA /* GLStatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLStatusCell.swift; sourceTree = "<group>"; };
@@ -477,6 +479,7 @@
 				48F04501278320AE00B60B33 /* GLComposeTypeView.xib */,
 				486699002787030D00B5211C /* GLComposeTypeButton.swift */,
 				486699022787039E00B5211C /* GLComposeTypeButton.xib */,
+				48645C48278867FA00A36E28 /* GLComposeTestView.swift */,
 			);
 			path = ComposeTypeView;
 			sourceTree = "<group>";
@@ -636,6 +639,7 @@
 				043F02352700817800B40465 /* UIBarButtonItem+Extension.swift in Sources */,
 				04F27C5027001E3D006F5B01 /* GLProfileViewController.swift in Sources */,
 				48B4163B274CCB7F0099E069 /* GLNewFeatureView.swift in Sources */,
+				48645C49278867FA00A36E28 /* GLComposeTestView.swift in Sources */,
 				043F024027016A9000B40465 /* UIImage+Extension.swift in Sources */,
 				04F27C4027001DB8006F5B01 /* GLNavigationController.swift in Sources */,
 				48EAFACE274A2B0000F3A0BA /* Date+Extension.swift in Sources */,

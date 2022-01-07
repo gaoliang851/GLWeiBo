@@ -43,29 +43,17 @@
                                     <constraint firstAttribute="height" constant="44" id="Nnj-QY-1O5"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nu9-wb-kut">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nu9-wb-kut">
                                 <rect key="frame" x="0.0" y="412" width="414" height="224"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="06P-wD-77k" userLabel="contentSize图">
-                                        <rect key="frame" x="0.0" y="0.0" width="828" height="224"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </view>
-                                </subviews>
                                 <color key="backgroundColor" red="1" green="0.42352941179999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="06P-wD-77k" secondAttribute="trailing" constant="-414" id="H6x-Wc-1mA"/>
-                                    <constraint firstAttribute="bottom" secondItem="06P-wD-77k" secondAttribute="bottom" id="QjG-aF-6bH"/>
                                     <constraint firstAttribute="height" constant="224" id="XsU-6h-YLt"/>
-                                    <constraint firstItem="06P-wD-77k" firstAttribute="centerY" secondItem="nu9-wb-kut" secondAttribute="centerY" id="cLA-sF-WkX"/>
-                                    <constraint firstItem="06P-wD-77k" firstAttribute="top" secondItem="nu9-wb-kut" secondAttribute="top" id="hPx-Y2-ess"/>
-                                    <constraint firstItem="06P-wD-77k" firstAttribute="leading" secondItem="nu9-wb-kut" secondAttribute="leading" id="k6D-Ox-Jti"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="NTC-Tt-MW3" firstAttribute="centerX" secondItem="7ah-28-ydE" secondAttribute="centerX" id="3V7-y9-gbb"/>
                             <constraint firstItem="NTC-Tt-MW3" firstAttribute="top" secondItem="7ah-28-ydE" secondAttribute="top" constant="100" id="9aA-E5-mdO"/>
-                            <constraint firstItem="06P-wD-77k" firstAttribute="width" secondItem="7ah-28-ydE" secondAttribute="width" multiplier="2" id="Cwc-Dm-iIO"/>
                             <constraint firstAttribute="trailing" secondItem="bgM-dm-Tiu" secondAttribute="trailing" id="IFV-bR-8F2"/>
                             <constraint firstItem="bgM-dm-Tiu" firstAttribute="leading" secondItem="7ah-28-ydE" secondAttribute="leading" id="MPb-q1-624"/>
                             <constraint firstItem="bgM-dm-Tiu" firstAttribute="top" secondItem="nu9-wb-kut" secondAttribute="bottom" constant="56" id="QbB-iv-SBh"/>
@@ -81,7 +69,6 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="p9I-5A-siF" secondAttribute="bottom" id="4r6-Kb-Zha"/>
-                <constraint firstItem="06P-wD-77k" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="2" id="CgM-4e-sai"/>
                 <constraint firstItem="p9I-5A-siF" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="aMu-bd-mQ1"/>
                 <constraint firstItem="p9I-5A-siF" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="rLE-x4-9hd"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="p9I-5A-siF" secondAttribute="trailing" id="xcN-iX-Ifl"/>

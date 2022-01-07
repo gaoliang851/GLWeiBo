@@ -22,7 +22,6 @@ class GLComposeTypeButton: UIControl {
         let btn = nib.instantiate(withOwner: nil, options: nil)[0] as! GLComposeTypeButton
         
         btn.imageView.image = UIImage(named: imageName)
-        
         btn.titleLabel.text = title
         
         return btn

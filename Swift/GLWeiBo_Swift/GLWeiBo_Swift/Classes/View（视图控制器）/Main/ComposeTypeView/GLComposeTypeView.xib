@@ -27,7 +27,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bgM-dm-Tiu" userLabel="底部tabbar">
                                 <rect key="frame" x="0.0" y="692" width="414" height="44"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Wg-07-ePn">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Wg-07-ePn" userLabel="关闭按钮">
                                         <rect key="frame" x="193.66666666666666" y="8.6666666666666288" width="27" height="27"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="tabbar_compose_background_icon_close"/>
@@ -35,10 +35,17 @@
                                             <action selector="close:" destination="iN0-l3-epB" eventType="touchUpInside" id="A0O-Nh-isO"/>
                                         </connections>
                                     </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HAX-z8-HtU" userLabel="返回上一页按钮">
+                                        <rect key="frame" x="193.66666666666666" y="8.6666666666666288" width="27" height="27"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="tabbar_compose_background_icon_return"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="HAX-z8-HtU" firstAttribute="centerY" secondItem="bgM-dm-Tiu" secondAttribute="centerY" id="0wo-wo-9kA"/>
                                     <constraint firstItem="1Wg-07-ePn" firstAttribute="centerY" secondItem="bgM-dm-Tiu" secondAttribute="centerY" id="5S6-cv-WAV"/>
+                                    <constraint firstItem="HAX-z8-HtU" firstAttribute="centerX" secondItem="bgM-dm-Tiu" secondAttribute="centerX" id="BBX-yA-asT"/>
                                     <constraint firstItem="1Wg-07-ePn" firstAttribute="centerX" secondItem="bgM-dm-Tiu" secondAttribute="centerX" id="M12-VQ-afT"/>
                                     <constraint firstAttribute="height" constant="44" id="Nnj-QY-1O5"/>
                                 </constraints>
@@ -74,6 +81,9 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="p9I-5A-siF" secondAttribute="trailing" id="xcN-iX-Ifl"/>
             </constraints>
             <connections>
+                <outlet property="closeButtonCenterXCons" destination="M12-VQ-afT" id="BG1-h9-9wf"/>
+                <outlet property="returnButton" destination="HAX-z8-HtU" id="L1S-0D-7O0"/>
+                <outlet property="returnButtonCenterXCons" destination="BBX-yA-asT" id="HgL-hi-XUK"/>
                 <outlet property="scrollView" destination="nu9-wb-kut" id="d2i-n3-zrb"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="34.239130434782609"/>
@@ -82,6 +92,7 @@
     <resources>
         <image name="compose_slogan" width="154" height="48"/>
         <image name="tabbar_compose_background_icon_close" width="26.666666030883789" height="26.666666030883789"/>
+        <image name="tabbar_compose_background_icon_return" width="26.666666030883789" height="26.666666030883789"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

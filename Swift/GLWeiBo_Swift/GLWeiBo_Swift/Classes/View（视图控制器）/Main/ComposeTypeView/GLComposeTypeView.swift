@@ -9,7 +9,11 @@ import UIKit
 
 class GLComposeTypeView: UIView {
     @IBOutlet weak var scrollView: UIScrollView!
-    
+    /// 关闭按钮CenterX约束
+    @IBOutlet weak var closeButtonCenterXCons: NSLayoutConstraint!
+    /// 返回上一页按钮CenterX约束
+    @IBOutlet weak var returnButtonCenterXCons: NSLayoutConstraint!
+    @IBOutlet weak var returnButton: UIButton!
     lazy var buttonsInfo = [["imageName":"tabbar_compose_idea","title": "文字"],
                             ["imageName":"tabbar_compose_photo","title": "照片/视频"],
                             ["imageName":"tabbar_compose_weibo","title": "长微博"],
@@ -57,7 +61,20 @@ class GLComposeTypeView: UIView {
     }
     
     @objc func clickMore() {
-        logi("more")
+        // 1. scrollview翻页
+        let offset = CGPoint(x: scrollView.bounds.width, y: 0)
+        scrollView.setContentOffset(offset, animated: true)
+        
+        // 2.底部按钮修改
+        returnButton.isHidden = false
+        
+        let margin = scrollView.bounds.width / 6
+        closeButtonCenterXCons.constant += margin
+        returnButtonCenterXCons.constant -= margin
+        
+        UIView.animate(withDuration: 0.25) {
+            self.layoutIfNeeded()
+        }
     }
     
     @IBAction func close(_ sender: UIButton) {

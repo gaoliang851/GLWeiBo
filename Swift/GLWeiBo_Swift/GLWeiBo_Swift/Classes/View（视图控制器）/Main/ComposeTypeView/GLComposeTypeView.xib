@@ -86,6 +86,9 @@
                 <constraint firstItem="p9I-5A-siF" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="rLE-x4-9hd"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="p9I-5A-siF" secondAttribute="trailing" id="xcN-iX-Ifl"/>
             </constraints>
+            <connections>
+                <outlet property="scrollView" destination="nu9-wb-kut" id="d2i-n3-zrb"/>
+            </connections>
             <point key="canvasLocation" x="131.8840579710145" y="34.239130434782609"/>
         </view>
     </objects>

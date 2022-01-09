@@ -47,7 +47,7 @@ class GLComposeTypeView: UIView {
         
         vc?.view.addSubview(self)
         
-        showCurrent()
+        showCurrentView()
     }
     
     /*
@@ -100,7 +100,8 @@ class GLComposeTypeView: UIView {
     
     
     @IBAction func close(_ sender: UIButton) {
-        removeFromSuperview()
+        //removeFromSuperview()
+        hideButtons()
     }
     
 }
@@ -179,13 +180,18 @@ private extension GLComposeTypeView {
     }
 }
 
+// MARK: - 展示和隐藏动画
 private extension GLComposeTypeView {
     
     /// 渐隐渐现的弹出
-    func showCurrent() {
+    func showCurrentView() {
+        
+        showButtons()
+        
         // 创建一个基本类型的POP动画
         let anim = POPBasicAnimation(propertyNamed: kPOPViewAlpha)
         
+        anim?.delegate = self
         /// 变化的值范围
         anim?.fromValue = 0
         anim?.toValue = 1
@@ -193,5 +199,49 @@ private extension GLComposeTypeView {
         anim?.duration = 0.5
         /// 添加到self上
         pop_add(anim, forKey: nil)
+    }
+    
+    
+    /// 显示按钮动画
+    /// FIXME: 这里有问题，初始化显示不怎么正确
+    func showButtons() {
+        /// 获取左半边按钮view
+        let v = scrollView.subviews[0]
+        
+        /// 遍历buttons
+        for (i,btn) in v.subviews.enumerated() {
+            /// 创建动画
+            let anim = POPSpringAnimation(propertyNamed: kPOPLayerPositionY)
+            
+            /// 设置动画属性
+            anim?.fromValue = btn.center.y + 400
+            anim?.toValue = btn.center.y
+            
+            // 弹力系数，取值返回 0~20 数值越大，弹性越大，默认值为4
+            anim?.springBounciness = 8
+            // 弹力速度，取值返回 0~20，数值越大，速度越快，默认值为12
+            anim?.springSpeed = 8
+            
+            // 设置动画启动时间
+            anim?.beginTime = CACurrentMediaTime() + CFTimeInterval(i) * 0.025
+        }
+    }
+    
+    func hideButtons() {
+        // 判断当前是第几页
+        let page = Int(scrollView.contentOffset.x / scrollView.contentSize.width)
+        let v = scrollView.subviews[page]
+        
+        for (i,btn) in v.subviews.enumerated().reversed() {
+            // 添加消除动画
+            let anim = POPSpringAnimation(propertyNamed: kPOPLayerPositionY)
+            
+            anim?.fromValue = btn.center.y
+            anim?.toValue = btn.center.y + 400
+            
+            anim?.beginTime = CACurrentMediaTime() + CFTimeInterval(v.subviews.count - i) * 0.025
+            btn.pop_add(anim, forKey: nil)
+            
+        }
     }
 }

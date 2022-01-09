@@ -15,7 +15,7 @@ class GLComposeTypeView: UIView {
     /// 返回上一页按钮CenterX约束
     @IBOutlet weak var returnButtonCenterXCons: NSLayoutConstraint!
     @IBOutlet weak var returnButton: UIButton!
-    lazy var buttonsInfo = [["imageName":"tabbar_compose_idea","title": "文字"],
+    lazy var buttonsInfo = [["imageName":"tabbar_compose_idea","title": "文字","clsName":"GLComposeTextViewController"],
                             ["imageName":"tabbar_compose_photo","title": "照片/视频"],
                             ["imageName":"tabbar_compose_weibo","title": "长微博"],
                             ["imageName":"tabbar_compose_lbs","title": "签到"],
@@ -59,8 +59,9 @@ class GLComposeTypeView: UIView {
     }
      */
     
-    @objc func clickBtn() {
-        logi("点击了按钮")
+    @objc func clickBtn(button: GLComposeTypeButton) {
+        /// 
+        logi("点击了按钮,clsName = \(button.clsName)")
     }
     
     @objc func clickMore() {
@@ -102,6 +103,7 @@ class GLComposeTypeView: UIView {
     @IBAction func close(_ sender: UIButton) {
         //removeFromSuperview()
         hideButtons()
+        hideView()
     }
     
 }
@@ -150,6 +152,7 @@ private extension GLComposeTypeView {
             }
             // 创建按钮
             let btn = GLComposeTypeButton.composeTypeButton(imageName: imageName, title: title)
+            btn.clsName = dict["clsName"]
             // 添加到视图
             v.addSubview(btn)
             // 添加监听方法
@@ -186,12 +189,9 @@ private extension GLComposeTypeView {
     /// 渐隐渐现的弹出
     func showCurrentView() {
         
-        showButtons()
-        
         // 创建一个基本类型的POP动画
         let anim = POPBasicAnimation(propertyNamed: kPOPViewAlpha)
         
-        anim?.delegate = self
         /// 变化的值范围
         anim?.fromValue = 0
         anim?.toValue = 1
@@ -199,6 +199,8 @@ private extension GLComposeTypeView {
         anim?.duration = 0.5
         /// 添加到self上
         pop_add(anim, forKey: nil)
+        
+        showButtons()
     }
     
     
@@ -224,12 +226,14 @@ private extension GLComposeTypeView {
             
             // 设置动画启动时间
             anim?.beginTime = CACurrentMediaTime() + CFTimeInterval(i) * 0.025
+            
+            btn.layer.pop_add(anim, forKey: nil)
         }
     }
     
     func hideButtons() {
         // 判断当前是第几页
-        let page = Int(scrollView.contentOffset.x / scrollView.contentSize.width)
+        let page = Int(scrollView.contentOffset.x / scrollView.bounds.width)
         let v = scrollView.subviews[page]
         
         for (i,btn) in v.subviews.enumerated().reversed() {
@@ -241,7 +245,20 @@ private extension GLComposeTypeView {
             
             anim?.beginTime = CACurrentMediaTime() + CFTimeInterval(v.subviews.count - i) * 0.025
             btn.pop_add(anim, forKey: nil)
-            
         }
+    }
+    
+    func hideView() {
+        let hideAnim = POPBasicAnimation(propertyNamed: kPOPViewAlpha)
+        hideAnim?.fromValue = 1
+        hideAnim?.toValue = 0
+        hideAnim?.duration = 0.5
+        
+        hideAnim?.completionBlock = { _,_ in
+            self.removeFromSuperview()
+        }
+        
+        pop_add(hideAnim, forKey: nil)
+        
     }
 }

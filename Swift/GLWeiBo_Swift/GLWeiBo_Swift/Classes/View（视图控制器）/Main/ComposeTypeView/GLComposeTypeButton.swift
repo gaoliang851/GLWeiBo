@@ -13,6 +13,8 @@ class GLComposeTypeButton: UIControl {
     
     @IBOutlet weak var titleLabel: UILabel!
     
+    var clsName: String?
+    
     /// 实例化一个类型按钮
     /// - Parameters:
     ///   - imageName: 图片名称

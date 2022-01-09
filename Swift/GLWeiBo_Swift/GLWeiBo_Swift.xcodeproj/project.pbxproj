@@ -153,7 +153,7 @@
 		48F044F82782F8E800B60B33 /* GLMeiTuanRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLMeiTuanRefreshView.swift; sourceTree = "<group>"; };
 		48F044F92782F8E800B60B33 /* GLMeiTuanRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GLMeiTuanRefreshView.xib; sourceTree = "<group>"; };
 		48F044FA2782F8E800B60B33 /* GLHumanRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GLHumanRefreshView.xib; sourceTree = "<group>"; };
-		48F044FF2783209900B60B33 /* GLComposeTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLComposeTypeView.swift; sourceTree = "<group>"; };
+		48F044FF2783209900B60B33 /* GLComposeTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLComposeTypeView.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		48F04501278320AE00B60B33 /* GLComposeTypeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GLComposeTypeView.xib; sourceTree = "<group>"; };
 		99C767F1A03101793C0BACF4 /* Pods_GLWeiBo_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GLWeiBo_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC2DEFC70E860BB1137A4690 /* Pods-GLWeiBo_Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GLWeiBo_Swift.release.xcconfig"; path = "Target Support Files/Pods-GLWeiBo_Swift/Pods-GLWeiBo_Swift.release.xcconfig"; sourceTree = "<group>"; };

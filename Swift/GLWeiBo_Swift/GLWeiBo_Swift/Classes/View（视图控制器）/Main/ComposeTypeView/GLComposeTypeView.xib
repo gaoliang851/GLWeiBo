@@ -39,6 +39,9 @@
                                         <rect key="frame" x="193.66666666666666" y="8.6666666666666288" width="27" height="27"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="tabbar_compose_background_icon_return"/>
+                                        <connections>
+                                            <action selector="clickReturn" destination="iN0-l3-epB" eventType="touchUpInside" id="AOW-Pb-e9r"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>

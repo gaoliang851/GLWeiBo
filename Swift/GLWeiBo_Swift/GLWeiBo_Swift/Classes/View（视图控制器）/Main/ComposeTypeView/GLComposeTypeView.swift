@@ -77,6 +77,25 @@ class GLComposeTypeView: UIView {
         }
     }
     
+    @IBAction func clickReturn() {
+        // 1. scrollview返回第一页
+        scrollView.setContentOffset(CGPoint(), animated: true)
+        
+        // 2. 合并两个按钮
+        closeButtonCenterXCons.constant = 0
+        returnButtonCenterXCons.constant = 0
+        
+        UIView.animate(withDuration: 0.25) {
+            self.layoutIfNeeded()
+            // 按钮渐隐效果
+            self.returnButton.alpha = 0
+        } completion: { _ in
+            self.returnButton.isHidden = true
+            self.returnButton.alpha = 1
+        }
+    }
+    
+    
     @IBAction func close(_ sender: UIButton) {
         removeFromSuperview()
     }

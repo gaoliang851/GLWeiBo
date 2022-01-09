@@ -9,13 +9,16 @@ import UIKit
 import pop
 
 class GLComposeTypeView: UIView {
+    
+    private var completionBlock: ((String?) -> ())?
+    
     @IBOutlet weak var scrollView: UIScrollView!
     /// 关闭按钮CenterX约束
     @IBOutlet weak var closeButtonCenterXCons: NSLayoutConstraint!
     /// 返回上一页按钮CenterX约束
     @IBOutlet weak var returnButtonCenterXCons: NSLayoutConstraint!
     @IBOutlet weak var returnButton: UIButton!
-    lazy var buttonsInfo = [["imageName":"tabbar_compose_idea","title": "文字","clsName":"GLComposeTextViewController"],
+    lazy var buttonsInfo = [["imageName":"tabbar_compose_idea","title": "文字","clsName":"GLComposeViewController"],
                             ["imageName":"tabbar_compose_photo","title": "照片/视频"],
                             ["imageName":"tabbar_compose_weibo","title": "长微博"],
                             ["imageName":"tabbar_compose_lbs","title": "签到"],
@@ -40,7 +43,13 @@ class GLComposeTypeView: UIView {
         return v
     }
     
-    func show() {
+    
+    /// 展示页面
+    /// - Parameter completion: 完成回调
+    func show(completion:  @escaping (_ clsName: String?)->()) {
+        
+        completionBlock = completion
+        
         let vc =  UIApplication.shared.windows.filter { window in
             window.isKeyWindow
          }.first?.rootViewController
@@ -60,8 +69,40 @@ class GLComposeTypeView: UIView {
      */
     
     @objc func clickBtn(button: GLComposeTypeButton) {
-        /// 
-        logi("点击了按钮,clsName = \(button.clsName)")
+        ///
+        // logi("点击了按钮,clsName = \(button.clsName)")
+        
+        //添加 放大 / 缩小动画
+        guard let superView = button.superview else {
+            return
+        }
+        
+        let duration = 0.5
+        
+        for (i , btn) in superView.subviews.enumerated() {
+            // 1. 创建sacle动画
+            let sacleAnim: POPBasicAnimation = POPBasicAnimation(propertyNamed: kPOPViewScaleXY)
+            let scale = (btn == button) ? 2 : 0.2
+            sacleAnim.toValue = NSValue(cgPoint: CGPoint(x: scale, y: scale))
+            sacleAnim.duration = duration
+            btn.pop_add(sacleAnim, forKey: nil)
+            
+            // 2. 创建alpha动画
+            let alphaAnim: POPBasicAnimation = POPBasicAnimation(propertyNamed: kPOPViewAlpha)
+            
+            alphaAnim.toValue = 0.2
+            alphaAnim.duration = duration
+            btn.pop_add(alphaAnim, forKey: nil)
+            
+            // 3. 添加动画完成监听
+            if i == 0 {
+                // 完成回调
+                alphaAnim.completionBlock = { _,_ in
+                    // 完成回调
+                    self.completionBlock?(button.clsName)
+                }
+            }
+        }
     }
     
     @objc func clickMore() {

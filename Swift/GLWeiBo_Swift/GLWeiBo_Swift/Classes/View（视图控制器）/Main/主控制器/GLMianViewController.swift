@@ -35,7 +35,22 @@ class GLMianViewController: UITabBarController {
     @objc private func composeStatus() {
         logi("撰写微博")
         let composeTypeView = GLComposeTypeView.composeTypeView()
-        composeTypeView.show()
+        composeTypeView.show { [weak composeTypeView] (clsName) in
+            
+            guard let clsName = clsName ,
+                  let cls = NSClassFromString(Bundle.main.namespace + "." + clsName) as? UIViewController.Type else {
+                composeTypeView?.removeFromSuperview()
+                return
+            }
+            
+            let vc = cls.init()
+            let nav = UINavigationController(rootViewController: vc)
+            nav.modalPresentationStyle = .fullScreen
+            
+            self.present(nav, animated: true) {
+                composeTypeView?.removeFromSuperview()
+            }
+        }
     }
     
     

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import pop
 
 class GLComposeTypeView: UIView {
     @IBOutlet weak var scrollView: UIScrollView!
@@ -45,6 +46,8 @@ class GLComposeTypeView: UIView {
          }.first?.rootViewController
         
         vc?.view.addSubview(self)
+        
+        showCurrent()
     }
     
     /*
@@ -173,5 +176,22 @@ private extension GLComposeTypeView {
             let rect = CGRect(x: X, y: Y, width: btnSize.width, height: btnSize.height)
             btn.frame = rect
         }
+    }
+}
+
+private extension GLComposeTypeView {
+    
+    /// 渐隐渐现的弹出
+    func showCurrent() {
+        // 创建一个基本类型的POP动画
+        let anim = POPBasicAnimation(propertyNamed: kPOPViewAlpha)
+        
+        /// 变化的值范围
+        anim?.fromValue = 0
+        anim?.toValue = 1
+        /// 耗时
+        anim?.duration = 0.5
+        /// 添加到self上
+        pop_add(anim, forKey: nil)
     }
 }

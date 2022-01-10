@@ -38,7 +38,7 @@ class GLStatusCell: UITableViewCell {
             retweedStatusLabel?.text = viewModel?.retweetedStatusText
             
             // 设置来源
-            sourceLabel.text = viewModel?.status.source
+            sourceLabel.text = viewModel?.status.source?.cz_href()?.text
             // 设置创建时间
             // timeLabel.text = viewModel?.status.created_at
         }

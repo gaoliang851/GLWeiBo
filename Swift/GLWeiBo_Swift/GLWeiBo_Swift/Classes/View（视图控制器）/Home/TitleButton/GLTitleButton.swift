@@ -39,19 +39,25 @@ class GLTitleButton: UIButton {
     // 重新布局子视图
     override func layoutSubviews() {
         super.layoutSubviews()
+        logi(#function)
         
         guard let titleLabel = titleLabel,let imageView = imageView else {
             return
         }
         /// 可能会触发多次，为了避免重复设置需要判断
         /// titleLabel在 imageView右边才需要设置
-        if titleLabel.frame.minX > imageView.frame.minX {
-            let halfPadding = 0.5 * padding
-            // title.x 向左移imageView.width + 半个padding
-            titleLabel.frame = titleLabel.frame.offsetBy(dx: -imageView.bounds.width - halfPadding, dy: 0)
-            // 将 imageView的 x 右移 titleLabel.width + imageView.imgae.size.width
-            imageView.frame = imageView.frame.offsetBy(dx: titleLabel.bounds.width + halfPadding, dy: 0)
-        }
+//        if titleLabel.frame.minX > imageView.frame.minX {
+//            let halfPadding = 0.5 * padding
+//            // title.x 向左移imageView.width + 半个padding
+//            titleLabel.frame = titleLabel.frame.offsetBy(dx: -imageView.bounds.width - halfPadding, dy: 0)
+//            // 将 imageView的 x 右移 titleLabel.width + imageView.imgae.size.width
+//            imageView.frame = imageView.frame.offsetBy(dx: titleLabel.bounds.width + halfPadding, dy: 0)
+//        }
+        
+        /// OC中 结构体是不允许直接修改的
+        ///  但Swift中允许修改
+        titleLabel.frame.origin.x = 0
+        imageView.frame.origin.x = titleLabel.bounds.width + 0.5 * padding
     }
     
     override func sizeThatFits(_ size: CGSize) -> CGSize {

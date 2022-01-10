@@ -12,7 +12,7 @@ class GLComposeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.cz_random()
+        view.backgroundColor = .red
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "退出", style: .plain, target: self, action: #selector(close))
     }

@@ -37,6 +37,11 @@ class GLStatus: NSObject {
     var comments_count: Int = 0
     /// 点赞数
     var attitudes_count: Int = 0
+    /// 微博创建时间
+    var created_at: String?
+    /// 微博来源
+    var source: String?
+    
     /// 重写 description 属性
     override var description: String {
         yy_modelDescription()

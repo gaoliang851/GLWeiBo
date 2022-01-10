@@ -36,6 +36,11 @@ class GLStatusCell: UITableViewCell {
             
             // 设置转发微博的内容
             retweedStatusLabel?.text = viewModel?.retweetedStatusText
+            
+            // 设置来源
+            sourceLabel.text = viewModel?.status.source
+            // 设置创建时间
+            // timeLabel.text = viewModel?.status.created_at
         }
     }
     

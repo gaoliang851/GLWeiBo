@@ -47,7 +47,10 @@ class GLBaseViewController: UIViewController, UIGestureRecognizerDelegate {
     /// 网络加载的方法，在viewDidLoad中统一调用
     /// 如果子类不实现该方法，默认是关闭refreshControl的
     @objc func loadData() {
-        refreshControl?.endRefreshing()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            self.refreshControl?.endRefreshing()
+        }
+        
     }
 }
 

@@ -87,7 +87,11 @@ class GLRefreshControl: UIControl {
         }
         
         // 传递父视图的高度
-        refreshView.parentViewHeight = height
+        // 不刷新的时候，才传递高度
+        if refreshView.refreshState != .WillRefresh {
+            refreshView.parentViewHeight = height
+        }
+        
         
         // 用户是否正在滚动
         if sv.isDragging {

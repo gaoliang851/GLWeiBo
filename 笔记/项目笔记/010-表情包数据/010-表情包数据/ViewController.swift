@@ -21,7 +21,25 @@ class ViewController: UIViewController {
         
         // let image = UIImage(named: "lxh/lxh_beicui.png", in: HMEBundle, compatibleWith: nil)
         
-        print("adb = \(CZEmoticonManager.shared.packages.last?.emoticons.first?.image)")
+        var t1 = Date().timeIntervalSince1970
+        
+        print("adb = \(CZEmoticonManager.shared.findEmoticon(string: "[爱你]"))")
+        
+        var t2 = Date().timeIntervalSince1970
+        
+        let c1 = t2 - t1
+        
+        print("1: \(t2 - t1)")
+        
+        t1 = Date().timeIntervalSince1970
+        
+        print("adb = \(CZEmoticonManager.shared.findEmoticon(string: "[爱你]"))")
+        
+        t2 = Date().timeIntervalSince1970
+        
+        let c2 = t2 - t1
+        
+        print("c2 < c1 ? \(c2 < c1)")
     }
 
 }

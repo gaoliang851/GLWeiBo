@@ -49,13 +49,13 @@ class ViewController: UIViewController {
         // <a href="https://www.baidu.com" ret="windows">haha</a>
         // <a href="(.*?)".*?>(.*?)</a>
         
-        let string = "我[爱你]啊[笑哈哈]99!"
+        let string = "我[爱你]啊[笑哈哈]"
         
-        emoticonString(string: string)
+        demoLabel.attributedText = emoticonString(string: string)
     }
     
     func emoticonString(string: String) -> NSAttributedString {
-        let attrString = NSAttributedString(string: string)
+        let attrString = NSMutableAttributedString(string: string)
         
         //1. 建立正则表达式、过滤所有表情文字
         let pattern = "\\[.*?\\]"
@@ -67,11 +67,14 @@ class ViewController: UIViewController {
         // 2. 匹配所有项
         let matches = regx.matches(in: string, options: [], range: NSRange(location: 0, length: string.count))
         
-        for m in matches {
+        /// 这里要进行倒序遍历，否则因为替换了前边的表情，导致后边的索引发生改变
+        for m in matches.reversed() {
             let r = m.range(at: 0)
             let subStr = (string as NSString).substring(with: r)
             
-            print(subStr)
+            if let em = CZEmoticonManager.shared.findEmoticon(string: subStr) {
+                attrString.replaceCharacters(in: r, with: em.imageText(font: demoLabel.font))
+            }
         }
         
         return attrString

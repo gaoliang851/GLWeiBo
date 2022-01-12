@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var demoLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -40,6 +41,8 @@ class ViewController: UIViewController {
         let c2 = t2 - t1
         
         print("c2 < c1 ? \(c2 < c1)")
+        
+        demoLabel.attributedText = CZEmoticonManager.shared.findEmoticon(string: "[爱你]")?.imageText(font: demoLabel.font)
     }
 
 }

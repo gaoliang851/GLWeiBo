@@ -13,8 +13,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        CZEmoticonManager.shared
+        let HMEBundlePath = Bundle.main.path(forResource: "HMEmoticon.bundle", ofType: nil)
         
+        let HMEBundle = Bundle(path: HMEBundlePath!)
+        
+//        let imagePath = HMEBundle?.path(forResource: "", ofType: nil)
+        
+        // let image = UIImage(named: "lxh/lxh_beicui.png", in: HMEBundle, compatibleWith: nil)
+        
+        print("adb = \(CZEmoticonManager.shared.packages.last?.emoticons.first?.image)")
     }
 
 }

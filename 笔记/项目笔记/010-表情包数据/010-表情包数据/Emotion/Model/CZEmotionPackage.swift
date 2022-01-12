@@ -11,7 +11,28 @@ import YYModel
     /// 分组名称
     var groupName: String?
     /// 目录名称
-    var directory: String?
+    var directory: String? {
+        didSet {
+            
+            guard let directory = directory ,
+                  /// 加载各个分目录下的info.plist
+                  let infoPlistPath = Bundle.HMEmoticonBundle?.path(forResource: "info.plist", ofType: nil, inDirectory: directory),
+                  // 加载info.plist里面的数组
+                  let models = try? NSArray(contentsOf: URL(fileURLWithPath: infoPlistPath), error: ()) as? [[String : String]],
+                  /// 数组转 CZEmoticon 模型
+                  let emoticons = NSArray.yy_modelArray(with: CZEmoticon.self, json: models) as? [CZEmoticon] else {
+                return
+            }
+            
+            //遍历 emoticons 数组，设置directory 属性
+            for item in emoticons {
+                item.directory = directory
+            }
+            
+            self.emoticons += emoticons
+            
+        }
+    }
     /// 表情数组
     lazy var emoticons = [CZEmoticon]()
     

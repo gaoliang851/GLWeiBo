@@ -17,4 +17,25 @@ import UIKit
     var png: String?
     /// emoji 的十六进制编码
     var code: String?
+    
+    /// 表情所在的目录名称
+    var directory: String?
+    
+    var image: UIImage? {
+        
+        if type {
+            return nil
+        }
+        
+        guard let directory = directory,
+              let png = png else {
+            return nil
+        }
+        
+        return UIImage(named: "\(directory)/\(png)", in: Bundle.HMEmoticonBundle, compatibleWith: nil)
+    }
+    
+    override var description: String {
+        yy_modelDescription()
+    }
 }

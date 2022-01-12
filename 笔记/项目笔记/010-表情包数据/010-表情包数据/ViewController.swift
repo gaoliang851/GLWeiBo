@@ -43,6 +43,38 @@ class ViewController: UIViewController {
         print("c2 < c1 ? \(c2 < c1)")
         
         demoLabel.attributedText = CZEmoticonManager.shared.findEmoticon(string: "[爱你]")?.imageText(font: demoLabel.font)
+        
+        //let string = "<a href="">"
+        
+        // <a href="https://www.baidu.com" ret="windows">haha</a>
+        // <a href="(.*?)".*?>(.*?)</a>
+        
+        let string = "我[爱你]啊[笑哈哈]99!"
+        
+        emoticonString(string: string)
+    }
+    
+    func emoticonString(string: String) -> NSAttributedString {
+        let attrString = NSAttributedString(string: string)
+        
+        //1. 建立正则表达式、过滤所有表情文字
+        let pattern = "\\[.*?\\]"
+        
+        guard let regx = try? NSRegularExpression(pattern: pattern, options: []) else {
+            return attrString
+        }
+        
+        // 2. 匹配所有项
+        let matches = regx.matches(in: string, options: [], range: NSRange(location: 0, length: string.count))
+        
+        for m in matches {
+            let r = m.range(at: 0)
+            let subStr = (string as NSString).substring(with: r)
+            
+            print(subStr)
+        }
+        
+        return attrString
     }
 
 }

@@ -14,6 +14,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        
         let HMEBundlePath = Bundle.main.path(forResource: "HMEmoticon.bundle", ofType: nil)
         
         let HMEBundle = Bundle(path: HMEBundlePath!)
@@ -49,9 +50,9 @@ class ViewController: UIViewController {
         // <a href="https://www.baidu.com" ret="windows">haha</a>
         // <a href="(.*?)".*?>(.*?)</a>
         
-        let string = "我[爱你]啊[笑哈哈]"
+        let string = "我[爱你]啊[笑哈哈]! [马上有对象]"
         
-        demoLabel.attributedText = emoticonString(string: string)
+        demoLabel.attributedText = CZEmoticonManager.shared.emoticonString(string: string, font: demoLabel.font)
     }
     
     func emoticonString(string: String) -> NSAttributedString {
@@ -76,7 +77,7 @@ class ViewController: UIViewController {
                 attrString.replaceCharacters(in: r, with: em.imageText(font: demoLabel.font))
             }
         }
-        
+
         return attrString
     }
 

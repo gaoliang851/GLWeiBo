@@ -8,7 +8,6 @@
 import UIKit
 
 extension Bundle {
-    
     /// 表情Bunlde
     static var HMEmoticonBundle: Bundle? {
         get {
@@ -50,7 +49,37 @@ private extension CZEmoticonManager {
     }
 }
 
+// MARK: - 表情字符串的处理
 extension CZEmoticonManager {
+    
+    func emoticonString(string: String,font: UIFont) -> NSAttributedString {
+        let attrString = NSMutableAttributedString(string: string)
+        
+        //1. 建立正则表达式、过滤所有表情文字
+        let pattern = "\\[.*?\\]"
+        
+        guard let regx = try? NSRegularExpression(pattern: pattern, options: []) else {
+            return attrString
+        }
+        
+        // 2. 匹配所有项
+        let matches = regx.matches(in: string, options: [], range: NSRange(location: 0, length: string.count))
+        
+        /// 这里要进行倒序遍历，否则因为替换了前边的表情，导致后边的索引发生改变
+        for m in matches.reversed() {
+            let r = m.range(at: 0)
+            let subStr = (string as NSString).substring(with: r)
+            
+            if let em = CZEmoticonManager.shared.findEmoticon(string: subStr) {
+                attrString.replaceCharacters(in: r, with: em.imageText(font: font))
+            }
+        }
+        
+        // 统一设置一遍字符串属性
+        attrString.addAttributes([.font:font], range: NSRange(location: 0, length: attrString.length))
+
+        return attrString
+    }
     
     /// 通过字符串查找表情对象
     /// - Parameter string: 表情字符 eg: [爱你]

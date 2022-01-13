@@ -104,9 +104,6 @@ class GLStatusViewModel: CustomStringConvertible {
         
         var height: CGFloat = 0
         
-        let orginalFont = UIFont.systemFont(ofSize: 15)
-        let retweetedFont = UIFont.systemFont(ofSize: 14)
-        
         // 顶部：顶部间距视图(12) + margin(12) + 头像视图高度(34)
         height += margin * 2 + iconHeight + margin
         //正文的高度

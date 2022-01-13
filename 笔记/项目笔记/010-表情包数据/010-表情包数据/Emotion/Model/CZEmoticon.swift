@@ -42,11 +42,13 @@ import UIKit
     func imageText(font: UIFont) -> NSAttributedString {
         // 如果图像不存在就返回一个空的
         guard let image = image else {
-            return NSAttributedString("")
+            return NSAttributedString()
         }
         
         // 1. 创建附件
-        let attachment =  NSTextAttachment(image: image)
+        let attachment =  NSTextAttachment()
+        attachment.image = image
+        
         let height = font.lineHeight
         attachment.bounds = CGRect(x: 0, y: -4, width: height, height: height)
         

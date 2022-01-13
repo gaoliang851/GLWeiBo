@@ -40,7 +40,7 @@ private extension CZEmoticonManager {
     func loadPackages() {
         
         guard let plistPath = Bundle.HMEmoticonBundle?.path(forResource: "emoticons.plist",ofType: nil),
-              let array = try? NSArray(contentsOf: URL(fileURLWithPath: plistPath), error: ()) as? [[String:String]],
+              let array = NSArray(contentsOf: URL(fileURLWithPath: plistPath)) as? [[String:String]],
               let model = NSArray.yy_modelArray(with: CZEmotionPackage.self, json: array) as? [CZEmotionPackage] else {
             return
         }

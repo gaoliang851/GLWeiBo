@@ -23,6 +23,7 @@ class GLMianViewController: UITabBarController {
         setupTimer()
         setupNewFeaturesView()
         
+        
         // 设置代理
         delegate = self
         

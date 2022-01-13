@@ -13,7 +13,9 @@ class GLStatusCell: UITableViewCell {
     var viewModel: GLStatusViewModel? {
         didSet {
             // 微博文本
-            stausLabel.text = viewModel?.status.text
+            stausLabel.attributedText = viewModel?.statusAttrText
+            // 设置转发微博的内容
+            retweedStatusLabel?.attributedText = viewModel?.retweetedStatusAttrText
             
             // 姓名
             nameLabel.text = viewModel?.status.user?.screen_name
@@ -34,8 +36,7 @@ class GLStatusCell: UITableViewCell {
             // 配图视图视图模型
             pictureView.viewModel = viewModel
             
-            // 设置转发微博的内容
-            retweedStatusLabel?.text = viewModel?.retweetedStatusText
+            
             
             // 设置来源
             sourceLabel.text = viewModel?.status.source?.cz_href()?.text

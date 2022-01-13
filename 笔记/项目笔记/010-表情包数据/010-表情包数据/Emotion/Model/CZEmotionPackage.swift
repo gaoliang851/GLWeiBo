@@ -18,7 +18,7 @@ import YYModel
                   /// 加载各个分目录下的info.plist
                   let infoPlistPath = Bundle.HMEmoticonBundle?.path(forResource: "info.plist", ofType: nil, inDirectory: directory),
                   // 加载info.plist里面的数组
-                  let models = try? NSArray(contentsOf: URL(fileURLWithPath: infoPlistPath), error: ()) as? [[String : String]],
+                  let models = NSArray(contentsOf: URL(fileURLWithPath: infoPlistPath)) as? [[String : String]],
                   /// 数组转 CZEmoticon 模型
                   let emoticons = NSArray.yy_modelArray(with: CZEmoticon.self, json: models) as? [CZEmoticon] else {
                 return

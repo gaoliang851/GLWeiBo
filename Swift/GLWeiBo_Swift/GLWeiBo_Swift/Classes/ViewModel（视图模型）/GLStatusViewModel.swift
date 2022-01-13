@@ -10,6 +10,11 @@ import UIKit
 
 /// 单条微博的视图模型
 class GLStatusViewModel: CustomStringConvertible {
+    /// 微博正文的属性文本
+    var statusAttrText: NSAttributedString?
+    /// 转发微博的属性文本
+    var retweetedStatusAttrText: NSAttributedString?
+    
     /// 微博模型
     var status: GLStatus
     /// 会员图标
@@ -32,8 +37,7 @@ class GLStatusViewModel: CustomStringConvertible {
         status.retweeted_status?.pic_urls ?? status.pic_urls
     }
     
-    /// 转发微博内容
-    var retweetedStatusText: String?
+    
     /// 高度
     var rowHeight: CGFloat = 0
     
@@ -72,11 +76,20 @@ class GLStatusViewModel: CustomStringConvertible {
         // 计算配图视图大小
         pictureViewSize = calcPictureViewSize(count: picURLs?.count)
         
+        let orginalFont = UIFont.systemFont(ofSize: 15)
+        let retweetedFont = UIFont.systemFont(ofSize: 14)
+        
         // 设置转发微博的内容
-        retweetedStatusText = "@"
+        let retweetedStatusText = "@"
         + (status.retweeted_status?.user?.screen_name ?? "")
         + ":"
         + (status.retweeted_status?.text ?? "")
+        
+        /// 计算转发微博的属性文本
+        retweetedStatusAttrText = CZEmoticonManager.shared.emoticonString(string: retweetedStatusText, font: retweetedFont)
+        
+        /// 计算微博正文的属性文本
+        statusAttrText = CZEmoticonManager.shared.emoticonString(string: model.text ?? "", font: orginalFont)
         
         // 计算row的高度
         updateRowHeight()
@@ -98,23 +111,21 @@ class GLStatusViewModel: CustomStringConvertible {
         height += margin * 2 + iconHeight + margin
         //正文的高度
         let viewSize = CGSize(width: UIScreen.cz_screenWidth() - 2 * margin, height: CGFloat.greatestFiniteMagnitude)
-        if let text = status.text {
-            height += (text as NSString).boundingRect(with: viewSize,
-                                                      options: [.usesLineFragmentOrigin],
-                                                      attributes: [.font:orginalFont],
-                                                      context: nil).height
+        if let text = statusAttrText {
+            
+            height += text.boundingRect(with: viewSize,
+                                        options: [.usesLineFragmentOrigin],
+                                        context: nil).height
         }
         
         //转发微博
         if status.retweeted_status != nil {
             height += margin * 2
-            if let text = retweetedStatusText {
-                height += (text as NSString).boundingRect(with: viewSize,
-                                                          options: [.usesLineFragmentOrigin],
-                                                          attributes: [.font:retweetedFont],
-                                                          context: nil).height
+            if let text = retweetedStatusAttrText {
+                height += text.boundingRect(with: viewSize,
+                                            options: [.usesLineFragmentOrigin],
+                                            context: nil).height
             }
-            
         }
         
         // 配图高度

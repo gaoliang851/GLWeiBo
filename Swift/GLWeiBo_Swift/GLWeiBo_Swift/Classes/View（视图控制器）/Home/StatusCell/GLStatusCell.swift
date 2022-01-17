@@ -7,7 +7,20 @@
 
 import UIKit
 
+/// 微博 cell 的 协议
+/// 如果需要设置可选协议方法
+/// - 需要遵守 `NSObjectProtocol` 协议
+/// - 协议需要是 `@objc` 的
+/// - 方法需要 `@objc optional`
+@objc protocol GLStatusCellDelegate: NSObjectProtocol {
+    /// 微博 cell 选中 URL 字符串
+    @objc optional func statusCellDidSelectedURLString(cell: GLStatusCell,urlString: String)
+}
+
 class GLStatusCell: UITableViewCell {
+    
+    /// 代理属性
+    weak var delegate: GLStatusCellDelegate?
     
     /// 微博视图模型
     var viewModel: GLStatusViewModel? {
@@ -54,7 +67,7 @@ class GLStatusCell: UITableViewCell {
     /// 来源
     @IBOutlet weak var sourceLabel: UILabel!
     /// 微博正文
-    @IBOutlet weak var stausLabel: UILabel!
+    @IBOutlet weak var stausLabel: FFLabel!
     /// 会员图标
     @IBOutlet weak var memberIconView: UIImageView!
     /// 认证图标
@@ -66,7 +79,8 @@ class GLStatusCell: UITableViewCell {
     
     /// 被转发微博的正文, 因为该控件可能为空,
     /// 必须使用 `?`
-    @IBOutlet weak var retweedStatusLabel: UILabel?
+    @IBOutlet weak var retweedStatusLabel: FFLabel?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -83,6 +97,17 @@ class GLStatusCell: UITableViewCell {
         self.layer.rasterizationScale = UIScreen.main.scale
         
         //https://www.it610.com/article/1241798950760075264.htm
+        
+        stausLabel.delegate = self
+        retweedStatusLabel?.delegate = self
     }
+}
 
+extension GLStatusCell: FFLabelDelegate {
+    func labelDidSelectedLinkText(label: FFLabel, text: String) {
+        print(text)
+        if text.hasPrefix("http") {
+            delegate?.statusCellDidSelectedURLString?(cell: self, urlString: text)
+        }
+    }
 }

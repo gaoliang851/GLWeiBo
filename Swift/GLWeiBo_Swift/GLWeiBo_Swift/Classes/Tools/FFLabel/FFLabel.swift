@@ -176,10 +176,6 @@ public class FFLabel: UILabel {
             DispatchQueue.main.asyncAfter(deadline: when) {
                 self.modifySelectedAttribute(false)
             }
-            
-//            DispatchQueue.main.after(when: when) {
-//                self.modifySelectedAttribute(false)
-//            }
         }
     }
     

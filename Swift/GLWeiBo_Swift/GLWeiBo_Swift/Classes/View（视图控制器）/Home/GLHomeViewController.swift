@@ -92,6 +92,9 @@ extension GLHomeViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellid, for: indexPath) as! GLStatusCell
         //2. 设置cell ,设置微博内容
         cell.viewModel = vm
+        
+        // 设置代理
+        cell.delegate = self
         //3. 返回cell
         return cell
     }
@@ -119,6 +122,13 @@ extension GLHomeViewController {
             // 开始刷新
             loadData()
         }
+    }
+}
+
+extension GLHomeViewController : GLStatusCellDelegate {
+    
+    func statusCellDidSelectedURLString(cell: GLStatusCell, urlString: String) {
+        print("选中了 \(urlString)")
     }
 }
 

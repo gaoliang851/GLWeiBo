@@ -7,6 +7,14 @@
 
 import UIKit
 
+/**
+ 1. 使用TextKit 接管 Label 的底层实现 - `绘制` textStorage的文本内容
+ 2. 使用正则表达式过滤 URL , 设置 URL 的特殊显示
+ 3. 交互
+ 
+ - UILabel 默认不能实现垂直顶部对齐，使用 TextKit 可以
+ */
+
 class CZLabel: UILabel {
 
     // TextKit的3个核心对象
@@ -32,6 +40,35 @@ class CZLabel: UILabel {
         prepareTextSystem()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        // 获取第一个点击的位置
+        guard let location = touches.first?.location(in: self) else {
+            return
+        }
+        
+        // 获取location对应的字符索引
+        let idx = textlayoutManager.glyphIndex(for: location, in: textContainer)
+        
+        print("idx == \(idx)")
+        
+        // 3. 判断 idx 是否在 urls 的 ranges 范围内，如果在就高亮
+        for r in urlRanges ?? [] {
+            
+            if NSLocationInRange(idx, r) {
+                print("需要高亮")
+                
+                // 修改文本的字体属性
+                textStorage.addAttributes([.foregroundColor:UIColor.brown], range: r)
+            
+                // 如果需要重绘, 就调用 `setNeedsDisplay`, 而不是drawRect()
+                setNeedsDisplay()
+            } else {
+                print("没戳中")
+            }
+        }
+    }
+    
     /// 绘图函数，将文本绘制在Label上
     /// - 在 iOS 中绘制工作是类似于 `油画`似的
     /// - 后绘制的内容会把之前绘制的内容覆盖！
@@ -49,6 +86,9 @@ class CZLabel: UILabel {
 private extension CZLabel {
     /// 准备文本系统
     func prepareTextSystem() {
+        
+        // 0.
+        isUserInteractionEnabled = true
         
         prepareTextStorage()
         

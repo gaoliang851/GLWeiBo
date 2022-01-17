@@ -36,6 +36,9 @@
                             <constraint firstItem="WI3-HX-Kf2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="18" id="tC8-ch-IJI"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="WI3-HX-Kf2" id="jab-pA-4Dk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

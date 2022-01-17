@@ -129,6 +129,12 @@ extension GLHomeViewController : GLStatusCellDelegate {
     
     func statusCellDidSelectedURLString(cell: GLStatusCell, urlString: String) {
         print("选中了 \(urlString)")
+        
+        let vc = GLWebViewController()
+        
+        vc.urlString = urlString
+        
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

@@ -56,6 +56,7 @@
 		4882ECCA2790502900DFE0DA /* CZEmotionPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4882ECC62790502900DFE0DA /* CZEmotionPackage.swift */; };
 		4882ECCB2790502900DFE0DA /* HMEmoticon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4882ECC72790502900DFE0DA /* HMEmoticon.bundle */; };
 		4882ECF02795427200DFE0DA /* FFLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4882ECEF2795427200DFE0DA /* FFLabel.swift */; };
+		4882ECF227954F5C00DFE0DA /* GLWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4882ECF127954F5C00DFE0DA /* GLWebViewController.swift */; };
 		4885F8872752060100E74DDA /* GLStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4885F8862752060100E74DDA /* GLStatusCell.swift */; };
 		4885F8892752061800E74DDA /* GLStatusNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4885F8882752061800E74DDA /* GLStatusNormalCell.xib */; };
 		4885F88B27532BE800E74DDA /* GLUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4885F88A27532BE800E74DDA /* GLUser.swift */; };
@@ -147,6 +148,7 @@
 		4882ECC62790502900DFE0DA /* CZEmotionPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmotionPackage.swift; sourceTree = "<group>"; };
 		4882ECC72790502900DFE0DA /* HMEmoticon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HMEmoticon.bundle; sourceTree = "<group>"; };
 		4882ECEF2795427200DFE0DA /* FFLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFLabel.swift; sourceTree = "<group>"; };
+		4882ECF127954F5C00DFE0DA /* GLWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLWebViewController.swift; sourceTree = "<group>"; };
 		4885F8862752060100E74DDA /* GLStatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLStatusCell.swift; sourceTree = "<group>"; };
 		4885F8882752061800E74DDA /* GLStatusNormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GLStatusNormalCell.xib; sourceTree = "<group>"; };
 		4885F88A27532BE800E74DDA /* GLUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLUser.swift; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 				4885F885275205D900E74DDA /* StatusCell */,
 				48432634274B888700C5F42E /* TitleButton */,
 				04F27C4627001E12006F5B01 /* GLHomeViewController.swift */,
+				4882ECF127954F5C00DFE0DA /* GLWebViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -683,6 +686,7 @@
 				4885F8972754C94900E74DDA /* GLStatusPictureView.swift in Sources */,
 				04F27C77270021E6006F5B01 /* NSArray+Log.m in Sources */,
 				04F27C6E270021E5006F5B01 /* UIScreen+CZAddition.m in Sources */,
+				4882ECF227954F5C00DFE0DA /* GLWebViewController.swift in Sources */,
 				04136F942716AB06003A2CC8 /* GLStatus.swift in Sources */,
 				04F27C4D27001E2B006F5B01 /* GLDiscoverViewController.swift in Sources */,
 				043F02352700817800B40465 /* UIBarButtonItem+Extension.swift in Sources */,

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GLComposeViewController" customModule="GLWeiBo_Swift" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="F3I-e9-ESJ" id="JFV-cF-bX4"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="F3I-e9-ESJ">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hvO-Ju-r6u">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                    <color key="textColor" systemColor="labelColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qhn-hG-e6E">
+                    <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                    <items>
+                        <barButtonItem title="Item" id="Aud-v0-Po7"/>
+                    </items>
+                </toolbar>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="IKE-O3-d7Y"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="hvO-Ju-r6u" firstAttribute="trailing" secondItem="IKE-O3-d7Y" secondAttribute="trailing" id="8Az-7A-qME"/>
+                <constraint firstItem="qhn-hG-e6E" firstAttribute="leading" secondItem="IKE-O3-d7Y" secondAttribute="leading" id="CjA-yg-xrr"/>
+                <constraint firstItem="IKE-O3-d7Y" firstAttribute="bottom" secondItem="qhn-hG-e6E" secondAttribute="bottom" id="Nwq-f0-CEk"/>
+                <constraint firstItem="qhn-hG-e6E" firstAttribute="top" secondItem="hvO-Ju-r6u" secondAttribute="bottom" id="gK6-CG-W6w"/>
+                <constraint firstItem="hvO-Ju-r6u" firstAttribute="top" secondItem="F3I-e9-ESJ" secondAttribute="top" id="oT1-gs-ewO"/>
+                <constraint firstItem="hvO-Ju-r6u" firstAttribute="leading" secondItem="IKE-O3-d7Y" secondAttribute="leading" id="tkc-63-2OL"/>
+                <constraint firstItem="qhn-hG-e6E" firstAttribute="trailing" secondItem="IKE-O3-d7Y" secondAttribute="trailing" id="uqk-tR-ac7"/>
+            </constraints>
+            <point key="canvasLocation" x="37.681159420289859" y="57.589285714285708"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

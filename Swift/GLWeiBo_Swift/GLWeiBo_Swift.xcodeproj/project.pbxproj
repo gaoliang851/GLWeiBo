@@ -57,6 +57,7 @@
 		4882ECCB2790502900DFE0DA /* HMEmoticon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4882ECC72790502900DFE0DA /* HMEmoticon.bundle */; };
 		4882ECF02795427200DFE0DA /* FFLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4882ECEF2795427200DFE0DA /* FFLabel.swift */; };
 		4882ECF227954F5C00DFE0DA /* GLWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4882ECF127954F5C00DFE0DA /* GLWebViewController.swift */; };
+		4882ECF4279567D200DFE0DA /* GLComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4882ECF3279567D200DFE0DA /* GLComposeViewController.xib */; };
 		4885F8872752060100E74DDA /* GLStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4885F8862752060100E74DDA /* GLStatusCell.swift */; };
 		4885F8892752061800E74DDA /* GLStatusNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4885F8882752061800E74DDA /* GLStatusNormalCell.xib */; };
 		4885F88B27532BE800E74DDA /* GLUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4885F88A27532BE800E74DDA /* GLUser.swift */; };
@@ -149,6 +150,7 @@
 		4882ECC72790502900DFE0DA /* HMEmoticon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HMEmoticon.bundle; sourceTree = "<group>"; };
 		4882ECEF2795427200DFE0DA /* FFLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFLabel.swift; sourceTree = "<group>"; };
 		4882ECF127954F5C00DFE0DA /* GLWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLWebViewController.swift; sourceTree = "<group>"; };
+		4882ECF3279567D200DFE0DA /* GLComposeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GLComposeViewController.xib; sourceTree = "<group>"; };
 		4885F8862752060100E74DDA /* GLStatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLStatusCell.swift; sourceTree = "<group>"; };
 		4885F8882752061800E74DDA /* GLStatusNormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GLStatusNormalCell.xib; sourceTree = "<group>"; };
 		4885F88A27532BE800E74DDA /* GLUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLUser.swift; sourceTree = "<group>"; };
@@ -529,6 +531,7 @@
 				486699022787039E00B5211C /* GLComposeTypeButton.xib */,
 				48645C48278867FA00A36E28 /* GLComposeTestView.swift */,
 				48645C4A278B0F2700A36E28 /* GLComposeViewController.swift */,
+				4882ECF3279567D200DFE0DA /* GLComposeViewController.xib */,
 			);
 			path = ComposeTypeView;
 			sourceTree = "<group>";
@@ -614,6 +617,7 @@
 				485F8945274DD77D00FE4A87 /* GLWeocomeView.xib in Resources */,
 				48F04502278320AE00B60B33 /* GLComposeTypeView.xib in Resources */,
 				48F044EC2781C53200B60B33 /* GLRefreshView.xib in Resources */,
+				4882ECF4279567D200DFE0DA /* GLComposeViewController.xib in Resources */,
 				486699032787039E00B5211C /* GLComposeTypeButton.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

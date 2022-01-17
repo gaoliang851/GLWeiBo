@@ -55,6 +55,7 @@
 		4882ECC92790502900DFE0DA /* CZEmoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4882ECC52790502900DFE0DA /* CZEmoticon.swift */; };
 		4882ECCA2790502900DFE0DA /* CZEmotionPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4882ECC62790502900DFE0DA /* CZEmotionPackage.swift */; };
 		4882ECCB2790502900DFE0DA /* HMEmoticon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4882ECC72790502900DFE0DA /* HMEmoticon.bundle */; };
+		4882ECF02795427200DFE0DA /* FFLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4882ECEF2795427200DFE0DA /* FFLabel.swift */; };
 		4885F8872752060100E74DDA /* GLStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4885F8862752060100E74DDA /* GLStatusCell.swift */; };
 		4885F8892752061800E74DDA /* GLStatusNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4885F8882752061800E74DDA /* GLStatusNormalCell.xib */; };
 		4885F88B27532BE800E74DDA /* GLUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4885F88A27532BE800E74DDA /* GLUser.swift */; };
@@ -145,6 +146,7 @@
 		4882ECC52790502900DFE0DA /* CZEmoticon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmoticon.swift; sourceTree = "<group>"; };
 		4882ECC62790502900DFE0DA /* CZEmotionPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmotionPackage.swift; sourceTree = "<group>"; };
 		4882ECC72790502900DFE0DA /* HMEmoticon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HMEmoticon.bundle; sourceTree = "<group>"; };
+		4882ECEF2795427200DFE0DA /* FFLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFLabel.swift; sourceTree = "<group>"; };
 		4885F8862752060100E74DDA /* GLStatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLStatusCell.swift; sourceTree = "<group>"; };
 		4885F8882752061800E74DDA /* GLStatusNormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GLStatusNormalCell.xib; sourceTree = "<group>"; };
 		4885F88A27532BE800E74DDA /* GLUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLUser.swift; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 		04F27C3427001B7C006F5B01 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				4882ECEE2795427200DFE0DA /* FFLabel */,
 				4882ECC22790502900DFE0DA /* Emotion */,
 				48B130F72763289A0051E382 /* UI框架 */,
 				0494491927157896005748C4 /* Network */,
@@ -452,6 +455,14 @@
 				4882ECC62790502900DFE0DA /* CZEmotionPackage.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		4882ECEE2795427200DFE0DA /* FFLabel */ = {
+			isa = PBXGroup;
+			children = (
+				4882ECEF2795427200DFE0DA /* FFLabel.swift */,
+			);
+			path = FFLabel;
 			sourceTree = "<group>";
 		};
 		4885F885275205D900E74DDA /* StatusCell */ = {
@@ -703,6 +714,7 @@
 				48432636274B88A600C5F42E /* GLTitleButton.swift in Sources */,
 				04136F972716AE8C003A2CC8 /* GLStatusListViewModel.swift in Sources */,
 				48645C6F278C07C300A36E28 /* String+Extension.swift in Sources */,
+				4882ECF02795427200DFE0DA /* FFLabel.swift in Sources */,
 				04F27C6C270021E5006F5B01 /* UIColor+CZAddition.m in Sources */,
 				04F27C6D270021E5006F5B01 /* UIView+CZAddition.m in Sources */,
 				48F044ED2781C53200B60B33 /* GLRefreshView.swift in Sources */,

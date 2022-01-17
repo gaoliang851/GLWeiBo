@@ -33,9 +33,15 @@ class CZLabel: UILabel {
     }
     
     /// 绘图函数，将文本绘制在Label上
+    /// - 在 iOS 中绘制工作是类似于 `油画`似的
+    /// - 后绘制的内容会把之前绘制的内容覆盖！
+    /// - 尽量避免使用带透明度的颜色，会严重影响性能
     override func drawText(in rect: CGRect) {
         let range = NSRange(location: 0, length: textStorage.length)
         
+        /// 绘制背景，如果在文字之后绘制，会覆盖掉绘制的文字
+        textlayoutManager.drawBackground(forGlyphRange: range, at: CGPoint())
+        /// 绘制 Glyphs 字形
         textlayoutManager.drawGlyphs(forGlyphRange: range, at: CGPoint())
     }
 }
@@ -49,8 +55,6 @@ private extension CZLabel {
         // 2. 添加对象关系
         textStorage.addLayoutManager(textlayoutManager)
         textlayoutManager.addTextContainer(textContainer)
-        
-        print(urlRanges)
     }
     
     /// 准备文本内容
@@ -61,6 +65,12 @@ private extension CZLabel {
             textStorage.setAttributedString(NSAttributedString(string: text!))
         } else {
             textStorage.setAttributedString(NSAttributedString(string: ""))
+        }
+        
+        /// 设置 URL 显示的样式
+        for r in urlRanges ?? [] {
+            textStorage.addAttributes([.foregroundColor:UIColor.red,
+                                       .backgroundColor:UIColor.black], range: r)
         }
     }
 }

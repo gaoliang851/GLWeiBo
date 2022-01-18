@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GLComposeViewController" customModule="GLWeiBo_Swift" customModuleProvider="target">
             <connections>
+                <outlet property="textView" destination="hvO-Ju-r6u" id="SnU-en-RST"/>
+                <outlet property="toolbar" destination="qhn-hG-e6E" id="nsk-uG-p54"/>
                 <outlet property="view" destination="F3I-e9-ESJ" id="JFV-cF-bX4"/>
             </connections>
         </placeholder>

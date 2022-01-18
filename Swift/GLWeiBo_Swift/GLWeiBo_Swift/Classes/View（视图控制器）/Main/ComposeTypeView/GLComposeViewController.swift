@@ -22,11 +22,29 @@ import UIKit
 /// 撰写微博控制器
 class GLComposeViewController: UIViewController {
 
+    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var toolbar: UIToolbar!
+    
+    lazy var sendButton: UIButton = {
+        let btn = UIButton(type: .custom)
+        
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        btn.setTitle("发布", for: .normal)
+        
+        btn.setTitleColor(.white, for: .normal)
+        btn.setTitleColor(.gray, for: .disabled)
+        
+        btn.setBackgroundImage(UIImage(named: "common_button_orange"), for: .normal)
+        btn.setBackgroundImage(UIImage(named: "common_button_white_disable"), for: .disabled)
+        btn.setBackgroundImage(UIImage(named: "common_button_orange_highlighted"), for: .highlighted)
+        
+        btn.frame = CGRect(x: 0, y: 0, width: 45, height: 35)
+        
+        return btn
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = .red
-        
         setupUI()
     }
     
@@ -39,13 +57,16 @@ class GLComposeViewController: UIViewController {
 private extension GLComposeViewController {
     /// 设置 UI
     func setupUI() {
+        view.backgroundColor = .white
         setupNavbar()
     }
     
     /// 设置导航栏
     func setupNavbar() {
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "退出", style: .plain, target: self, action: #selector(close))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "关闭",target: self, action: #selector(close))
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: sendButton)
         
         let navColor = UIColor.cz_color(withHex: 0xF7F7F7)
         
@@ -67,5 +88,7 @@ private extension GLComposeViewController {
         navigationController?.navigationBar.isTranslucent = false
         // navigation控件颜色
         navigationController?.navigationBar.tintColor = .darkGray
+        
+        
     }
 }

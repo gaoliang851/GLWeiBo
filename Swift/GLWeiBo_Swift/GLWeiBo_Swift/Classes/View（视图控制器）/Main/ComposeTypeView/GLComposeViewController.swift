@@ -58,6 +58,19 @@ class GLComposeViewController: UIViewController {
         setupUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //激活键盘
+        textView.becomeFirstResponder()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        // 关闭键盘
+        textView.resignFirstResponder()
+    }
+    
+    
     @objc private func close() {
         dismiss(animated: true, completion: nil)
     }

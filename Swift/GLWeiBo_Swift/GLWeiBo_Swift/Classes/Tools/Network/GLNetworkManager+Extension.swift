@@ -95,3 +95,22 @@ extension GLNetworkManager {
         }
     }
 }
+
+// MARK: - 发布微博
+extension GLNetworkManager {
+    func postStatus(text: String, completion : @escaping (_ result: [String: Any]?, _ isSuccess: Bool)->()) {
+        
+        let urlString = "https://api.weibo.com/2/statuses/update.json"
+
+        let params = ["status":text]
+        
+//        tokenRequest(method: .POST, URLString: urlString, paramters: params) { json, isSuccess in
+//            completion(json as? [String:Any],isSuccess)
+//        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            completion(nil,true)
+        }
+        
+    }
+}

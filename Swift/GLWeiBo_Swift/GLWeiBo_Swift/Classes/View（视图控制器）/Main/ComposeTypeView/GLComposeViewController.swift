@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 /**
  - 加载视图控制器的时候，如果 XIB 和控制器同名，默认的构造函数会 `优先`加载 XIB
@@ -72,12 +73,32 @@ class GLComposeViewController: UIViewController {
     
     
     @objc private func close() {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true) {
+            SVProgressHUD.dismiss()
+        }
     }
     
     // MARK: 发布微博
     @IBAction func postStatus() {
-        print("发布微博")
+        
+        guard let text = textView.text else {
+            return
+        }
+        
+        GLNetworkManager.shared.postStatus(text: text) { result, isSuccess in
+            // 修改指示器样式
+            SVProgressHUD.setDefaultStyle(.dark)
+            
+            let message = isSuccess ? "发布成功" : "网络不给力"
+            
+            SVProgressHUD.showInfo(withStatus: message)
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                // 恢复样式
+                SVProgressHUD.setDefaultStyle(.light)
+                self.close()
+            }
+        }
     }
     
     deinit {
@@ -104,19 +125,14 @@ private extension GLComposeViewController {
     
     // MARK: - 键盘改变通知
     @objc func keyboardChanged(n: Notification) {
-        print(n.userInfo)
         
         /// 获取键盘最终的frame
         guard let rect = (n.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue,
         // 获取键盘弹起动画时长
         let duration = (n.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue
         else {
-            
-            print("????")
             return
         }
-        
-        print("rect is \(rect)")
         
         //toolbarBottomCons.constant = -(UIScreen.main.bounds.height - rect.origin.y)
         
@@ -137,6 +153,8 @@ private extension GLComposeViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: sendButton)
         
         navigationItem.titleView = titleLabel
+        
+        sendButton.isEnabled = false
         
         let navColor = UIColor.cz_color(withHex: 0xF7F7F7)
         

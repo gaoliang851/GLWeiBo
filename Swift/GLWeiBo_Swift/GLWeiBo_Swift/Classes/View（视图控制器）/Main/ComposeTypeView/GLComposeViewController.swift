@@ -72,6 +72,7 @@ private extension GLComposeViewController {
     func setupUI() {
         view.backgroundColor = .white
         setupNavbar()
+        setupToolbar()
     }
     
     /// 设置导航栏
@@ -103,7 +104,43 @@ private extension GLComposeViewController {
         navigationController?.navigationBar.isTranslucent = false
         // navigation控件颜色
         navigationController?.navigationBar.tintColor = .darkGray
+    }
+    
+    
+    /// 设置工具栏
+    func setupToolbar() {
+        // 添加工具栏按钮
+        let itemSettings = [["imageName": "compose_toolbar_picture"],
+            ["imageName": "compose_mentionbutton_background"],
+            ["imageName": "compose_trendbutton_background"],
+            ["imageName": "compose_emoticonbutton_background"],
+            ["imageName": "compose_add_background"]]
         
+        var items = [UIBarButtonItem]()
         
+        /// 遍历数组
+        for dict in itemSettings {
+            
+            guard let imageName = dict["imageName"] else {
+                continue
+            }
+            
+            let image = UIImage(named: imageName)
+            let imageHL = UIImage(named: imageName + "_highlighted")
+            
+            let button = UIButton(type: .custom)
+            
+            button.setImage(image, for: .normal)
+            button.setImage(imageHL, for: .highlighted)
+            
+            button.sizeToFit()
+            /// 将按钮添加到数组
+            items.append(UIBarButtonItem(customView: button))
+            /// 将弹簧添加到数组
+            items.append(UIBarButtonItem(barButtonSystemItem:.flexibleSpace, target: nil, action: nil))
+        }
+        /// 移除最后一个多出来的弹簧
+        items.removeLast()
+        toolbar.items = items
     }
 }

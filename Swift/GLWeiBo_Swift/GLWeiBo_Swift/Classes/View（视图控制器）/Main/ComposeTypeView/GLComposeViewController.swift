@@ -26,6 +26,9 @@ class GLComposeViewController: UIViewController {
     @IBOutlet weak var toolbar: UIToolbar!
     
     @IBOutlet var sendButton: UIButton!
+    
+    @IBOutlet var titleLabel: UILabel!
+    
     //    lazy var sendButton: UIButton = {
 //        let btn = UIButton(type: .custom)
 //
@@ -74,6 +77,8 @@ private extension GLComposeViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "关闭",target: self, action: #selector(close))
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: sendButton)
+        
+        navigationItem.titleView = titleLabel
         
         let navColor = UIColor.cz_color(withHex: 0xF7F7F7)
         

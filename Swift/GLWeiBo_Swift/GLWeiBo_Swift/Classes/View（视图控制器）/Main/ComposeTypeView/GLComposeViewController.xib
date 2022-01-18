@@ -15,6 +15,7 @@
                 <outlet property="textView" destination="hvO-Ju-r6u" id="SnU-en-RST"/>
                 <outlet property="titleLabel" destination="lVO-5G-NHu" id="hcq-V5-wKu"/>
                 <outlet property="toolbar" destination="qhn-hG-e6E" id="nsk-uG-p54"/>
+                <outlet property="toolbarBottomCons" destination="Nwq-f0-CEk" id="fSa-Gv-5uS"/>
                 <outlet property="view" destination="F3I-e9-ESJ" id="JFV-cF-bX4"/>
             </connections>
         </placeholder>
@@ -33,9 +34,7 @@
                 </textView>
                 <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qhn-hG-e6E">
                     <rect key="frame" x="0.0" y="813" width="414" height="49"/>
-                    <items>
-                        <barButtonItem title="Item" id="Aud-v0-Po7"/>
-                    </items>
+                    <items/>
                 </toolbar>
             </subviews>
             <viewLayoutGuide key="safeArea" id="IKE-O3-d7Y"/>
@@ -43,7 +42,7 @@
             <constraints>
                 <constraint firstItem="hvO-Ju-r6u" firstAttribute="trailing" secondItem="IKE-O3-d7Y" secondAttribute="trailing" id="8Az-7A-qME"/>
                 <constraint firstItem="qhn-hG-e6E" firstAttribute="leading" secondItem="IKE-O3-d7Y" secondAttribute="leading" id="CjA-yg-xrr"/>
-                <constraint firstItem="IKE-O3-d7Y" firstAttribute="bottom" secondItem="qhn-hG-e6E" secondAttribute="bottom" id="Nwq-f0-CEk"/>
+                <constraint firstItem="qhn-hG-e6E" firstAttribute="bottom" secondItem="IKE-O3-d7Y" secondAttribute="bottom" id="Nwq-f0-CEk"/>
                 <constraint firstItem="qhn-hG-e6E" firstAttribute="top" secondItem="hvO-Ju-r6u" secondAttribute="bottom" id="gK6-CG-W6w"/>
                 <constraint firstItem="hvO-Ju-r6u" firstAttribute="top" secondItem="F3I-e9-ESJ" secondAttribute="top" id="oT1-gs-ewO"/>
                 <constraint firstItem="hvO-Ju-r6u" firstAttribute="leading" secondItem="IKE-O3-d7Y" secondAttribute="leading" id="tkc-63-2OL"/>

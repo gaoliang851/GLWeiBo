@@ -32,6 +32,7 @@ class GLComposeViewController: UIViewController {
     /// 如果想要调整行间距，可以增加一个空行，设置空行字体，lineHeight
     @IBOutlet var titleLabel: UILabel!
     
+    @IBOutlet weak var toolbarBottomCons: NSLayoutConstraint!
     //    lazy var sendButton: UIButton = {
 //        let btn = UIButton(type: .custom)
 //
@@ -65,6 +66,10 @@ class GLComposeViewController: UIViewController {
     @IBAction func postStatus() {
         print("发布微博")
     }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 }
 
 private extension GLComposeViewController {
@@ -73,6 +78,42 @@ private extension GLComposeViewController {
         view.backgroundColor = .white
         setupNavbar()
         setupToolbar()
+        
+        // 监听键盘通知
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardChanged),
+                                               name: UIResponder.keyboardWillChangeFrameNotification,
+                                               object: nil)
+        
+    }
+    
+    
+    
+    // MARK: - 键盘改变通知
+    @objc func keyboardChanged(n: Notification) {
+        print(n.userInfo)
+        
+        /// 获取键盘最终的frame
+        guard let rect = (n.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue,
+        // 获取键盘弹起动画时长
+        let duration = (n.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue
+        else {
+            
+            print("????")
+            return
+        }
+        
+        print("rect is \(rect)")
+        
+        //toolbarBottomCons.constant = -(UIScreen.main.bounds.height - rect.origin.y)
+        
+        toolbarBottomCons.constant = -(navigationController!.view.bounds.height - rect.origin.y)
+        
+        print("constant: \(toolbarBottomCons.constant)")
+        
+        UIView.animate(withDuration: duration) {
+            self.view.layoutIfNeeded()
+        }
     }
     
     /// 设置导航栏

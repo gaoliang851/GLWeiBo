@@ -14,6 +14,15 @@ class GLComposeTextView: UITextView {
     override func awakeFromNib() {
         setupUI()
     }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    // MARK: - 监听textView变化
+    @objc private func textViewChanged(n: Notification) {
+        placeholderLabel.isHidden = hasText
+    }
 
 }
 
@@ -29,5 +38,12 @@ private extension GLComposeTextView {
         placeholderLabel.frame.origin = CGPoint(x: 5, y: 8)
         
         addSubview(placeholderLabel)
+        
+        /// 通过通知监听文本变化
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(textViewChanged(n:)),
+            name: UITextView.textDidChangeNotification,
+            object: self)
     }
 }

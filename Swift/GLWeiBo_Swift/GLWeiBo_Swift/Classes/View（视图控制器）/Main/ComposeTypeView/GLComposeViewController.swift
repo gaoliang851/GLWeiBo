@@ -198,3 +198,12 @@ private extension GLComposeViewController {
         toolbar.items = items
     }
 }
+
+// MARK: - UITextViewDelegate
+// 通过代理来控制发布按钮状态
+extension GLComposeViewController : UITextViewDelegate {
+    
+    func textViewDidChange(_ textView: UITextView) {
+        sendButton.isEnabled = textView.hasText
+    }
+}

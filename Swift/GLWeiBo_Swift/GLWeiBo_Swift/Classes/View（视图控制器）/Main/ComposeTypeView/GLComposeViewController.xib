@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GLComposeViewController" customModule="GLWeiBo_Swift" customModuleProvider="target">
             <connections>
+                <outlet property="sendButton" destination="NLq-Ut-zGg" id="7w9-5c-Bhu"/>
                 <outlet property="textView" destination="hvO-Ju-r6u" id="SnU-en-RST"/>
                 <outlet property="toolbar" destination="qhn-hG-e6E" id="nsk-uG-p54"/>
                 <outlet property="view" destination="F3I-e9-ESJ" id="JFV-cF-bX4"/>
@@ -49,8 +50,26 @@
             </constraints>
             <point key="canvasLocation" x="37.681159420289859" y="57.589285714285708"/>
         </view>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="NLq-Ut-zGg">
+            <rect key="frame" x="0.0" y="0.0" width="45" height="35"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+            <state key="normal" title="发布" backgroundImage="common_button_orange"/>
+            <state key="disabled" backgroundImage="common_button_white_disable">
+                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            </state>
+            <state key="highlighted" backgroundImage="common_button_orange_highlighted"/>
+            <connections>
+                <action selector="postStatus" destination="-1" eventType="touchUpInside" id="qcC-iD-Mwa"/>
+            </connections>
+            <point key="canvasLocation" x="519.56521739130437" y="-234.04017857142856"/>
+        </button>
     </objects>
     <resources>
+        <image name="common_button_orange" width="11" height="35"/>
+        <image name="common_button_orange_highlighted" width="11" height="35"/>
+        <image name="common_button_white_disable" width="11" height="35"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

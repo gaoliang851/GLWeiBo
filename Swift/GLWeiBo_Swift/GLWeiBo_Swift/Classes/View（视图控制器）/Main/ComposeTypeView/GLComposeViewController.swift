@@ -25,24 +25,27 @@ class GLComposeViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var toolbar: UIToolbar!
     
-    lazy var sendButton: UIButton = {
-        let btn = UIButton(type: .custom)
-        
-        btn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
-        btn.setTitle("发布", for: .normal)
-        
-        btn.setTitleColor(.white, for: .normal)
-        btn.setTitleColor(.gray, for: .disabled)
-        
-        btn.setBackgroundImage(UIImage(named: "common_button_orange"), for: .normal)
-        btn.setBackgroundImage(UIImage(named: "common_button_white_disable"), for: .disabled)
-        btn.setBackgroundImage(UIImage(named: "common_button_orange_highlighted"), for: .highlighted)
-        
-        btn.frame = CGRect(x: 0, y: 0, width: 45, height: 35)
-        
-        return btn
-    }()
+    @IBOutlet var sendButton: UIButton!
+    //    lazy var sendButton: UIButton = {
+//        let btn = UIButton(type: .custom)
+//
+//        btn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+//        btn.setTitle("发布", for: .normal)
+//
+//        btn.setTitleColor(.white, for: .normal)
+//        btn.setTitleColor(.gray, for: .disabled)
+//
+//        btn.setBackgroundImage(UIImage(named: "common_button_orange"), for: .normal)
+//        btn.setBackgroundImage(UIImage(named: "common_button_white_disable"), for: .disabled)
+//        btn.setBackgroundImage(UIImage(named: "common_button_orange_highlighted"), for: .highlighted)
+//
+//        btn.frame = CGRect(x: 0, y: 0, width: 45, height: 35)
+//
+//        return btn
+//    }()
     
+    
+    // MARK: - 视图声明周期
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -51,7 +54,11 @@ class GLComposeViewController: UIViewController {
     @objc private func close() {
         dismiss(animated: true, completion: nil)
     }
-
+    
+    // MARK: 发布微博
+    @IBAction func postStatus() {
+        print("发布微博")
+    }
 }
 
 private extension GLComposeViewController {

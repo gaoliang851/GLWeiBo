@@ -21,12 +21,15 @@ import UIKit
 
 /// 撰写微博控制器
 class GLComposeViewController: UIViewController {
-
+    /// 文本编辑视图
     @IBOutlet weak var textView: UITextView!
+    /// 底部工具栏
     @IBOutlet weak var toolbar: UIToolbar!
-    
+    /// 发布按钮
     @IBOutlet var sendButton: UIButton!
-    
+    /// 标题标签 - 换行的热键 option + 回车
+    /// 逐行选中文本并且设置属性
+    /// 如果想要调整行间距，可以增加一个空行，设置空行字体，lineHeight
     @IBOutlet var titleLabel: UILabel!
     
     //    lazy var sendButton: UIButton = {

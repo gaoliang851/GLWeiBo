@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 // MARK: - 用于封装微博的网络请求
 extension GLNetworkManager {
@@ -98,11 +99,33 @@ extension GLNetworkManager {
 
 // MARK: - 发布微博
 extension GLNetworkManager {
-    func postStatus(text: String, completion : @escaping (_ result: [String: Any]?, _ isSuccess: Bool)->()) {
+    func postStatus(text: String,image: UIImage? , completion : @escaping (_ result: Any?, _ isSuccess: Bool)->()) {
         
-        let urlString = "https://api.weibo.com/2/statuses/update.json"
-
+        // 1. url
+        let urlString: String
+        
+        //根据是否有图像，选择不同的接口地址
+        if image == nil {
+            urlString = "https://api.weibo.com/2/statuses/update.json"
+        } else {
+            urlString = "https://upload.api.weibo.com/2/statuses/upload.json"
+        }
+        
+        // 2. 参数字典
         let params = ["status":text]
+        
+        // 3. 如果图像不为空,需要设置 name 和 data
+        var name: String?
+        var data: Data?
+        
+        if image != nil {
+            name = "pic"
+            data = image!.pngData()
+        }
+        
+        // 4. 发起网络请求
+        tokenRequest(method: .POST, URLString: urlString, paramters: params, name: name, data: data, completion: completion)
+        
         
 //        tokenRequest(method: .POST, URLString: urlString, paramters: params) { json, isSuccess in
 //            completion(json as? [String:Any],isSuccess)

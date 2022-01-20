@@ -85,7 +85,8 @@ class GLComposeViewController: UIViewController {
             return
         }
         
-        GLNetworkManager.shared.postStatus(text: text) { result, isSuccess in
+        let image: UIImage? = nil
+        GLNetworkManager.shared.postStatus(text: text,image: image) { result, isSuccess in
             // 修改指示器样式
             SVProgressHUD.setDefaultStyle(.dark)
             

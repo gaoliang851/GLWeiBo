@@ -51,10 +51,6 @@
 		48645C6F278C07C300A36E28 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48645C6E278C07C300A36E28 /* String+Extension.swift */; };
 		486699012787030D00B5211C /* GLComposeTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486699002787030D00B5211C /* GLComposeTypeButton.swift */; };
 		486699032787039E00B5211C /* GLComposeTypeButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 486699022787039E00B5211C /* GLComposeTypeButton.xib */; };
-		4882ECC82790502900DFE0DA /* CZEmoticonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4882ECC32790502900DFE0DA /* CZEmoticonManager.swift */; };
-		4882ECC92790502900DFE0DA /* CZEmoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4882ECC52790502900DFE0DA /* CZEmoticon.swift */; };
-		4882ECCA2790502900DFE0DA /* CZEmotionPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4882ECC62790502900DFE0DA /* CZEmotionPackage.swift */; };
-		4882ECCB2790502900DFE0DA /* HMEmoticon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4882ECC72790502900DFE0DA /* HMEmoticon.bundle */; };
 		4882ECF02795427200DFE0DA /* FFLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4882ECEF2795427200DFE0DA /* FFLabel.swift */; };
 		4882ECF227954F5C00DFE0DA /* GLWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4882ECF127954F5C00DFE0DA /* GLWebViewController.swift */; };
 		4882ECF4279567D200DFE0DA /* GLComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4882ECF3279567D200DFE0DA /* GLComposeViewController.xib */; };
@@ -71,6 +67,10 @@
 		48B130FD276329250051E382 /* GLRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B130FC276329250051E382 /* GLRefreshControl.swift */; };
 		48B41639274CCAF60099E069 /* GLWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B41638274CCAF60099E069 /* GLWelcomeView.swift */; };
 		48B4163B274CCB7F0099E069 /* GLNewFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B4163A274CCB7F0099E069 /* GLNewFeatureView.swift */; };
+		48B5601E2799657A0084CBFA /* CZEmoticonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B560192799657A0084CBFA /* CZEmoticonManager.swift */; };
+		48B5601F2799657A0084CBFA /* CZEmoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B5601B2799657A0084CBFA /* CZEmoticon.swift */; };
+		48B560202799657A0084CBFA /* CZEmotionPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B5601C2799657A0084CBFA /* CZEmotionPackage.swift */; };
+		48B560212799657A0084CBFA /* HMEmoticon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 48B5601D2799657A0084CBFA /* HMEmoticon.bundle */; };
 		48EAFAC92746220600F3A0BA /* Log4Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EAFAC82746220600F3A0BA /* Log4Swift.swift */; };
 		48EAFACC27462FD700F3A0BA /* GLUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EAFACB27462FD700F3A0BA /* GLUserAccount.swift */; };
 		48EAFACE274A2B0000F3A0BA /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EAFACD274A2B0000F3A0BA /* Date+Extension.swift */; };
@@ -145,10 +145,6 @@
 		48645C6E278C07C300A36E28 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Extension.swift"; path = "../../../../../../笔记/项目笔记/正则表达式的基本使用/正则表达式的基本使用/String+Extension.swift"; sourceTree = "<group>"; };
 		486699002787030D00B5211C /* GLComposeTypeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLComposeTypeButton.swift; sourceTree = "<group>"; };
 		486699022787039E00B5211C /* GLComposeTypeButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GLComposeTypeButton.xib; sourceTree = "<group>"; };
-		4882ECC32790502900DFE0DA /* CZEmoticonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmoticonManager.swift; sourceTree = "<group>"; };
-		4882ECC52790502900DFE0DA /* CZEmoticon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmoticon.swift; sourceTree = "<group>"; };
-		4882ECC62790502900DFE0DA /* CZEmotionPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmotionPackage.swift; sourceTree = "<group>"; };
-		4882ECC72790502900DFE0DA /* HMEmoticon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HMEmoticon.bundle; sourceTree = "<group>"; };
 		4882ECEF2795427200DFE0DA /* FFLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFLabel.swift; sourceTree = "<group>"; };
 		4882ECF127954F5C00DFE0DA /* GLWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLWebViewController.swift; sourceTree = "<group>"; };
 		4882ECF3279567D200DFE0DA /* GLComposeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GLComposeViewController.xib; sourceTree = "<group>"; };
@@ -165,6 +161,10 @@
 		48B130FC276329250051E382 /* GLRefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLRefreshControl.swift; sourceTree = "<group>"; };
 		48B41638274CCAF60099E069 /* GLWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLWelcomeView.swift; sourceTree = "<group>"; };
 		48B4163A274CCB7F0099E069 /* GLNewFeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLNewFeatureView.swift; sourceTree = "<group>"; };
+		48B560192799657A0084CBFA /* CZEmoticonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmoticonManager.swift; sourceTree = "<group>"; };
+		48B5601B2799657A0084CBFA /* CZEmoticon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmoticon.swift; sourceTree = "<group>"; };
+		48B5601C2799657A0084CBFA /* CZEmotionPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CZEmotionPackage.swift; sourceTree = "<group>"; };
+		48B5601D2799657A0084CBFA /* HMEmoticon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HMEmoticon.bundle; sourceTree = "<group>"; };
 		48EAFAC82746220600F3A0BA /* Log4Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log4Swift.swift; sourceTree = "<group>"; };
 		48EAFACB27462FD700F3A0BA /* GLUserAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLUserAccount.swift; sourceTree = "<group>"; };
 		48EAFACD274A2B0000F3A0BA /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
@@ -312,8 +312,8 @@
 		04F27C3427001B7C006F5B01 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				48B560182799657A0084CBFA /* Emotion */,
 				4882ECEE2795427200DFE0DA /* FFLabel */,
-				4882ECC22790502900DFE0DA /* Emotion */,
 				48B130F72763289A0051E382 /* UI框架 */,
 				0494491927157896005748C4 /* Network */,
 				04F27C7C270049BA006F5B01 /* Extension */,
@@ -444,26 +444,6 @@
 			path = TitleButton;
 			sourceTree = "<group>";
 		};
-		4882ECC22790502900DFE0DA /* Emotion */ = {
-			isa = PBXGroup;
-			children = (
-				4882ECC32790502900DFE0DA /* CZEmoticonManager.swift */,
-				4882ECC42790502900DFE0DA /* Model */,
-				4882ECC72790502900DFE0DA /* HMEmoticon.bundle */,
-			);
-			name = Emotion;
-			path = "../../../../../笔记/项目笔记/010-表情包数据/010-表情包数据/Emotion";
-			sourceTree = "<group>";
-		};
-		4882ECC42790502900DFE0DA /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				4882ECC52790502900DFE0DA /* CZEmoticon.swift */,
-				4882ECC62790502900DFE0DA /* CZEmotionPackage.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		4882ECEE2795427200DFE0DA /* FFLabel */ = {
 			isa = PBXGroup;
 			children = (
@@ -514,6 +494,25 @@
 				485F8946274E2C9800FE4A87 /* GLNewFeatureView.xib */,
 			);
 			path = NewFeature;
+			sourceTree = "<group>";
+		};
+		48B560182799657A0084CBFA /* Emotion */ = {
+			isa = PBXGroup;
+			children = (
+				48B560192799657A0084CBFA /* CZEmoticonManager.swift */,
+				48B5601A2799657A0084CBFA /* Model */,
+				48B5601D2799657A0084CBFA /* HMEmoticon.bundle */,
+			);
+			path = Emotion;
+			sourceTree = "<group>";
+		};
+		48B5601A2799657A0084CBFA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				48B5601B2799657A0084CBFA /* CZEmoticon.swift */,
+				48B5601C2799657A0084CBFA /* CZEmotionPackage.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		48EAFACA27462FBE00F3A0BA /* Model */ = {
@@ -610,12 +609,12 @@
 			files = (
 				04CBE9D0270EDF66009CF637 /* main.json in Resources */,
 				485F8947274E2C9800FE4A87 /* GLNewFeatureView.xib in Resources */,
+				48B560212799657A0084CBFA /* HMEmoticon.bundle in Resources */,
 				48A6BBA02758B68A004DDF47 /* GLStatusRetweedCell.xib in Resources */,
 				049E6F5B26FF2A1A00BD774F /* LaunchScreen.storyboard in Resources */,
 				4885F8892752061800E74DDA /* GLStatusNormalCell.xib in Resources */,
 				049E6F5826FF2A1A00BD774F /* Assets.xcassets in Resources */,
 				48F044FC2782F8E800B60B33 /* GLMeiTuanRefreshView.xib in Resources */,
-				4882ECCB2790502900DFE0DA /* HMEmoticon.bundle in Resources */,
 				48F044FD2782F8E800B60B33 /* GLHumanRefreshView.xib in Resources */,
 				485F8945274DD77D00FE4A87 /* GLWeocomeView.xib in Resources */,
 				48F04502278320AE00B60B33 /* GLComposeTypeView.xib in Resources */,
@@ -680,18 +679,18 @@
 				04F27C70270021E5006F5B01 /* NSString+CZBase64.m in Sources */,
 				486699012787030D00B5211C /* GLComposeTypeButton.swift in Sources */,
 				4885F8872752060100E74DDA /* GLStatusCell.swift in Sources */,
-				4882ECC92790502900DFE0DA /* CZEmoticon.swift in Sources */,
 				04F27C3C27001DA1006F5B01 /* GLMianViewController.swift in Sources */,
 				043F023C270165E000B40465 /* GLNavigationBar.swift in Sources */,
+				48B5601E2799657A0084CBFA /* CZEmoticonManager.swift in Sources */,
 				04F27C73270021E5006F5B01 /* NSObject+CZRuntime.m in Sources */,
 				043F023827015B3D00B40465 /* UINavigationBar+Extension.swift in Sources */,
 				48B130FD276329250051E382 /* GLRefreshControl.swift in Sources */,
 				4885F8952754C5CF00E74DDA /* GLStatusPicture.swift in Sources */,
-				4882ECC82790502900DFE0DA /* CZEmoticonManager.swift in Sources */,
 				04F27C76270021E6006F5B01 /* NSAttributedString+CZAdditon.m in Sources */,
 				48B41639274CCAF60099E069 /* GLWelcomeView.swift in Sources */,
 				4885F8972754C94900E74DDA /* GLStatusPictureView.swift in Sources */,
 				04F27C77270021E6006F5B01 /* NSArray+Log.m in Sources */,
+				48B560202799657A0084CBFA /* CZEmotionPackage.swift in Sources */,
 				04F27C6E270021E5006F5B01 /* UIScreen+CZAddition.m in Sources */,
 				4882ECFA279696C200DFE0DA /* GLComposeTextView.swift in Sources */,
 				4882ECF227954F5C00DFE0DA /* GLWebViewController.swift in Sources */,
@@ -706,12 +705,12 @@
 				04F27C4027001DB8006F5B01 /* GLNavigationController.swift in Sources */,
 				48EAFACE274A2B0000F3A0BA /* Date+Extension.swift in Sources */,
 				04F27C72270021E5006F5B01 /* UIButton+CZAddition.m in Sources */,
+				48B5601F2799657A0084CBFA /* CZEmoticon.swift in Sources */,
 				4885F89127537EFE00E74DDA /* GLStatusToolBar.swift in Sources */,
 				04F27C82270070C0006F5B01 /* GLDemoViewController.swift in Sources */,
 				48EAFAC92746220600F3A0BA /* Log4Swift.swift in Sources */,
 				04F27C4A27001E1F006F5B01 /* GLMessageViewController.swift in Sources */,
 				04F27C75270021E6006F5B01 /* NSString+CZHash.m in Sources */,
-				4882ECCA2790502900DFE0DA /* CZEmotionPackage.swift in Sources */,
 				04DD04E4272D3835005809D7 /* GLOAuthViewController.swift in Sources */,
 				04F27C74270021E6006F5B01 /* UIViewController+CZAddition.m in Sources */,
 				48F045002783209900B60B33 /* GLComposeTypeView.swift in Sources */,

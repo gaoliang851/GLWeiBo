@@ -84,6 +84,8 @@ class GLComposeViewController: UIViewController {
         view.backgroundColor = .blue
         // 2. 设置键盘视图
         textView.inputView = view
+        // 键盘助理视图，就是键盘上方的view
+        // textView.inputAccessoryView
         
         // 3. 刷新键盘视图
         textView.reloadInputViews()

@@ -99,4 +99,45 @@ class GLNetworkManager: AFHTTPSessionManager {
             post(URLString, parameters: paramters, headers: nil, progress: nil, success: success, failure: failure)
         }
     }
+    
+    
+    /// MARK: - 封装 AFN 方法
+    /// 上传文件必须是 POST 方法，GET 只能获取数据
+    /// 封装 AFN 的上传文件方法
+    /// - Parameters:
+    ///   - urlString: URLSTring
+    ///   - parameters: 参数字典
+    ///   - name: 接收上传数据的服务器字段（name - 要咨询公司的后台） `pic`
+    ///   - data: 要上传的二进制数据
+    ///   - completion: 完成回调
+    func upload(urlString: String,
+                parameters: [String:AnyObject]?,
+                name: String,
+                data: Data,
+                completion: @escaping (_ json: Any?,_ isSuccess: Bool)->()) {
+        
+        post(urlString, parameters: parameters, headers: nil, constructingBodyWith: { (formData) in
+            // 创建 formData
+            /**
+             1. data: 要上传的二进制数据
+             2. name: 服务器接受数据的字段名
+             3. fileName: 保存在服务器的文件名，大多数服务器，现在可以乱写,
+                        很多服务器，上传图片完成后，会生成缩略图，中图，大图...
+             4. mimeType: 告诉服务器上传文件的类型，如果不想告诉、可以使用 application/octet-steam，
+                        image/png image/jpg image/gif
+             */
+            formData.appendPart(withFileData: data, name: name, fileName: "xxx", mimeType: "application/octet-stream")
+        }, progress: nil) { _, json in
+            completion(json, true)
+        } failure: { task, error in
+            if (task?.response as? HTTPURLResponse)?.statusCode == 403 {
+                print("Token 过期了")
+                // 发送通知
+                NotificationCenter.default.post(name: NSNotification.Name(GLUserShouldLoginNotification), object: "bad token")
+                
+            }
+            print("网络请求错误")
+            completion(nil, false)
+        }
+    }
 }

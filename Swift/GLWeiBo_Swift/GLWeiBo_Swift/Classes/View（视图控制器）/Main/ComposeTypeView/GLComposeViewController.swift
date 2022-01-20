@@ -77,6 +77,17 @@ class GLComposeViewController: UIViewController {
             SVProgressHUD.dismiss()
         }
     }
+    // MARK: - 切换表情键盘
+    @objc private func emoticonKeyboard() {
+        // 1. 视图的高度可以随便，展示出来就是屏幕的宽度
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        view.backgroundColor = .blue
+        // 2. 设置键盘视图
+        textView.inputView = view
+        
+        // 3. 刷新键盘视图
+        textView.reloadInputViews()
+    }
     
     // MARK: 发布微博
     @IBAction func postStatus() {
@@ -186,7 +197,7 @@ private extension GLComposeViewController {
         let itemSettings = [["imageName": "compose_toolbar_picture"],
             ["imageName": "compose_mentionbutton_background"],
             ["imageName": "compose_trendbutton_background"],
-            ["imageName": "compose_emoticonbutton_background"],
+                            ["imageName": "compose_emoticonbutton_background","actionName":"emoticonKeyboard"],
             ["imageName": "compose_add_background"]]
         
         var items = [UIBarButtonItem]()
@@ -205,6 +216,11 @@ private extension GLComposeViewController {
             
             button.setImage(image, for: .normal)
             button.setImage(imageHL, for: .highlighted)
+            
+            // 为按钮添加事件
+            if let actionName = dict["actionName"] {
+                button.addTarget(self, action: Selector(actionName), for: .touchUpInside)
+            }
             
             button.sizeToFit()
             /// 将按钮添加到数组

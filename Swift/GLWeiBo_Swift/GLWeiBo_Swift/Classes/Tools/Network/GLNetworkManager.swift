@@ -33,7 +33,12 @@ class GLNetworkManager: AFHTTPSessionManager {
     ///   - paramters: 参数字典
     ///   - completion: 完成回调
     /// - Returns: Void
-    func tokenRequest(method: GLHTTPMethod = .GET,URLString: String,paramters: [String: Any]?,completion: @escaping (Any?,Bool)->()) {
+    func tokenRequest(method: GLHTTPMethod = .GET,
+                      URLString: String,
+                      paramters: [String: Any]?,
+                      name: String? = nil,
+                      data: Data? = nil,
+                      completion: @escaping (Any?,Bool)->()) {
         // 处理token 字典
         // 0> 判断 token 是否为 nil, 为nil直接返回，程序执行过程中，一般token不会nil
         guard let token = userAccount.access_token else {
@@ -58,9 +63,13 @@ class GLNetworkManager: AFHTTPSessionManager {
         // 2> 设置参数字典,此处字典一定有值，用!也可以
         paramters?["access_token"] = token
         
-        // 3> 调用request 发起真正的网络请求
-        request(method: method, URLString: URLString, paramters: paramters, completion: completion)
-        
+        if let name = name, let data = data {
+            //上传文件
+            upload(urlString: URLString, parameters: paramters, name: name, data: data, completion: completion)
+        } else {
+            // 3> 调用request 发起真正的网络请求
+            request(method: method, URLString: URLString, paramters: paramters, completion: completion)
+        }
     }
     
     
@@ -111,7 +120,7 @@ class GLNetworkManager: AFHTTPSessionManager {
     ///   - data: 要上传的二进制数据
     ///   - completion: 完成回调
     func upload(urlString: String,
-                parameters: [String:AnyObject]?,
+                parameters: [String:Any]?,
                 name: String,
                 data: Data,
                 completion: @escaping (_ json: Any?,_ isSuccess: Bool)->()) {

@@ -9,6 +9,11 @@ import UIKit
 
 class CZEmticonInputView: UIView {
     
+    @IBOutlet weak var CZEmticonToolbar: UIView!
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    
     class func inputView() -> CZEmticonInputView {
         let nib = UINib(nibName: "CZEmticonInputView", bundle: nil)
         let v = nib.instantiate(withOwner: nil, options: nil)[0] as! CZEmticonInputView

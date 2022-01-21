@@ -18,6 +18,7 @@
 		48B5602B279965880084CBFA /* HMEmoticon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 48B56027279965880084CBFA /* HMEmoticon.bundle */; };
 		48B5602E27996B830084CBFA /* CZEmticonInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B5602D27996B830084CBFA /* CZEmticonInputView.swift */; };
 		48B5603227996C170084CBFA /* CZEmticonInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48B5603127996C170084CBFA /* CZEmticonInputView.xib */; };
+		48B5603A279A95600084CBFA /* CZEmticonToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B56039279A95600084CBFA /* CZEmticonToolbar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		48B56027279965880084CBFA /* HMEmoticon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HMEmoticon.bundle; sourceTree = "<group>"; };
 		48B5602D27996B830084CBFA /* CZEmticonInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CZEmticonInputView.swift; sourceTree = "<group>"; };
 		48B5603127996C170084CBFA /* CZEmticonInputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CZEmticonInputView.xib; sourceTree = "<group>"; };
+		48B56039279A95600084CBFA /* CZEmticonToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CZEmticonToolbar.swift; sourceTree = "<group>"; };
 		7DCE910C6B768F43C2743FC6 /* Pods-day11-001-表情键盘.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-day11-001-表情键盘.debug.xcconfig"; path = "Target Support Files/Pods-day11-001-表情键盘/Pods-day11-001-表情键盘.debug.xcconfig"; sourceTree = "<group>"; };
 		A9BB3AC83D09DB0B6488E7EB /* Pods-day11-001-表情键盘.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-day11-001-表情键盘.release.xcconfig"; path = "Target Support Files/Pods-day11-001-表情键盘/Pods-day11-001-表情键盘.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,6 +109,7 @@
 			children = (
 				48B5602D27996B830084CBFA /* CZEmticonInputView.swift */,
 				48B5603127996C170084CBFA /* CZEmticonInputView.xib */,
+				48B56039279A95600084CBFA /* CZEmticonToolbar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				48B56005279963490084CBFA /* AppDelegate.swift in Sources */,
 				48B5602E27996B830084CBFA /* CZEmticonInputView.swift in Sources */,
 				48B5602A279965880084CBFA /* CZEmotionPackage.swift in Sources */,
+				48B5603A279A95600084CBFA /* CZEmticonToolbar.swift in Sources */,
 				48B56029279965880084CBFA /* CZEmoticon.swift in Sources */,
 				48B56028279965880084CBFA /* CZEmoticonManager.swift in Sources */,
 			);

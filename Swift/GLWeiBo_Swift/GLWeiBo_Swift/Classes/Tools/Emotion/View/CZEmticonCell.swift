@@ -35,11 +35,26 @@ private extension CZEmticonCell {
         let rowCount = 3
         let colCount = 7
         
+        // 左右间距
+        let leftMargin: CGFloat = 8
+        // 底部间距, 为分页控件预留控件
+        let bottomMargin: CGFloat = 16
+        
+        let w = (bounds.width - 2 * leftMargin) / CGFloat(colCount)
+        let h = (bounds.height - bottomMargin) / CGFloat(rowCount)
+        
         for i in 0..<21 {
+            // 行数
             let row = i / colCount
-            let col = i % rowCount
+            // 列数
+            let col = i % colCount
             
             let btn = UIButton(type: .custom)
+            let x = leftMargin + CGFloat(col) * w
+            let y = h * CGFloat(row)
+            let rect = CGRect(x: x, y: y, width: w, height: h)
+            btn.frame = rect
+            
             btn.backgroundColor = UIColor.red
             contentView.addSubview(btn)
         }

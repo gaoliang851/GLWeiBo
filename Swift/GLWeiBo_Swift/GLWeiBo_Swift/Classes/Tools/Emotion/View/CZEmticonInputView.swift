@@ -29,11 +29,11 @@ class CZEmticonInputView: UIView {
 }
 
 extension CZEmticonInputView : UICollectionViewDataSource {
-    
+    // 分组数量 - 返回表情包的数量
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         CZEmoticonManager.shared.packages.count
     }
-    
+    // 返回每个分组中的表情`页`的数量
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         2
     }

@@ -43,6 +43,25 @@ import YYModel
         (emoticons.count - 1) / 20 + 1
     }
     
+    /// 从懒加载的表情包中，按照page 截取最多20个表情模型数组
+    /// 例如 有 26个表情
+    /// page == 0, 返回 0~19 个模型
+    /// page == 1, 返回 20~25 个模型
+    func emoticon(page: Int) -> [CZEmoticon] {
+        let count = 20
+        let location = page * count
+        var length = count
+        
+        // 判断数组是否越界
+        if location + length > emoticons.count {
+            length = emoticons.count - location
+        }
+        
+        let range = NSRange(location: location, length: length)
+        let subArray = (emoticons as NSArray).subarray(with: range)
+        return subArray as! [CZEmoticon]
+    }
+    
     override var description: String {
         yy_modelDescription()
     }

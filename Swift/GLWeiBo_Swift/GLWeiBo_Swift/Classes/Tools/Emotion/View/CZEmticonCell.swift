@@ -11,20 +11,27 @@ import UIKit
 /// 一个cell 就是一个完整的表情布局
 class CZEmticonCell: UICollectionViewCell {
     
-    @IBOutlet weak var label: UILabel!
+    //@IBOutlet weak var label: UILabel!
+    
+    var emoticons: [CZEmoticon]? {
+        didSet {
+            print("表情包的数量 \(emoticons?.count)")
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
     }
     
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-    
+    /*
     override func awakeFromNib() {
         setupUI()
-    }
+    }*/
 }
 
 

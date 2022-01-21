@@ -44,6 +44,8 @@ extension CZEmticonInputView : UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! CZEmticonCell
         
         //cell.label.text = "\(indexPath.section) - \(indexPath.item)"
+        
+        cell.emoticons = CZEmoticonManager.shared.packages[indexPath.section].emoticon(page: indexPath.item)
     
         return cell
     }

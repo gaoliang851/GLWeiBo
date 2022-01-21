@@ -19,6 +19,8 @@
 		48B5602E27996B830084CBFA /* CZEmticonInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B5602D27996B830084CBFA /* CZEmticonInputView.swift */; };
 		48B5603227996C170084CBFA /* CZEmticonInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48B5603127996C170084CBFA /* CZEmticonInputView.xib */; };
 		48B5603A279A95600084CBFA /* CZEmticonToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B56039279A95600084CBFA /* CZEmticonToolbar.swift */; };
+		48B5603C279ABB490084CBFA /* CZEmticonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B5603B279ABB490084CBFA /* CZEmticonCell.swift */; };
+		48B56040279ABB670084CBFA /* CZEmticonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48B5603F279ABB670084CBFA /* CZEmticonCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		48B5602D27996B830084CBFA /* CZEmticonInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CZEmticonInputView.swift; sourceTree = "<group>"; };
 		48B5603127996C170084CBFA /* CZEmticonInputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CZEmticonInputView.xib; sourceTree = "<group>"; };
 		48B56039279A95600084CBFA /* CZEmticonToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CZEmticonToolbar.swift; sourceTree = "<group>"; };
+		48B5603B279ABB490084CBFA /* CZEmticonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CZEmticonCell.swift; sourceTree = "<group>"; };
+		48B5603F279ABB670084CBFA /* CZEmticonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CZEmticonCell.xib; sourceTree = "<group>"; };
 		7DCE910C6B768F43C2743FC6 /* Pods-day11-001-表情键盘.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-day11-001-表情键盘.debug.xcconfig"; path = "Target Support Files/Pods-day11-001-表情键盘/Pods-day11-001-表情键盘.debug.xcconfig"; sourceTree = "<group>"; };
 		A9BB3AC83D09DB0B6488E7EB /* Pods-day11-001-表情键盘.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-day11-001-表情键盘.release.xcconfig"; path = "Target Support Files/Pods-day11-001-表情键盘/Pods-day11-001-表情键盘.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,6 +114,8 @@
 				48B5602D27996B830084CBFA /* CZEmticonInputView.swift */,
 				48B5603127996C170084CBFA /* CZEmticonInputView.xib */,
 				48B56039279A95600084CBFA /* CZEmticonToolbar.swift */,
+				48B5603B279ABB490084CBFA /* CZEmticonCell.swift */,
+				48B5603F279ABB670084CBFA /* CZEmticonCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -194,6 +200,7 @@
 				48B5602B279965880084CBFA /* HMEmoticon.bundle in Resources */,
 				48B560112799634B0084CBFA /* LaunchScreen.storyboard in Resources */,
 				48B5600E2799634B0084CBFA /* Assets.xcassets in Resources */,
+				48B56040279ABB670084CBFA /* CZEmticonCell.xib in Resources */,
 				48B5600C279963490084CBFA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,6 +256,7 @@
 			files = (
 				48B56009279963490084CBFA /* ViewController.swift in Sources */,
 				48B56005279963490084CBFA /* AppDelegate.swift in Sources */,
+				48B5603C279ABB490084CBFA /* CZEmticonCell.swift in Sources */,
 				48B5602E27996B830084CBFA /* CZEmticonInputView.swift in Sources */,
 				48B5602A279965880084CBFA /* CZEmotionPackage.swift in Sources */,
 				48B5603A279A95600084CBFA /* CZEmticonToolbar.swift in Sources */,

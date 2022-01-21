@@ -10,6 +10,8 @@ import YYModel
 @objcMembers class CZEmotionPackage: NSObject {
     /// 分组名称
     var groupName: String?
+    /// 背景图片名称
+    var bgImageName: String?
     /// 目录名称
     var directory: String? {
         didSet {

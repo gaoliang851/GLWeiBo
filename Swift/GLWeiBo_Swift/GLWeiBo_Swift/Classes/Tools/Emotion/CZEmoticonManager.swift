@@ -23,6 +23,11 @@ class CZEmoticonManager {
     
     /// 用于缓存 表情查找
     private lazy var cache = [String: CZEmoticon]()
+    /// 表情 bundle的懒加载属性
+    lazy var bundle: Bundle = {
+        let HMEmoticonBunldePath = Bundle.main.path(forResource: "HMEmoticon.bundle", ofType: nil)
+        return Bundle(path: HMEmoticonBunldePath!)!
+    }()
 
     /// 单例
     static let shared = CZEmoticonManager()

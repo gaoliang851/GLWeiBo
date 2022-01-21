@@ -23,8 +23,10 @@ class CZEmticonInputView: UIView {
     }
     
     override func awakeFromNib() {
-        let nib = UINib(nibName: "CZEmticonCell", bundle: nil)
-        collectionView.register(nib, forCellWithReuseIdentifier: cellId)
+//        let nib = UINib(nibName: "CZEmticonCell", bundle: nil)
+//        collectionView.register(nib, forCellWithReuseIdentifier: cellId)
+        
+        collectionView.register(CZEmticonCell.self, forCellWithReuseIdentifier: cellId)
     }
 }
 
@@ -41,7 +43,7 @@ extension CZEmticonInputView : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! CZEmticonCell
         
-        cell.label.text = "\(indexPath.section) - \(indexPath.item)"
+        //cell.label.text = "\(indexPath.section) - \(indexPath.item)"
     
         return cell
     }

@@ -38,6 +38,11 @@ import YYModel
     /// 表情数组
     lazy var emoticons = [CZEmoticon]()
     
+    /// 表情页的数量
+    var numberOfPages: Int {
+        (emoticons.count - 1) / 20 + 1
+    }
+    
     override var description: String {
         yy_modelDescription()
     }

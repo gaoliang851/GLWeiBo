@@ -35,7 +35,7 @@ extension CZEmticonInputView : UICollectionViewDataSource {
     }
     // 返回每个分组中的表情`页`的数量
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        2
+        CZEmoticonManager.shared.packages[section].numberOfPages
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

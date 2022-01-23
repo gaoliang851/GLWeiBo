@@ -11,8 +11,12 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var textView: UITextView!
     
-    lazy var emticonInputView = CZEmticonInputView.inputView { emticon in
-        print(emticon)
+    lazy var emticonInputView = CZEmticonInputView.inputView { [weak self] (emticon) in
+        self?.insertEmoticon(em: emticon)
+    }
+    
+    private func insertEmoticon(em: CZEmoticon?) {
+        
     }
     
     override func viewDidLoad() {

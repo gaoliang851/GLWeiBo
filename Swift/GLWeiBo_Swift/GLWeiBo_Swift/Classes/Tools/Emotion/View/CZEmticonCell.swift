@@ -46,10 +46,23 @@ class CZEmticonCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-    /*
-    override func awakeFromNib() {
-        setupUI()
-    }*/
+    // MARK: - 表情按钮点击事件
+    
+    /// 表情按钮点击事件
+    /// - Parameter button: 选中的表情按钮
+    @objc private func emticonSelected(button: UIButton) {
+        // 1. 取tag，0~20，20对应的是删除按钮
+        let tag = button.tag
+        
+        // 2. 根据 tag 判断是否是删除按钮，如果不是删除按钮，取得表情
+        var emoticon: CZEmoticon?
+        if tag < emoticons?.count ?? 0 {
+            emoticon = emoticons?[tag]
+        }
+        
+        // 3. em 要么是选中的按钮， 如果为nil 对应的是删除按钮
+        print(emoticon)
+    }
 }
 
 
@@ -83,6 +96,10 @@ private extension CZEmticonCell {
             btn.titleLabel?.font = UIFont.systemFont(ofSize: 32)
             
             contentView.addSubview(btn)
+            
+            // 设置tag, i就是表情的索引
+            btn.tag = i
+            btn.addTarget(self, action: #selector(emticonSelected), for: .touchUpInside)
         }
         
         // 取出最后一个按钮，设置删除按钮

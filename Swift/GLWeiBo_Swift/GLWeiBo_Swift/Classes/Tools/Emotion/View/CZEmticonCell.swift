@@ -25,8 +25,11 @@ class CZEmticonCell: UICollectionViewCell {
             // 2. 遍历表情，设置按钮图像
             for (i,em) in (emoticons ?? []).enumerated() {
                 let button = contentView.subviews[i] as! UIButton
+                // 设置图像 - 如果图像为 nil 会清空图像，避免复用
                 button.setImage(em.image, for: .normal)
+                // 设置 emoji 字符串 - 如果 emoji 为 nil 会清空 title，避免复用
                 button.setTitle(em.emoji, for: .normal)
+                
                 button.isHidden = false
             }
         }

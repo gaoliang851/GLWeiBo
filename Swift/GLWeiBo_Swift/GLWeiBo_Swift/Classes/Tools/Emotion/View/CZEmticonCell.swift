@@ -21,6 +21,8 @@ class CZEmticonCell: UICollectionViewCell {
             for v in contentView.subviews {
                 v.isHidden = true
             }
+            // 1.1 删除按钮不隐藏
+            contentView.subviews.last?.isHidden = false
             
             // 2. 遍历表情，设置按钮图像
             for (i,em) in (emoticons ?? []).enumerated() {
@@ -82,5 +84,13 @@ private extension CZEmticonCell {
             
             contentView.addSubview(btn)
         }
+        
+        // 取出最后一个按钮，设置删除按钮
+        let removeButton = contentView.subviews.last as! UIButton
+        let image = UIImage(named: "compose_emotion_delete", in: CZEmoticonManager.shared.bundle, compatibleWith: nil)
+        let imageHL = UIImage(named: "compose_emotion_delete_highlighted", in: CZEmoticonManager.shared.bundle, compatibleWith: nil)
+        removeButton.setImage(image, for: .normal)
+        removeButton.setImage(imageHL, for: .selected)
+        removeButton.setImage(imageHL, for: .highlighted)
     }
 }

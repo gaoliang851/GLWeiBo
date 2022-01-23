@@ -15,7 +15,19 @@ class CZEmticonCell: UICollectionViewCell {
     
     var emoticons: [CZEmoticon]? {
         didSet {
-            print("表情包的数量 \(emoticons?.count)")
+            //print("表情包的数量 \(emoticons?.count)")
+            
+            //1. 隐藏内部所有按钮
+            for v in contentView.subviews {
+                v.isHidden = true
+            }
+            
+            // 2. 遍历表情，设置按钮图像
+            for (i,em) in (emoticons ?? []).enumerated() {
+                let button = contentView.subviews[i] as! UIButton
+                button.setImage(em.image, for: .normal)
+                button.isHidden = false
+            }
         }
     }
     

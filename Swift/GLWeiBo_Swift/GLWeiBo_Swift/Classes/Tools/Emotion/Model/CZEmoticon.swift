@@ -16,7 +16,19 @@ import UIKit
     /// 表情图片名称，用于本地图文混排
     var png: String?
     /// emoji 的十六进制编码
-    var code: String?
+    var code: String? {
+        didSet {
+            guard let code = code else {
+                return
+            }
+            let scanner = Scanner(string: code)
+            var result: UInt32 = 0
+            scanner.scanHexInt32(&result)
+            emoji = String(Character(UnicodeScalar(result)!))
+        }
+    }
+    
+    var emoji: String?
     
     /// 表情所在的目录名称
     var directory: String?

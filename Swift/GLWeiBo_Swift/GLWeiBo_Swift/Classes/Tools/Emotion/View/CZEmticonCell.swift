@@ -26,6 +26,7 @@ class CZEmticonCell: UICollectionViewCell {
             for (i,em) in (emoticons ?? []).enumerated() {
                 let button = contentView.subviews[i] as! UIButton
                 button.setImage(em.image, for: .normal)
+                button.setTitle(em.emoji, for: .normal)
                 button.isHidden = false
             }
         }
@@ -74,7 +75,8 @@ private extension CZEmticonCell {
             let rect = CGRect(x: x, y: y, width: w, height: h)
             btn.frame = rect
             
-            btn.backgroundColor = UIColor.red
+            btn.titleLabel?.font = UIFont.systemFont(ofSize: 32)
+            
             contentView.addSubview(btn)
         }
     }

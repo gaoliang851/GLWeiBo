@@ -11,7 +11,9 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var textView: UITextView!
     
-    lazy var emticonInputView = CZEmticonInputView.inputView()
+    lazy var emticonInputView = CZEmticonInputView.inputView { emticon in
+        print(emticon)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

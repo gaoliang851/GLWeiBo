@@ -15,10 +15,19 @@ class CZEmticonInputView: UIView {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    // 保存回调闭包
+    private var emticonSelectedCallBack: ((_ emticon: CZEmoticon?)->())?
     
-    class func inputView() -> CZEmticonInputView {
+//    class func inputView() -> CZEmticonInputView {
+//        let nib = UINib(nibName: "CZEmticonInputView", bundle: nil)
+//        let v = nib.instantiate(withOwner: nil, options: nil)[0] as! CZEmticonInputView
+//        return v
+//    }
+    
+    class func inputView(selectedEmticon: @escaping (_ emticon: CZEmoticon?)->()) -> CZEmticonInputView {
         let nib = UINib(nibName: "CZEmticonInputView", bundle: nil)
         let v = nib.instantiate(withOwner: nil, options: nil)[0] as! CZEmticonInputView
+        v.emticonSelectedCallBack = selectedEmticon
         return v
     }
     
@@ -56,6 +65,6 @@ extension CZEmticonInputView : UICollectionViewDataSource {
 extension CZEmticonInputView : CZEmticonCellDelegate {
     
     func emticonCellDidSelectedEmoticon(cell: CZEmticonCell, em: CZEmoticon?) {
-        print(em)
+        self.emticonSelectedCallBack?(em)
     }
 }

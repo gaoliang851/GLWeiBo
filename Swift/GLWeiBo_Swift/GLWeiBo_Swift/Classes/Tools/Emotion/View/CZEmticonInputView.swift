@@ -46,8 +46,16 @@ extension CZEmticonInputView : UICollectionViewDataSource {
         //cell.label.text = "\(indexPath.section) - \(indexPath.item)"
         
         cell.emoticons = CZEmoticonManager.shared.packages[indexPath.section].emoticon(page: indexPath.item)
+        
+        cell.delegate = self
     
         return cell
     }
+}
+
+extension CZEmticonInputView : CZEmticonCellDelegate {
     
+    func emticonCellDidSelectedEmoticon(cell: CZEmticonCell, em: CZEmoticon?) {
+        print(em)
+    }
 }

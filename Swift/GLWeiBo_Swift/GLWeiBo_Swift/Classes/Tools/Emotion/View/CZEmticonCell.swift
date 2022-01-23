@@ -8,10 +8,16 @@
 import UIKit
 
 
+/// 表情按钮点击代理
+@objc protocol CZEmticonCellDelegate {
+    func emticonCellDidSelectedEmoticon(cell: CZEmticonCell, em: CZEmoticon?)
+}
+
 /// 一个cell 就是一个完整的表情布局
 class CZEmticonCell: UICollectionViewCell {
     
     //@IBOutlet weak var label: UILabel!
+    weak var delegate : CZEmticonCellDelegate?
     
     var emoticons: [CZEmoticon]? {
         didSet {
@@ -61,7 +67,9 @@ class CZEmticonCell: UICollectionViewCell {
         }
         
         // 3. em 要么是选中的按钮， 如果为nil 对应的是删除按钮
-        print(emoticon)
+        //print(emoticon)
+        // 通知代理
+        delegate?.emticonCellDidSelectedEmoticon(cell: self, em: emoticon)
     }
 }
 

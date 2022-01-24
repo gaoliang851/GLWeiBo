@@ -32,6 +32,22 @@ class ViewController: UIViewController {
             let textRange = textView.selectedTextRange {
             textView.replace(textRange, withText: emoji)
         }
+        
+        // 3. 处理图片表情
+        let imageText = em.imageText(font: UIFont.systemFont(ofSize: 18))
+        
+        let attributedText = NSMutableAttributedString(attributedString: textView.attributedText)
+        
+        // 获取选中位置
+        let range = textView.selectedRange
+        
+        // 替换图片
+        attributedText.replaceCharacters(in: range, with: imageText)
+        
+        textView.attributedText = attributedText
+        
+        // 处理光标位置
+        textView.selectedRange = NSRange(location: range.location + 1, length: 0)
     }
     
     override func viewDidLoad() {

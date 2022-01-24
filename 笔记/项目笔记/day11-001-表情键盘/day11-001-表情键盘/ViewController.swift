@@ -35,18 +35,17 @@ class ViewController: UIViewController {
         
         // 3. 处理图片表情
         let imageText = em.imageText(font: UIFont.systemFont(ofSize: 18))
-        
+        // 3.1 获取当前 textView 属性文本 => 可变的
         let attributedText = NSMutableAttributedString(attributedString: textView.attributedText)
         
-        // 获取选中位置
+        // 将图像的属性文本插入到当前的光标位置
+        attributedText.replaceCharacters(in: textView.selectedRange, with: imageText)
+        
+        // 记录光标位置
         let range = textView.selectedRange
-        
-        // 替换图片
-        attributedText.replaceCharacters(in: range, with: imageText)
-        
+        // 设置文本
         textView.attributedText = attributedText
-        
-        // 处理光标位置
+        // 恢复光标位置
         textView.selectedRange = NSRange(location: range.location + 1, length: 0)
     }
     

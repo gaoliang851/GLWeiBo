@@ -34,8 +34,10 @@ class ViewController: UIViewController {
         }
         
         // 3. 处理图片表情
-        let imageText = em.imageText(font: UIFont.systemFont(ofSize: 18))
+        let imageText = em.imageText(font: textView.font!)
         // 3.1 获取当前 textView 属性文本 => 可变的
+        // 所有的排版系统中，几乎都有一个共同的特点，插入的字符的显示，跟随前一个字符的属性。
+        // 但是本身没有属性
         let attributedText = NSMutableAttributedString(attributedString: textView.attributedText)
         
         // 将图像的属性文本插入到当前的光标位置

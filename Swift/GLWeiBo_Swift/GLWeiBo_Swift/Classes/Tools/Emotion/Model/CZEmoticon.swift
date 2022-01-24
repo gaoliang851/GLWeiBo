@@ -64,7 +64,12 @@ import UIKit
         let height = font.lineHeight
         attachment.bounds = CGRect(x: 0, y: -4, width: height, height: height)
         
-        return NSAttributedString(attachment: attachment)
+        let attrM = NSMutableAttributedString(attributedString: NSAttributedString(attachment: attachment))
+        
+        // 给图片设置字体属性，修复连续输入图片表情，出第一个表情后续表情变小的问题
+        attrM.addAttributes([NSAttributedString.Key.font : font], range: NSRange(location: 0, length: 1))
+        
+        return attrM
     }
     
     override var description: String {

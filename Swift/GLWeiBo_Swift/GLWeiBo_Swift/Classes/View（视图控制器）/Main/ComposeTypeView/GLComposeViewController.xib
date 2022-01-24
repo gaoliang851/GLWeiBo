@@ -28,7 +28,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <color key="textColor" systemColor="labelColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     <connections>
                         <outlet property="delegate" destination="-1" id="pJJ-YS-4IW"/>
@@ -74,7 +74,7 @@
                 <fragment content="发微博">
                     <attributes>
                         <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                        <font key="NSFont" size="14" name=".PingFangSC-Regular"/>
+                        <font key="NSFont" metaFont="system" size="14"/>
                         <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                     </attributes>
                 </fragment>
@@ -84,14 +84,14 @@ Cg
 </string>
                     <attributes>
                         <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                        <font key="NSFont" size="17" name=".PingFangSC-Regular"/>
+                        <font key="NSFont" metaFont="system" size="17"/>
                         <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                     </attributes>
                 </fragment>
                 <fragment content=" ">
                     <attributes>
                         <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                        <font key="NSFont" size="3" name=".PingFangSC-Regular"/>
+                        <font key="NSFont" metaFont="system" size="3"/>
                         <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                     </attributes>
                 </fragment>
@@ -101,14 +101,14 @@ Cg
 </string>
                     <attributes>
                         <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                        <font key="NSFont" size="17" name=".PingFangSC-Regular"/>
+                        <font key="NSFont" metaFont="system" size="17"/>
                         <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                     </attributes>
                 </fragment>
                 <fragment content="天涯刀哥-傅红雪">
                     <attributes>
                         <color key="NSColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <font key="NSFont" size="12" name=".PingFangSC-Regular"/>
+                        <font key="NSFont" metaFont="cellTitle"/>
                         <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                     </attributes>
                 </fragment>

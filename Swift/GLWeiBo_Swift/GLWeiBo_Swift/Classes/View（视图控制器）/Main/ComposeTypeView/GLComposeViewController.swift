@@ -23,7 +23,7 @@ import SVProgressHUD
 /// 撰写微博控制器
 class GLComposeViewController: UIViewController {
     /// 文本编辑视图
-    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var textView: GLComposeTextView!
     /// 底部工具栏
     @IBOutlet weak var toolbar: UIToolbar!
     /// 发布按钮
@@ -52,6 +52,9 @@ class GLComposeViewController: UIViewController {
 //        return btn
 //    }()
     
+    lazy var emticonInputView = CZEmticonInputView.inputView { [weak self] (emticon) in
+        self?.textView.insertEmoticon(em: emticon)
+    }
     
     // MARK: - 视图声明周期
     override func viewDidLoad() {
@@ -80,10 +83,10 @@ class GLComposeViewController: UIViewController {
     // MARK: - 切换表情键盘
     @objc private func emoticonKeyboard() {
         // 1. 视图的高度可以随便，展示出来就是屏幕的宽度
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-        view.backgroundColor = .blue
+//        let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+//        view.backgroundColor = .blue
         // 2. 设置键盘视图
-        textView.inputView = view
+        textView.inputView = (textView.inputView == nil) ? emticonInputView : nil
         // 键盘助理视图，就是键盘上方的view
         // textView.inputAccessoryView
         

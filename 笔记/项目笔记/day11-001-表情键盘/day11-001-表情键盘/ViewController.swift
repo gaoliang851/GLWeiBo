@@ -62,5 +62,33 @@ class ViewController: UIViewController {
         textView .reloadInputViews()
         
     }
+    
+    /// 返回 textView 对应的纯文本的字符串 [将属性文本转换成文字]
+    var emticonText: String {
+        // 1. 获取textView 的属性文本
+        guard let attrStr = textView.attributedText else {
+            return ""
+        }
+        
+        // 2. 需要获得属性文本中的图片 [附件 NSAttachment]
+        /// in range: 遍历的范围
+        /// 选项 []
+        /// 闭包
+        var result = ""
+        attrStr.enumerateAttributes(in: NSRange(location: 0, length: attrStr.length), options: []) { dict, range, _ in
+            if let attachment = dict[NSAttributedString.Key.attachment] {
+                print("图片")
+            } else {
+                /// 纯文本,拼接文本
+                let subStr = attrStr.attributedSubstring(from: range).string
+                result += subStr
+            }
+        }
+        return result
+    }
+    
+    @IBAction func show(_ sender: Any) {
+        print(emticonText)
+    }
 }
 

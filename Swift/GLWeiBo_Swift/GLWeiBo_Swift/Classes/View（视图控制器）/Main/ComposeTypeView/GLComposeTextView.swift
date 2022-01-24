@@ -48,7 +48,7 @@ private extension GLComposeTextView {
     }
 }
 
-/// 表情键盘专属方法
+// MARK: - 表情键盘专属方法
 extension GLComposeTextView {
     /// 向文本中插入表情 [图文混排]
     /// - Parameter em: 选入的表情, nil 表示 删除
@@ -89,5 +89,29 @@ extension GLComposeTextView {
         
         // 调用文本变化通知回调方法
         textViewChanged()
+    }
+    
+    /// 返回 textView 对应的纯文本的字符串 [将属性文本转换成文字]
+    var emticonText: String {
+        // 1. 获取textView 的属性文本
+        guard let attrStr = attributedText else {
+            return ""
+        }
+        
+        // 2. 需要获得属性文本中的图片 [附件 NSAttachment]
+        /// in range: 遍历的范围
+        /// 选项 []
+        /// 闭包
+        var result = ""
+        attrStr.enumerateAttributes(in: NSRange(location: 0, length: attrStr.length), options: []) { dict, range, _ in
+            if let attachment = dict[NSAttributedString.Key.attachment] as? CZEmoticonAttachment {
+                result += attachment.chs ?? ""
+            } else {
+                /// 纯文本,拼接文本
+                let subStr = attrStr.attributedSubstring(from: range).string
+                result += subStr
+            }
+        }
+        return result
     }
 }

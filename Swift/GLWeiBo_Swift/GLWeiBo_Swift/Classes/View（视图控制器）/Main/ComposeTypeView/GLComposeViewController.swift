@@ -97,9 +97,7 @@ class GLComposeViewController: UIViewController {
     // MARK: 发布微博
     @IBAction func postStatus() {
         
-        guard let text = textView.text else {
-            return
-        }
+        let text = textView.emticonText
         
         let image: UIImage? = nil
         GLNetworkManager.shared.postStatus(text: text,image: image) { result, isSuccess in

@@ -58,7 +58,9 @@ import UIKit
         }
         
         // 1. 创建附件
-        let attachment =  NSTextAttachment()
+        let attachment =  CZEmoticonAttachment()
+        attachment.chs = chs
+        
         attachment.image = image
         
         let height = font.lineHeight

@@ -76,8 +76,8 @@ class ViewController: UIViewController {
         /// 闭包
         var result = ""
         attrStr.enumerateAttributes(in: NSRange(location: 0, length: attrStr.length), options: []) { dict, range, _ in
-            if let attachment = dict[NSAttributedString.Key.attachment] {
-                print("图片")
+            if let attachment = dict[NSAttributedString.Key.attachment] as? CZEmoticonAttachment {
+                result += attachment.chs ?? ""
             } else {
                 /// 纯文本,拼接文本
                 let subStr = attrStr.attributedSubstring(from: range).string

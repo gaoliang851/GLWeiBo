@@ -7,13 +7,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,CALayerDelegate {
 
     @IBOutlet weak var textView: UITextView!
     
     lazy var emticonInputView = CZEmticonInputView.inputView { [weak self] (emticon) in
         self?.insertEmoticon(em: emticon)
     }
+    
+    
     
     
     /// 向文本中插入表情 [图文混排]
@@ -29,7 +31,7 @@ class ViewController: UIViewController {
         
         // 2. 如果是emoji, 直接插入
         if let emoji = em.emoji,
-            let textRange = textView.selectedTextRange {
+           let textRange = textView.selectedTextRange {
             textView.replace(textRange, withText: emoji)
         }
         
@@ -90,5 +92,6 @@ class ViewController: UIViewController {
     @IBAction func show(_ sender: Any) {
         print(emticonText)
     }
+    
 }
 
